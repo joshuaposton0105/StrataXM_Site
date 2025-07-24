@@ -11,12 +11,9 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(false);
-
     try {
       const res = await fetch('/api/send_emails', {
         method: 'POST',
@@ -25,18 +22,17 @@ const Contact = () => {
       });
 
       if (!res.ok) {
-        throw new Error('Failed to send email');
+        console.error('Email sending failed.');
+        return;
       }
 
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', company: '', message: '' });
-
       setTimeout(() => {
         setIsSubmitted(false);
+        setFormData({ name: '', email: '', company: '', message: '' });
       }, 3000);
     } catch (err) {
-      console.error('Email error:', err);
-      setError(true);
+      console.error('Error submitting form:', err);
     }
   };
 
@@ -49,8 +45,27 @@ const Contact = () => {
 
   return (
     <div className="pt-16 lg:pt-20">
-      {/* ... Hero section ... */}
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-slate-50 to-cyan-50 py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
+              Let's <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Talk</span>
+            </h1>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Whether you're ready to start or just exploring, we'd love to hear from you. 
+              Every great transformation begins with a conversation.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
+      {/* Contact Section */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -150,23 +165,149 @@ const Contact = () => {
                     Send Message
                     <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </motion.button>
-
-                  {error && (
-                    <p className="text-red-600 font-medium text-sm mt-2 text-center">
-                      There was an error sending your message. Please try again later.
-                    </p>
-                  )}
                 </form>
               )}
             </motion.div>
 
-            {/* Right Column: Direct Contact, Calendar, etc. — leave unchanged */}
-            {/* ... Your existing content here ... */}
+            {/* Contact Info & Calendar */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-8"
+            >
+              {/* Direct Contact */}
+              <div className="bg-slate-50 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  Prefer to talk directly?
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-6 h-6 text-cyan-500" />
+                    <a
+                      href="mailto:josh@strataxm.com"
+                      className="text-slate-700 hover:text-cyan-600 transition-colors duration-200"
+                    >
+                      josh@strataxm.com
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-6 h-6 text-cyan-500" />
+                    <a
+                      href="tel:+13184195264"
+                      className="text-slate-700 hover:text-cyan-600 transition-colors duration-200"
+                    >
+                      (318) 419-5264
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Schedule a Call */}
+              <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-8 border border-cyan-200">
+                <div className="flex items-center space-x-3 mb-6">
+                  <Calendar className="w-8 h-8 text-cyan-600" />
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    Schedule a Strategy Call
+                  </h3>
+                </div>
+                <p className="text-slate-700 mb-6 leading-relaxed">
+                  Book a free 30-minute consultation to discuss your automation and AI opportunities. 
+                  We'll help you identify quick wins and long-term strategies.
+                </p>
+                <a
+                  href="https://calendly.com/strataxm/strategy-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
+                >
+                  Book Your Free Call
+                </a>
+              </div>
+
+              {/* Response Time */}
+              <div className="bg-white border-2 border-slate-100 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  What to expect:
+                </h3>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Response within 24 hours</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Free consultation to understand your needs</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Clear next steps and timeline</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>No pressure, no sales pitch</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ... FAQ section ... */}
+      {/* FAQ Section */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Common Questions
+            </h2>
+            <p className="text-xl text-slate-600">
+              Here are some questions we hear most often from business owners.
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                question: 'How quickly can we see results?',
+                answer: 'Most clients see initial improvements within 2-4 weeks. Simple automation wins can often be implemented in days, while more complex AI solutions typically take 6-12 weeks.'
+              },
+              {
+                question: 'Do we need to have technical expertise on our team?',
+                answer: 'Not at all. We handle all the technical implementation and provide training so your team can use and maintain the solutions. Everything is designed to be user-friendly.'
+              },
+              {
+                question: 'What if we\'re not ready for AI yet?',
+                answer: 'That\'s perfectly fine. We often start with workflow automation and data organization. These create a foundation that makes AI implementation much more effective later.'
+              },
+              {
+                question: 'How much does this typically cost?',
+                answer: 'Investment varies based on scope and complexity. Most small business projects range from $10K-50K. We always provide clear pricing upfront with no hidden fees.'
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-slate-100"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
