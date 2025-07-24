@@ -45,10 +45,35 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!validateForm()) return;
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch('/api/send_emails', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) {
+      throw new Error('Submission failed');
+    }
+
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', company: '', message: '' });
+    setErrors({});
+  } catch (err) {
+    console.error(err);
+    alert('Submission failed. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+    setTimeout(() => setIsSubmitted(false), 4000);
+  }
+};
+
       
       // Reset form after successful submission
       setTimeout(() => {
