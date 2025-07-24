@@ -46,16 +46,19 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // For production, you would replace this with your actual API endpoint
-      // Example: const response = await fetch('/api/contact', { ... })
+      // Send form data to Formspree
+      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
-      // Simulate API call for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In a real implementation, you might want to:
-      // 1. Send to your backend API
-      // 2. Use a service like Formspree, Netlify Forms, or EmailJS
-      // 3. Integrate with your CRM or email service
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
       
       setIsSubmitted(true);
       
@@ -139,14 +142,7 @@ const Contact = () => {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true" name="contact">
-
-
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                      Your Name *
-                    </label>
-                    <input
+                <form onSubmit={handleSubmit} className="space-y-6">
                       type="text"
                       id="name"
                       name="name"
