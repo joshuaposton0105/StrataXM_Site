@@ -45,35 +45,19 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-
-  if (!validateForm()) return;
-  setIsSubmitting(true);
-
-  try {
-    const res = await fetch('/api/send_emails', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-
-    if (!res.ok) {
-      throw new Error('Submission failed');
-    }
-
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', company: '', message: '' });
-    setErrors({});
-  } catch (err) {
-    console.error(err);
-    alert('Submission failed. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-    setTimeout(() => setIsSubmitted(false), 4000);
-  }
-};
-
+    try {
+      // For production, you would replace this with your actual API endpoint
+      // Example: const response = await fetch('/api/contact', { ... })
+      
+      // Simulate API call for demo purposes
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // In a real implementation, you might want to:
+      // 1. Send to your backend API
+      // 2. Use a service like Formspree, Netlify Forms, or EmailJS
+      // 3. Integrate with your CRM or email service
+      
+      setIsSubmitted(true);
       
       // Reset form after successful submission
       setTimeout(() => {
@@ -81,7 +65,13 @@ const Contact = () => {
         setFormData({ name: '', email: '', company: '', message: '' });
         setErrors({});
       }, 4000);
-    }, 1500);
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error sending your message. Please try again or contact us directly at josh@strataxm.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
