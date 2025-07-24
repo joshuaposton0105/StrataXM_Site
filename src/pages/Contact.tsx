@@ -173,10 +173,10 @@ const Contact = () => {
                   <div className="flex items-center space-x-3">
                     <Mail className="w-6 h-6 text-cyan-500" />
                     <a
-                      href="mailto:hello@strataxm.com"
+                      href="mailto:josh@strataxm.com"
                       className="text-slate-700 hover:text-cyan-600 transition-colors duration-200"
                     >
-                      hello@strataxm.com
+                      josh@strataxm.com
                     </a>
                   </div>
                   <div className="flex items-center space-x-3">
