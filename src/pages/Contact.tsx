@@ -139,7 +139,14 @@ const Contact = () => {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true" name="contact">
+                  {/* Netlify hidden fields */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <div style={{ display: 'none' }}>
+                    <input name="bot-field" />
+                  </div>
+                  {/* End Netlify hidden fields */}
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                       Your Name *
@@ -242,6 +249,7 @@ const Contact = () => {
                     )}
                   </motion.button>
                 </form>
+
               )}
             </motion.div>
 
