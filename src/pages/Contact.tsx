@@ -143,6 +143,11 @@ const Contact = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                      Your Name *
+                    </label>
+                    <input
                       type="text"
                       id="name"
                       name="name"
