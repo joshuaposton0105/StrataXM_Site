@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Calendar, Mail, Phone, CheckCircle } from 'lucide-react';
+import { Send, Calendar, Mail, Phone, CheckCircle, DollarSign, Clock, Target } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +36,25 @@ const Contact = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
+  const callBenefits = [
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: 'Identify Quick Wins',
+      description: 'We\'ll spot 2-3 processes you can automate immediately for fast ROI.'
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: 'Calculate Your ROI',
+      description: 'Get specific numbers on potential savings and investment required.'
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: 'Create a Roadmap',
+      description: 'Leave with a clear 90-day plan for your automation journey.'
+    }
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -107,10 +126,25 @@ const Contact = () => {
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
               Let's <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Talk</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Whether you're ready to start or just exploring, we'd love to hear from you. 
-              Every great transformation begins with a conversation.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+              Book a free 30-minute strategy call and leave with a clear action plan for your business.
             </p>
+            <div className="bg-white rounded-lg p-6 max-w-2xl mx-auto shadow-lg border border-slate-100">
+              <h3 className="text-lg font-semibold text-slate-900 mb-4 text-center">
+                What You'll Get From Our Call:
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {callBenefits.map((benefit, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                      {benefit.icon}
+                    </div>
+                    <h4 className="font-medium text-slate-900 mb-2">{benefit.title}</h4>
+                    <p className="text-sm text-slate-600">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -291,18 +325,96 @@ const Contact = () => {
                     Schedule a Strategy Call
                   </h3>
                 </div>
-                <p className="text-slate-700 mb-6 leading-relaxed">
-                  Book a free 30-minute consultation to discuss your automation and AI opportunities. 
-                  We'll help you identify quick wins and long-term strategies.
-                </p>
+                <div className="space-y-4 mb-6">
+                  <p className="text-slate-700 leading-relaxed">
+                    <strong>30-minute call where we'll:</strong>
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-sm">Analyze your current processes and identify automation opportunities</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-sm">Calculate potential time and cost savings for your business</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-sm">Create a prioritized action plan with realistic timelines</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-sm">Discuss investment levels and expected ROI</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
+                  <p className="text-sm text-cyan-800 font-medium text-center">
+                    <strong>No sales pitch.</strong> Just practical advice you can use whether you work with us or not.
+                  </p>
+                </div>
                 <a
                   href="https://calendly.com/strataxm/strategy-call"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
+                  className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-4 px-6 rounded-lg font-semibold text-center transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
                 >
-                  Book Your Free Call
+                  Book Your Free Strategy Call
                 </a>
+              </div>
+
+              {/* Value Proposition */}
+              <div className="bg-white border-2 border-slate-100 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
+                  Why This Call Is Worth Your Time
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 font-bold text-sm">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">Immediate Value</h4>
+                      <p className="text-sm text-slate-600">You'll leave with actionable insights you can implement right away, even if you never hire us.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 font-bold text-sm">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">Realistic Expectations</h4>
+                      <p className="text-sm text-slate-600">We'll give you honest timelines and budgets, not inflated promises to win your business.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 font-bold text-sm">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">No Pressure</h4>
+                      <p className="text-sm text-slate-600">This is a strategy session, not a sales call. We'll only propose working together if it makes sense for both of us.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Proof */}
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4 text-center">
+                  What Others Say About Our Strategy Calls
+                </h3>
+                <div className="space-y-4">
+                  <blockquote className="text-slate-700 italic text-center">
+                    "Josh identified $40K in potential savings in our first 30-minute call. Even if we hadn't hired them, that conversation alone was worth thousands."
+                  </blockquote>
+                  <p className="text-center text-sm text-slate-500">— Marketing Agency Owner</p>
+                  
+                  <blockquote className="text-slate-700 italic text-center">
+                    "Finally, someone who speaks in business terms instead of tech jargon. Josh showed us exactly what was possible and what it would cost."
+                  </blockquote>
+                  <p className="text-center text-sm text-slate-500">— E-commerce Business Owner</p>
+                </div>
               </div>
 
               {/* Response Time */}
