@@ -22,35 +22,11 @@ const About = () => {
     }
   ];
 
-  const clientResults = [
-    {
-      industry: 'Marketing Agency',
-      challenge: 'Spending 20+ hours weekly on client reports',
-      solution: 'Automated reporting dashboard',
-      result: 'Saved $30K annually, improved client satisfaction by 40%',
-      timeframe: '6 weeks to implement'
-    },
-    {
-      industry: 'E-commerce Business',
-      challenge: 'Inventory management chaos, frequent stockouts',
-      solution: 'AI-powered demand forecasting',
-      result: 'Reduced stockouts by 85%, increased profit margins by 15%',
-      timeframe: '8 weeks to implement'
-    },
-    {
-      industry: 'Professional Services',
-      challenge: 'Manual client onboarding taking 3+ days',
-      solution: 'Automated workflow system',
-      result: 'Onboarding now takes 2 hours, 300% capacity increase',
-      timeframe: '4 weeks to implement'
-    }
-  ];
-
   const whyChooseUs = [
     {
       icon: <Award className="w-6 h-6" />,
-      title: 'Proven Track Record',
-      description: 'Over 50 successful implementations with measurable ROI for every client.'
+      title: 'Proven Methodologies',
+      description: 'We use battle-tested frameworks and approaches that have delivered results across industries.'
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
@@ -59,8 +35,8 @@ const About = () => {
     },
     {
       icon: <CheckCircle2 className="w-6 h-6" />,
-      title: 'Results Guarantee',
-      description: 'If we don\'t deliver measurable improvements, we\'ll work for free until we do.'
+      title: 'Results-Focused Approach',
+      description: 'Every solution we recommend is tied to clear business outcomes and measurable improvements.'
     }
   ];
   return (
@@ -189,7 +165,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Client Success Stories */}
+      {/* Our Approach */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -199,40 +175,54 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Real Client Success Stories
+              Our Proven Approach
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Here's what happens when businesses stop doing everything manually and start working smarter.
+              We follow a systematic methodology that ensures every automation project delivers measurable business value.
             </p>
           </motion.div>
 
-          <div className="space-y-8">
-            {clientResults.map((story, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                step: '01',
+                title: 'Assess & Analyze',
+                description: 'We map your current processes, identify bottlenecks, and quantify improvement opportunities.',
+                outcome: 'Clear picture of where automation will have the biggest impact'
+              },
+              {
+                step: '02', 
+                title: 'Design & Plan',
+                description: 'We create a detailed roadmap with priorities, timelines, and expected ROI for each initiative.',
+                outcome: 'Concrete plan with realistic expectations and measurable goals'
+              },
+              {
+                step: '03',
+                title: 'Implement & Optimize',
+                description: 'We build, test, and deploy solutions while training your team for long-term success.',
+                outcome: 'Working systems that deliver immediate value and scale with your business'
+              }
+            ].map((phase, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Industry</h3>
-                    <p className="text-cyan-600 font-medium">{story.industry}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Challenge</h3>
-                    <p className="text-slate-600 text-sm">{story.challenge}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Solution</h3>
-                    <p className="text-slate-600 text-sm">{story.solution}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Result</h3>
-                    <p className="text-green-600 font-medium text-sm">{story.result}</p>
-                    <p className="text-slate-500 text-xs mt-1">{story.timeframe}</p>
-                  </div>
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">
+                  {phase.step}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  {phase.title}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {phase.description}
+                </p>
+                <div className="bg-cyan-50 rounded-lg p-4 border border-cyan-100">
+                  <p className="text-sm text-cyan-800 font-medium">
+                    <strong>Outcome:</strong> {phase.outcome}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -245,13 +235,13 @@ const About = () => {
             className="text-center mt-12"
           >
             <p className="text-lg text-slate-600 mb-6">
-              Want to see results like these in your business?
+              Ready to see how this approach can transform your business?
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Discuss Your Success Story
+              Start Your Transformation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -331,18 +321,18 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Making a Real Impact
+              Industry Benchmarks
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Here's what we've helped our clients achieve through smart automation and AI implementation.
+              Here's what businesses typically achieve through smart automation and AI implementation.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: '80%', label: 'Average reduction in manual work' },
-              { number: '60%', label: 'Faster decision-making with unified data' },
-              { number: '90%', label: 'Client satisfaction rate' }
+              { number: '60-80%', label: 'Typical reduction in manual work' },
+              { number: '40-60%', label: 'Faster decision-making with unified data' },
+              { number: '6-18mo', label: 'Average payback period' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -351,7 +341,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent mb-4">
+                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent mb-4">
                   {stat.number}
                 </div>
                 <p className="text-lg text-slate-600 font-medium">

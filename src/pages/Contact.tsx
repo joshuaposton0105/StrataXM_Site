@@ -401,19 +401,37 @@ const Contact = () => {
 
               {/* Social Proof */}
               <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-xl font-semibold text-slate-900 mb-4 text-center">
-                  What Others Say About Our Strategy Calls
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
+                  What You Can Expect From Our Call
                 </h3>
                 <div className="space-y-4">
-                  <blockquote className="text-slate-700 italic text-center">
-                    "Josh identified $40K in potential savings in our first 30-minute call. Even if we hadn't hired them, that conversation alone was worth thousands."
-                  </blockquote>
-                  <p className="text-center text-sm text-slate-500">— Marketing Agency Owner</p>
-                  
-                  <blockquote className="text-slate-700 italic text-center">
-                    "Finally, someone who speaks in business terms instead of tech jargon. Josh showed us exactly what was possible and what it would cost."
-                  </blockquote>
-                  <p className="text-center text-sm text-slate-500">— E-commerce Business Owner</p>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-cyan-600 font-bold text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">Honest Assessment</h4>
+                      <p className="text-sm text-slate-600">We'll tell you exactly what's realistic for your business and timeline.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-cyan-600 font-bold text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">Clear Numbers</h4>
+                      <p className="text-sm text-slate-600">You'll get realistic cost estimates and ROI projections based on your specific situation.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-cyan-600 font-bold text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900">Actionable Insights</h4>
+                      <p className="text-sm text-slate-600">You'll leave with specific steps you can take immediately, whether you work with us or not.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 

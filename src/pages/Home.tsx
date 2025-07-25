@@ -39,29 +39,25 @@ const Home = () => {
       icon: <DollarSign className="w-8 h-8" />,
       metric: '$50K+',
       title: 'Average Annual Savings',
-      description: 'Most clients save this much in the first year through reduced labor costs and improved efficiency.',
-      example: 'One client eliminated 20 hours/week of manual data entry, saving $26K annually in staff time.'
+      description: 'Typical savings businesses achieve in the first year through reduced labor costs and improved efficiency.'
     },
     {
       icon: <Clock className="w-8 h-8" />,
       metric: '15 Hours',
       title: 'Weekly Time Savings',
-      description: 'Time your team gets back each week to focus on revenue-generating activities.',
-      example: 'A marketing agency freed up 15 hours/week by automating client reporting and social media scheduling.'
+      description: 'Time teams typically get back each week to focus on revenue-generating activities.'
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       metric: '40%',
       title: 'Faster Decision Making',
-      description: 'How much quicker you can respond to opportunities with unified, real-time data.',
-      example: 'An e-commerce business increased conversion rates by 23% with AI-powered inventory predictions.'
+      description: 'How much quicker businesses can respond to opportunities with unified, real-time data.'
     },
     {
       icon: <Users className="w-8 h-8" />,
       metric: '3x',
       title: 'Capacity Increase',
-      description: 'Handle 3x more customers without hiring additional staff through smart automation.',
-      example: 'A service company grew from 100 to 300 clients with the same team size using workflow automation.'
+      description: 'Handle 3x more customers without hiring additional staff through smart automation.'
     }
   ];
 
@@ -158,10 +154,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Real Results Our Clients Achieve
+              Results Businesses Like Yours Achieve
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Here's what happens when you stop doing everything manually and start working smarter.
+              Here's what happens when businesses stop doing everything manually and start working smarter.
             </p>
           </motion.div>
 
@@ -180,9 +176,6 @@ const Home = () => {
                 <div className="text-4xl font-bold text-slate-900 mb-2">{outcome.metric}</div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-4">{outcome.title}</h3>
                 <p className="text-slate-600 mb-4 leading-relaxed">{outcome.description}</p>
-                <div className="bg-cyan-50 rounded-lg p-4 border border-cyan-100">
-                  <p className="text-sm text-cyan-800 font-medium">{outcome.example}</p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -197,7 +190,7 @@ const Home = () => {
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              See What Results You Could Achieve
+              Calculate Your Potential Results
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -270,10 +263,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              From Chaos to Control
+              The Transformation Journey
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              See the transformation our clients experience when they modernize their operations.
+              See the transformation businesses experience when they modernize their operations.
             </p>
           </motion.div>
 
