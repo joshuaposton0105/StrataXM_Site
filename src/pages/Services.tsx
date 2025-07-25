@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Database, Brain, Settings, Target, ArrowRight } from 'lucide-react';
+import { Zap, Database, Brain, Settings, Target, ArrowRight, Calculator, Clock, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -67,6 +67,44 @@ const Services = () => {
     }
   ];
 
+  const investmentBreakdown = [
+    {
+      icon: <Calculator className="w-6 h-6" />,
+      title: 'Typical Investment',
+      range: '$15K - $75K',
+      description: 'Most projects fall in this range depending on scope and complexity',
+      details: [
+        'Simple automation: $15K - $25K',
+        'Data integration: $25K - $45K', 
+        'AI implementation: $35K - $75K',
+        'Complete transformation: $50K - $100K+'
+      ]
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: 'Payback Period',
+      range: '6 - 18 months',
+      description: 'How quickly the investment pays for itself through savings',
+      details: [
+        'Labor cost reduction: 3-6 months',
+        'Efficiency improvements: 6-12 months',
+        'Revenue growth: 12-18 months',
+        'Competitive advantage: Ongoing'
+      ]
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: 'Long-term ROI',
+      range: '300% - 800%',
+      description: 'Return on investment over 3 years for most implementations',
+      details: [
+        'Year 1: Break even + 50-100% return',
+        'Year 2: 200-400% cumulative return',
+        'Year 3: 300-800% cumulative return',
+        'Ongoing: Compounding benefits'
+      ]
+    }
+  ];
   return (
     <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
@@ -135,6 +173,73 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Investment & ROI Section */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Investment & Returns
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Transparent pricing and realistic expectations about what you can expect to invest and earn back.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {investmentBreakdown.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mb-6">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h3>
+                <div className="text-3xl font-bold text-cyan-600 mb-4">{item.range}</div>
+                <p className="text-slate-600 mb-6 leading-relaxed">{item.description}</p>
+                <ul className="space-y-2">
+                  {item.details.map((detail, detailIndex) => (
+                    <li key={detailIndex} className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-sm text-slate-600">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-8 border border-cyan-200 text-center"
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Ready to See Your Specific Numbers?
+            </h3>
+            <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
+              Every business is different. Let's calculate the exact investment and expected returns for your specific situation.
+            </p>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
+            >
+              Get Your Custom ROI Analysis
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

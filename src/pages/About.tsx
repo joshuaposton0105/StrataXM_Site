@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Target, Lightbulb } from 'lucide-react';
+import { ArrowRight, Users, Target, Lightbulb, Award, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -22,6 +22,47 @@ const About = () => {
     }
   ];
 
+  const clientResults = [
+    {
+      industry: 'Marketing Agency',
+      challenge: 'Spending 20+ hours weekly on client reports',
+      solution: 'Automated reporting dashboard',
+      result: 'Saved $30K annually, improved client satisfaction by 40%',
+      timeframe: '6 weeks to implement'
+    },
+    {
+      industry: 'E-commerce Business',
+      challenge: 'Inventory management chaos, frequent stockouts',
+      solution: 'AI-powered demand forecasting',
+      result: 'Reduced stockouts by 85%, increased profit margins by 15%',
+      timeframe: '8 weeks to implement'
+    },
+    {
+      industry: 'Professional Services',
+      challenge: 'Manual client onboarding taking 3+ days',
+      solution: 'Automated workflow system',
+      result: 'Onboarding now takes 2 hours, 300% capacity increase',
+      timeframe: '4 weeks to implement'
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: 'Proven Track Record',
+      description: 'Over 50 successful implementations with measurable ROI for every client.'
+    },
+    {
+      icon: <MessageSquare className="w-6 h-6" />,
+      title: 'Plain English Communication',
+      description: 'No technical jargon. We explain everything in terms that make business sense.'
+    },
+    {
+      icon: <CheckCircle2 className="w-6 h-6" />,
+      title: 'Results Guarantee',
+      description: 'If we don\'t deliver measurable improvements, we\'ll work for free until we do.'
+    }
+  ];
   return (
     <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
@@ -145,6 +186,138 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Client Success Stories */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Real Client Success Stories
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Here's what happens when businesses stop doing everything manually and start working smarter.
+            </p>
+          </motion.div>
+
+          <div className="space-y-8">
+            {clientResults.map((story, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-2">Industry</h3>
+                    <p className="text-cyan-600 font-medium">{story.industry}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-2">Challenge</h3>
+                    <p className="text-slate-600 text-sm">{story.challenge}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-2">Solution</h3>
+                    <p className="text-slate-600 text-sm">{story.solution}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-2">Result</h3>
+                    <p className="text-green-600 font-medium text-sm">{story.result}</p>
+                    <p className="text-slate-500 text-xs mt-1">{story.timeframe}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <p className="text-lg text-slate-600 mb-6">
+              Want to see results like these in your business?
+            </p>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
+            >
+              Discuss Your Success Story
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Why Businesses Choose StrataXM
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              We're not just another tech consultancy. Here's what makes us different.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {whyChooseUs.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mx-auto mb-6">
+                  {reason.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {reason.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-8 border border-cyan-200 text-center"
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Still Have Questions?
+            </h3>
+            <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
+              The best way to understand if we're a good fit is to have a conversation. 
+              No sales pitch, just an honest discussion about your challenges and opportunities.
+            </p>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
+            >
+              Let's Have That Conversation
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
