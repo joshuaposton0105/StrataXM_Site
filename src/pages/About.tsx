@@ -84,7 +84,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Meet Josh Poston
+                Meet StrataXM
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
