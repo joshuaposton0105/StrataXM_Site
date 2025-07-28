@@ -71,13 +71,13 @@ const Services = () => {
     {
       icon: <Calculator className="w-6 h-6" />,
       title: 'Typical Investment',
-      range: '$15K - $75K',
+      range: '$1K - $25K',
       description: 'Most projects fall in this range depending on scope and complexity',
       details: [
-        'Simple automation: $15K - $25K',
-        'Data integration: $25K - $45K', 
-        'AI implementation: $35K - $75K',
-        'Complete transformation: $50K - $100K+'
+        'Simple automation: $500 - $2K',
+        'Data integration: $500 - $10K', 
+        'AI implementation: $1K - $10K',
+        'Complete transformation: $10K - $50K+'
       ]
     },
     {
