@@ -88,18 +88,13 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  After spending years helping Fortune 500 companies implement complex automation systems, 
-                  Josh saw a gap in the market: small and mid-sized businesses were being left behind in the 
-                  digital transformation wave.
+                  StrataXM was founded to solve a growing problem: while large enterprises reap the benefits of advanced automation and AI, small and mid-sized businesses are often left behind—overwhelmed by complexity, high costs, and technical jargon.
                 </p>
                 <p>
-                  Too many consultants speak in technical jargon and propose over-engineered solutions. 
-                  Josh founded StrataXM to bridge this gap—bringing enterprise-level automation and AI 
-                  capabilities to businesses in a way that's practical, affordable, and actually useful.
+                  StrataXM exists to change that. We bring enterprise-grade solutions to businesses in a way that’s practical, affordable, and designed around real-world needs—not hype or buzzwords. Every project starts with a simple question: “How will this make your business better?”
                 </p>
                 <p>
-                  "Technology should solve real problems for real people. If we can't explain how something 
-                  will make your business better in plain English, we shouldn't be building it."
+                  If a solution can’t be explained clearly or doesn’t provide measurable value, it doesn’t belong in your workflow. StrataXM is here to make sure technology serves your business—not the other way around.
                 </p>
               </div>
             </motion.div>
