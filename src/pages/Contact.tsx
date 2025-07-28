@@ -497,7 +497,7 @@ const Contact = () => {
               },
               {
                 question: 'How much does this typically cost?',
-                answer: 'Investment varies based on scope and complexity. Most small business projects range from $10K-50K. We always provide clear pricing upfront with no hidden fees.'
+                answer: 'We keep things simple and transparent. Most projects for small businesses fall between $5,000 and $25,000, depending on the scope. Whether it\'s a quick automation or a full system upgrade, you\'ll always get clear pricing upfront—with no surprise fees.'
               }
             ].map((faq, index) => (
               <motion.div
