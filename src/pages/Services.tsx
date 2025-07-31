@@ -43,7 +43,7 @@ const Services = () => {
     },
     {
       icon: <Settings className="w-8 h-8" />,
-      title: 'Stop Copying Information Between Programs',
+      title: 'Make Your Systems Talk',
       description: 'Tired of entering the same customer information in three different places? We connect your existing software so information automatically goes where it needs to go.',
       outcome: 'Eliminate manual data entry and reduce errors',
       features: [
