@@ -68,7 +68,7 @@ const Header = () => {
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
             >
-              Book a Free Strategy Call
+              Get Your Free Analysis
             </Link>
           </div>
 
@@ -111,7 +111,7 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2.5 rounded-lg font-medium text-center mt-4"
               >
-                Book a Free Strategy Call
+                Get Your Free Analysis
               </Link>
             </div>
           </motion.div>

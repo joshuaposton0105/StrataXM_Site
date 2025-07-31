@@ -7,62 +7,62 @@ const Services = () => {
   const services = [
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'We Automate Your Daily Grind',
-      description: 'Tired of your team drowning in repetitive tasks? We build systems that handle the boring stuff automatically, so your people can focus on what actually grows your business.',
-      outcome: 'Free up 60-80% of your team\'s time for high-value work',
+      title: 'Stop Doing the Same Tasks Over and Over',
+      description: 'If your team spends hours each day on data entry, sending similar emails, or updating spreadsheets, we can automate those tasks so they happen without any human involvement.',
+      outcome: 'Your team gets 15-20 hours back each week to focus on customers and growth',
       features: [
-        'Emails and documents process themselves',
-        'Orders flow from sale to fulfillment without manual steps',
-        'New customers get onboarded while you sleep',
-        'Reports appear in your inbox every morning, ready to go'
+        'Automatically send follow-up emails to customers',
+        'Process orders from start to finish without manual work',
+        'Set up new customers in your system automatically',
+        'Generate and email reports to you every morning'
       ]
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'We Turn Data Chaos Into Clarity',
-      description: 'Sick of hunting through five different systems to answer one simple question? We pull all your scattered data together so you can actually see what\'s happening in your business.',
-      outcome: 'Make decisions with confidence, not guesswork',
+      title: 'Get Answers About Your Business Instantly',
+      description: 'Instead of checking your sales system, then your accounting software, then three different spreadsheets just to see how you\'re doing, get all the information you need in one place.',
+      outcome: 'Answer any business question in seconds, not hours',
       features: [
-        'One dashboard shows everything that matters',
-        'Customer history from every touchpoint in one place',
-        'Financial performance updates in real-time',
-        'Clean, accurate data you can actually trust'
+        'See sales, expenses, and profits on one screen',
+        'View complete customer history without switching systems',
+        'Get real-time updates on how your business is performing',
+        'Trust that your numbers are accurate and up-to-date'
       ]
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'We Cut Through the AI Hype',
-      description: 'Everyone\'s talking about AI, but what can it actually do for your business? We separate the useful from the useless and show you exactly where AI will move the needle.',
-      outcome: 'Invest in AI that pays for itself, not expensive experiments',
+      title: 'Use Smart Technology to Make Better Decisions',
+      description: 'You\'ve heard about AI, but you\'re not sure what it can actually do for your business. We show you exactly where smart technology can help you make money or save time—no hype, just results.',
+      outcome: 'Only invest in technology that clearly improves your bottom line',
       features: [
-        'Clear roadmap of where AI helps (and where it doesn\'t)',
-        'Honest assessment of what you\'re ready for right now',
-        'Real numbers on costs, timeline, and expected returns',
-        'Risk-free way to test AI before committing big budgets'
+        'Identify exactly where smart technology will help your business',
+        'Get honest advice about what you\'re ready for right now',
+        'See clear numbers on what it will cost and what you\'ll save',
+        'Test solutions before making big investments'
       ]
     },
     {
       icon: <Settings className="w-8 h-8" />,
-      title: 'We Make Your Tools Talk to Each Other',
-      description: 'Frustrated by copying data between systems all day? We connect your existing tools so information flows automatically where it needs to go.',
-      outcome: 'Stop being a human copy-paste machine',
+      title: 'Stop Copying Information Between Programs',
+      description: 'Tired of entering the same customer information in three different places? We connect your existing software so information automatically goes where it needs to go.',
+      outcome: 'Eliminate manual data entry and reduce errors',
       features: [
-        'Sales data flows straight into your accounting system',
-        'Marketing campaigns sync with your CRM automatically',
-        'Team communication stays in sync across all platforms',
-        'Custom connections for your unique tool stack'
+        'Customer information automatically updates everywhere',
+        'Sales data flows directly into your accounting software',
+        'Marketing and sales systems share information seamlessly',
+        'Connect any software you use, even custom solutions'
       ]
     },
     {
       icon: <Brain className="w-8 h-8" />,
-      title: 'We Deploy AI That Actually Works',
-      description: 'Ready to put AI to work? We build practical AI solutions that solve real problems and deliver measurable results—no science experiments or empty promises.',
-      outcome: 'AI that pays for itself from day one',
+      title: 'Put Smart Technology to Work for You',
+      description: 'When you\'re ready to use AI, we implement practical solutions that solve real problems and save real money—no complicated experiments or unclear benefits.',
+      outcome: 'Smart technology that clearly improves your business from day one',
       features: [
-        'Smart chatbots that actually help customers (and reduce support tickets)',
-        'Inventory predictions that prevent stockouts and overstock',
-        'Documents that read and organize themselves',
-        'Personalized customer experiences that drive more sales'
+        'Chatbots that actually help customers and reduce your workload',
+        'Predict what inventory you\'ll need to avoid stockouts',
+        'Automatically organize and file important documents',
+        'Personalize customer experiences to increase sales'
       ]
     }
   ];
@@ -240,6 +240,53 @@ const Services = () => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
+
+          {/* Common Questions Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-20"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">
+              Questions We Hear All the Time
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  question: "Will this be too complicated for my team?",
+                  answer: "Not at all. We design everything to be simple to use. If your team can use email and basic software, they can use what we build. Plus, we train everyone so they feel confident."
+                },
+                {
+                  question: "What if something breaks or stops working?",
+                  answer: "We build reliable systems and provide ongoing support. Most of our solutions are more stable than manual processes because they eliminate human error."
+                },
+                {
+                  question: "Do I need to replace all my current software?",
+                  answer: "Usually not. We typically work with what you already have and just connect things better. Replacing everything is expensive and disruptive—we avoid that when possible."
+                },
+                {
+                  question: "How do I know this will actually save money?",
+                  answer: "We calculate the savings before we start any work. You'll see exactly how much time and money you'll save, and we only recommend projects that clearly pay for themselves."
+                }
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-6 shadow-sm border border-slate-100"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -309,16 +356,16 @@ const Services = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
+              Stop Wasting Time on Tasks That Should Be Automatic
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              Let's discuss which of these services would have the biggest impact on your business.
+              If any of these problems sound familiar, let's talk about how to fix them.
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Book Your Free Strategy Call
+              Get Your Free Time-Saving Analysis
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>

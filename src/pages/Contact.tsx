@@ -40,18 +40,18 @@ const Contact = () => {
   const callBenefits = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: 'Identify Quick Wins',
-      description: 'We\'ll spot 2-3 processes you can automate immediately for fast ROI.'
+      title: 'Find Your Biggest Time Wasters',
+      description: 'We\'ll identify which tasks are eating up most of your team\'s time.'
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
-      title: 'Calculate Your ROI',
-      description: 'Get specific numbers on potential savings and investment required.'
+      title: 'Calculate Your Savings',
+      description: 'See exactly how much time and money you could save each month.'
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: 'Create a Roadmap',
-      description: 'Leave with a clear 90-day plan for your automation journey.'
+      title: 'Get a Simple Plan',
+      description: 'Leave with clear next steps you can understand and implement.'
     }
   ];
 
@@ -124,14 +124,14 @@ const Contact = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Let's <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Talk</span>
+              Let's Figure Out How Much Time <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">You Could Save</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Book a free 30-minute strategy call and leave with a clear action plan for your business.
+              Book a free 30-minute call and we'll show you exactly which tasks in your business could be automated and how much time that would save you.
             </p>
             <div className="bg-white rounded-lg p-6 max-w-2xl mx-auto shadow-lg border border-slate-100">
               <h3 className="text-lg font-semibold text-slate-900 mb-4 text-center">
-                What You'll Get From Our Call:
+                Here's What Happens on Our Call:
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {callBenefits.map((benefit, index) => (
@@ -160,7 +160,7 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
-                Send us a message
+                Tell us about your situation
               </h2>
 
               {isSubmitted ? (
@@ -236,7 +236,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      Tell us about your challenges *
+                      What's taking up too much of your team's time? *
                     </label>
                     <textarea
                       id="message"
@@ -248,7 +248,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors duration-200 resize-none ${
                         errors.message ? 'border-red-300 bg-red-50' : 'border-slate-300'
                       }`}
-                      placeholder="What processes are slowing you down? What data challenges are you facing? What would you like to automate?"
+                      placeholder="For example: 'We spend 3 hours every day entering orders into our system' or 'It takes forever to find customer information when they call' or 'My team is drowning in email and paperwork'"
                     ></textarea>
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-600">{errors.message}</p>
@@ -293,7 +293,7 @@ const Contact = () => {
               {/* Direct Contact */}
               <div className="bg-slate-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Prefer to talk directly?
+                  Want to talk right now?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
@@ -322,35 +322,35 @@ const Contact = () => {
                 <div className="flex items-center space-x-3 mb-6">
                   <Calendar className="w-8 h-8 text-cyan-600" />
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Schedule a Strategy Call
+                    Book Your Free Analysis Call
                   </h3>
                 </div>
                 <div className="space-y-4 mb-6">
                   <p className="text-slate-700 leading-relaxed">
-                    <strong>30-minute call where we'll:</strong>
+                    <strong>In just 30 minutes, we'll:</strong>
                   </p>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Analyze your current processes and identify automation opportunities</span>
+                      <span className="text-sm">Look at your daily tasks and find what's wasting the most time</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Calculate potential time and cost savings for your business</span>
+                      <span className="text-sm">Show you exactly how much time and money you could save</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Create a prioritized action plan with realistic timelines</span>
+                      <span className="text-sm">Give you a simple plan for what to fix first</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Discuss investment levels and expected ROI</span>
+                      <span className="text-sm">Explain what it would cost and what you'd save</span>
                     </li>
                   </ul>
                 </div>
                 <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
                   <p className="text-sm text-cyan-800 font-medium text-center">
-                    <strong>No sales pitch.</strong> Just practical advice you can use whether you work with us or not.
+                    <strong>No pressure, no sales pitch.</strong> Just honest advice about what would help your business most.
                   </p>
                 </div>
                 <a
@@ -359,14 +359,14 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-4 px-6 rounded-lg font-semibold text-center transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
                 >
-                  Book Your Free Strategy Call
+                  Book Your Free Analysis Call
                 </a>
               </div>
 
               {/* Value Proposition */}
               <div className="bg-white border-2 border-slate-100 rounded-2xl p-8">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
-                  Why This Call Is Worth Your Time
+                  Why Business Owners Love This Call
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -374,8 +374,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">1</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Immediate Value</h4>
-                      <p className="text-sm text-slate-600">You'll leave with actionable insights you can implement right away, even if you never hire us.</p>
+                      <h4 className="font-medium text-slate-900">You Get Value Immediately</h4>
+                      <p className="text-sm text-slate-600">You'll leave knowing exactly what's wasting your time and how to fix it, even if you never hire us.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -383,8 +383,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">2</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Realistic Expectations</h4>
-                      <p className="text-sm text-slate-600">We'll give you honest timelines and budgets, not inflated promises to win your business.</p>
+                      <h4 className="font-medium text-slate-900">We Give You Honest Answers</h4>
+                      <p className="text-sm text-slate-600">We'll tell you exactly what's realistic for your business and budget—no inflated promises.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -392,8 +392,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">3</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">No Pressure</h4>
-                      <p className="text-sm text-slate-600">This is a strategy session, not a sales call. We'll only propose working together if it makes sense for both of us.</p>
+                      <h4 className="font-medium text-slate-900">Zero Pressure</h4>
+                      <p className="text-sm text-slate-600">This is about helping you understand your options, not selling you something. We only work together if it's clearly a good fit.</p>
                     </div>
                   </div>
                 </div>
@@ -402,7 +402,7 @@ const Contact = () => {
               {/* Social Proof */}
               <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
-                  What You Can Expect From Our Call
+                  What Actually Happens on the Call
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -410,8 +410,8 @@ const Contact = () => {
                       <span className="text-cyan-600 font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Honest Assessment</h4>
-                      <p className="text-sm text-slate-600">We'll tell you exactly what's realistic for your business and timeline.</p>
+                      <h4 className="font-medium text-slate-900">We Listen to Your Situation</h4>
+                      <p className="text-sm text-slate-600">You tell us what's frustrating you most, and we help you understand what can be fixed.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -419,8 +419,8 @@ const Contact = () => {
                       <span className="text-cyan-600 font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Clear Numbers</h4>
-                      <p className="text-sm text-slate-600">You'll get realistic cost estimates and ROI projections based on your specific situation.</p>
+                      <h4 className="font-medium text-slate-900">We Show You the Numbers</h4>
+                      <p className="text-sm text-slate-600">You'll see exactly how much time you could save and what it would cost to make it happen.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -428,8 +428,8 @@ const Contact = () => {
                       <span className="text-cyan-600 font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Actionable Insights</h4>
-                      <p className="text-sm text-slate-600">You'll leave with specific steps you can take immediately, whether you work with us or not.</p>
+                      <h4 className="font-medium text-slate-900">You Get a Clear Next Step</h4>
+                      <p className="text-sm text-slate-600">You'll leave knowing exactly what to do next, whether you work with us or handle it yourself.</p>
                     </div>
                   </div>
                 </div>
@@ -438,24 +438,24 @@ const Contact = () => {
               {/* Response Time */}
               <div className="bg-white border-2 border-slate-100 rounded-2xl p-8">
                 <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  What to expect:
+                  When you contact us:
                 </h3>
                 <ul className="space-y-3 text-slate-600">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Response within 24 hours</span>
+                    <span>We'll respond within 24 hours</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Free consultation to understand your needs</span>
+                    <span>We'll ask about your biggest time-wasters</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Clear next steps and timeline</span>
+                    <span>You'll get clear, honest advice</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>No pressure, no sales pitch</span>
+                    <span>Zero pressure to buy anything</span>
                   </li>
                 </ul>
               </div>
@@ -474,30 +474,30 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Common Questions
+              Questions People Ask Before They Call
             </h2>
             <p className="text-xl text-slate-600">
-              Here are some questions we hear most often from business owners.
+              Here are the most common concerns we hear from business owners.
             </p>
           </motion.div>
 
           <div className="space-y-6">
             {[
               {
-                question: 'How quickly can we see results?',
-                answer: 'Most clients see initial improvements within 2-4 weeks. Simple automation wins can often be implemented in days, while more complex AI solutions typically take 6-12 weeks.'
+                question: 'How quickly will I see results?',
+                answer: 'Most businesses see improvements within 2-4 weeks. Simple automations (like automatic email responses) can be set up in days. More complex solutions typically take 6-12 weeks.'
               },
               {
-                question: 'Do we need to have technical expertise on our team?',
-                answer: 'Not at all. We handle all the technical implementation and provide training so your team can use and maintain the solutions. Everything is designed to be user-friendly.'
+                question: 'Do I need to understand technology to work with you?',
+                answer: 'Not at all. We handle all the technical stuff and explain everything in plain English. If your team can use email and basic software, they can use what we build.'
               },
               {
-                question: 'What if we\'re not ready for AI yet?',
-                answer: 'That\'s perfectly fine. We often start with workflow automation and data organization. These create a foundation that makes AI implementation much more effective later.'
+                question: 'What if I\'m not ready for fancy AI stuff?',
+                answer: 'That\'s perfectly fine. We usually start with simple automation—like automatically processing orders or organizing customer information. You don\'t need to jump into AI right away.'
               },
               {
-                question: 'How much does this typically cost?',
-                answer: 'We keep things simple and transparent. Most projects for small businesses fall between $5,000 and $25,000, depending on the scope. Whether it\'s a quick automation or a full system upgrade, you\'ll always get clear pricing upfront—with no surprise fees.'
+                question: 'How much does this cost?',
+                answer: 'Most small business projects cost between $1,000 and $25,000, depending on what you want to automate. We\'ll give you clear pricing upfront—no surprise fees or hidden costs.'
               }
             ].map((faq, index) => (
               <motion.div

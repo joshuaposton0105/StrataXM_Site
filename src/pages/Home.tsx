@@ -7,23 +7,27 @@ const Home = () => {
   const services = [
     {
       icon: <Zap className="w-6 h-6" />,
-      title: 'Workflow Automation',
-      description: 'Streamline repetitive tasks so your team can focus on what matters.'
+      title: 'Stop Doing Repetitive Work',
+      description: 'We set up systems that handle your routine tasks automatically—like processing orders, sending follow-up emails, or updating spreadsheets.',
+      problem: 'Your team wastes hours each day on the same boring tasks'
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: 'Data Unification',
-      description: 'Consolidate scattered data into one reliable system.'
+      title: 'Find Information Instantly',
+      description: 'Instead of hunting through multiple systems to answer simple questions, get all your business information in one place.',
+      problem: 'You can\'t get a straight answer about your business without checking 5 different places'
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: 'AI Implementation',
-      description: 'Make AI practical, not theoretical, for your business.'
+      title: 'Let Technology Handle the Thinking',
+      description: 'We help you use smart technology to make better decisions, predict what customers want, and handle complex tasks without human error.',
+      problem: 'You\'re making important decisions based on guesswork instead of data'
     },
     {
       icon: <Settings className="w-6 h-6" />,
-      title: 'Smart Integrations',
-      description: 'Connect your existing tools so everything works together.'
+      title: 'Make Your Systems Talk to Each Other',
+      description: 'Stop copying information between different software. We connect your tools so data flows automatically where it needs to go.',
+      problem: 'You\'re constantly copying and pasting between different programs'
     }
   ];
 
@@ -89,21 +93,21 @@ const Home = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                Modernize Your Business with{' '}
+                Stop Wasting Time on Tasks That{' '}
                 <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">
-                  Automation + AI
+                  Should Run Themselves
                 </span>
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                We help companies streamline operations, unify data, and adopt AI—without the hassle. 
-                Focus on growing your business while we handle the technical transformation.
+                If your team spends hours each day on repetitive work, hunting for information across different systems, 
+                or manually doing things that feel like they should be automatic—we can fix that.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
                   className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 flex items-center justify-center group"
                 >
-                  Book a Free Strategy Call
+                  See How Much Time You Could Save
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
                 <Link
@@ -190,7 +194,7 @@ const Home = () => {
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Calculate Your Potential Results
+              Find Out What You Could Save
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -221,10 +225,14 @@ const Home = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 border border-slate-100 hover:border-cyan-200 hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-xl p-8 border border-slate-100 hover:border-cyan-200 hover:shadow-xl transition-all duration-300 group text-center"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
+                </div>
+                <div className="mb-4">
+                  <div className="text-sm text-red-600 font-medium mb-2">Problem:</div>
+                  <p className="text-sm text-slate-500 italic">{service.problem}</p>
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-4">
                   {service.title}
@@ -247,6 +255,85 @@ const Home = () => {
               className="inline-flex items-center text-cyan-600 font-semibold text-lg hover:text-cyan-700 transition-colors duration-200 group"
             >
               Learn More About Our Services
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Who We Help Section */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Does This Sound Like Your Business?
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Here are some common situations where we've helped businesses save time and money.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'The Overwhelmed Team',
+                scenario: 'Your staff spends most of their day on data entry, sending the same emails over and over, or manually tracking orders through your system.',
+                solution: 'We automate these tasks so your team can focus on serving customers and growing the business.',
+                savings: 'Typical savings: 15-20 hours per week'
+              },
+              {
+                title: 'The Information Hunt',
+                scenario: 'When someone asks "How are we doing this month?" you have to check your sales system, accounting software, and three spreadsheets to get an answer.',
+                solution: 'We create one dashboard that shows you everything important about your business in real-time.',
+                savings: 'Typical savings: 5-10 hours per week'
+              },
+              {
+                title: 'The Growing Pains',
+                scenario: 'You\'re getting more customers, but you can\'t hire fast enough. Your current processes don\'t scale, and quality is starting to slip.',
+                solution: 'We help you handle 2-3x more volume with your current team through smart automation.',
+                savings: 'Typical savings: $50,000+ in hiring costs'
+              }
+            ].map((example, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100"
+              >
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">{example.title}</h3>
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium text-red-600 mb-2">The Problem:</h4>
+                  <p className="text-slate-600 mb-4">{example.scenario}</p>
+                  <h4 className="text-sm font-medium text-green-600 mb-2">Our Solution:</h4>
+                  <p className="text-slate-600 mb-4">{example.solution}</p>
+                </div>
+                <div className="bg-cyan-50 rounded-lg p-4 border border-cyan-100">
+                  <p className="text-sm text-cyan-800 font-medium">{example.savings}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <p className="text-lg text-slate-600 mb-6">
+              Recognize your business in any of these scenarios?
+            </p>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
+            >
+              Let's Talk About Your Specific Situation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -319,13 +406,13 @@ const Home = () => {
             className="text-center mt-12"
           >
             <p className="text-lg text-slate-600 mb-6">
-              Ready to make this transformation in your business?
+              Tired of the daily struggle? Ready to work smarter instead of harder?
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Book Your Free Strategy Call
+              Show Me How to Fix These Problems
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -381,7 +468,7 @@ const Home = () => {
                   to="/contact"
                   className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25 inline-flex items-center group"
                 >
-                  Calculate Your Specific ROI
+                  See What This Could Save You
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </div>
@@ -399,16 +486,16 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Operations?
+              Stop Wasting Time on Work That Should Be Automatic
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              Let's discuss how automation and AI can help your business scale smarter, not harder.
+              If you're tired of your team spending all day on repetitive tasks instead of growing your business, let's talk.
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Start Your Transformation Today
+              Get Your Free Time-Saving Analysis
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
