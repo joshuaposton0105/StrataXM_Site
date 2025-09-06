@@ -104,7 +104,7 @@ const Home = () => {
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                 StrataXM transforms scattered business data into a unified, intelligent foundation. 
                 We automate data flows, eliminate manual processes, and deliver the insights 
-                Louisiana businesses need to compete and grow.
+                businesses need to compete and grow.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
