@@ -219,8 +219,8 @@ const Home = () => {
               Our Data Infrastructure Approach
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Every business follows the same path: <strong>Capture → Flow → Insights</strong>. 
-              We build the foundation that makes AI and automation possible.
+              Every successful digital transformation follows the same path: <strong>Capture → Flow → Insights</strong>. 
+              We build the data foundation that makes AI, automation, and modern business operations possible.
             </p>
           </motion.div>
 
