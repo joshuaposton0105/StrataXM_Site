@@ -205,8 +205,8 @@ const About = () => {
               Our Data Infrastructure Methodology
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We follow a proven three-phase approach that ensures every data infrastructure project 
-              delivers measurable business value.
+              We follow a proven three-phase digital transformation methodology that ensures every project 
+              delivers measurable business value and sustainable modernization.
             </p>
           </motion.div>
 

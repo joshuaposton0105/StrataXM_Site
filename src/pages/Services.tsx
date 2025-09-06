@@ -42,7 +42,7 @@ const Services = () => {
       title: 'Insights & AI',
       subtitle: 'Analyze → Predict → Optimize',
       description: 'Transform your unified data into actionable insights and AI-powered tools that drive better decisions.',
-      outcome: 'Make data-driven decisions with predictive insights and automated intelligence',
+      outcome: 'Complete your digital transformation with AI-powered insights and intelligent automation',
       features: [
         'Build Power BI dashboards for real-time visibility',
         'Implement predictive models and anomaly detection',

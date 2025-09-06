@@ -449,8 +449,8 @@ const Contact = () => {
           <div className="space-y-6">
             {[
               {
-                question: 'How long does it take to see results from data infrastructure?',
-                answer: 'Most businesses see immediate improvements in data access within 2-4 weeks. Full data infrastructure transformation typically takes 3-6 months, but we deliver value at each phase.'
+                question: 'How long does it take to see results from digital transformation?',
+                answer: 'Most businesses see immediate improvements in data access and workflow efficiency within 2-4 weeks. Complete digital transformation typically takes 3-6 months, but we deliver measurable value at each phase.'
               },
               {
                 question: 'Do I need to replace all my current software?',
