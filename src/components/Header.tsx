@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +24,7 @@ const Header = () => {
   ];
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-100' 
@@ -84,41 +81,34 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-slate-100"
-          >
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-2 text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'text-cyan-500'
-                      : 'text-slate-700 hover:text-cyan-500'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-slate-100">
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item) => (
               <Link
-                to="/contact"
+                key={item.name}
+                to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2.5 rounded-lg font-medium text-center mt-4"
+                className={`block py-2 text-sm font-medium transition-colors duration-200 ${
+                  location.pathname === item.path
+                    ? 'text-cyan-500'
+                    : 'text-slate-700 hover:text-cyan-500'
+                }`}
               >
-                Get Your Free Analysis
+                {item.name}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2.5 rounded-lg font-medium text-center mt-4"
+            >
+              Get Your Free Analysis
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 
