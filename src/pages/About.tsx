@@ -7,18 +7,18 @@ const About = () => {
   const values = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: 'Louisiana-First Approach',
-      description: 'We understand the unique challenges of Louisiana businesses and build solutions that work in our local market.'
+      title: 'Meet Where You Are Approach',
+      description: 'We meet businesses where they are on the digital transformation journey, helping them take the right next step instead of forcing oversized platforms that create more chaos than clarity.'
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: 'Long-Term Partnership',
-      description: 'We\'re not project vendors—we\'re your ongoing data infrastructure partner, committed to your long-term success.'
+      description: 'We\'re not project vendors—we\'re your ongoing digital transformation partner, committed to your long-term success.'
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: 'Future-Ready Foundation',
-      description: 'Every solution we build is designed to support AI and advanced analytics as your business matures.'
+      description: 'Every solution we build lays the groundwork for more advanced reporting and decision-making over time.'
     }
   ];
 
@@ -26,7 +26,7 @@ const About = () => {
     {
       icon: <Award className="w-6 h-6" />,
       title: 'Proven Data Infrastructure',
-      description: 'We use enterprise-grade Microsoft technologies and proven methodologies that scale with your business.'
+      description: 'We build on reliable, modern technologies and proven approaches that adapt as your business expands.'
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
@@ -48,8 +48,8 @@ const About = () => {
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: 'Community Investment',
-      description: 'We reinvest in Louisiana\'s business community through mentorship, education, and local partnerships.'
+      title: 'Practical Innovation',
+      description: 'We bring modern solutions to real business challenges—balancing efficiency, clarity, and the right level of technology.'
     },
     {
       icon: <Zap className="w-6 h-6" />,
@@ -108,13 +108,13 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  StrataXM was founded with a clear mission: to democratize enterprise-grade data infrastructure 
+                  StrataXM was founded with a clear mission: to democratize enterprise-grade technology 
                   for Louisiana's small and mid-sized businesses. While large corporations have teams of data 
                   engineers and AI specialists, local businesses have been left behind.
                 </p>
                 <p>
-                  We exist to change that. StrataXM brings the same data infrastructure capabilities that power 
-                  Fortune 500 companies to Louisiana businesses—in a way that's practical, affordable, and 
+                  We exist to change that. StrataXM brings the same digital transformation capabilities that power 
+                  Fortune 500 companies to small businesses—in a way that's practical, affordable, and 
                   designed for long-term partnership.
                 </p>
                 <p>
@@ -154,14 +154,14 @@ const About = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Our Mission</h3>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                To build the data infrastructure that makes Louisiana businesses AI-ready, competitive, 
+                To build the data infrastructure that makes small and medium sized businesses AI-ready, competitive, 
                 and positioned for sustainable growth. We transform scattered business data into unified, 
                 intelligent foundations that power better decisions and automated operations.
               </p>
               <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 h-1 w-24 mx-auto rounded-full mb-8"></div>
               <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Our Vision</h3>
               <p className="text-lg text-slate-600 leading-relaxed">
-                A Louisiana where every business—regardless of size—has access to enterprise-grade data 
+                A landscape where every business—regardless of size—has access to enterprise-grade data 
                 infrastructure and AI capabilities. Where local companies compete on equal footing with 
                 national players because their data works as hard as they do.
               </p>
