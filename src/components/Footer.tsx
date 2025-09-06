@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="text-xl font-bold">StrataXM</span>
             </div>
             <p className="text-slate-400 mb-6 max-w-md">
-              Helping small and mid-sized businesses unlock the power of automation, AI, and data-driven operations.
+              Building the data infrastructure that makes Louisiana businesses AI-ready and competitive.
             </p>
             <div className="flex space-x-4">
               <a
@@ -71,19 +71,19 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Data Infrastructure</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-slate-400">Workflow Automation</span>
+                <span className="text-slate-400">Data Foundations</span>
               </li>
               <li>
-                <span className="text-slate-400">Data Unification</span>
+                <span className="text-slate-400">Automated Data Flows</span>
               </li>
               <li>
-                <span className="text-slate-400">AI Implementation</span>
+                <span className="text-slate-400">Insights & AI</span>
               </li>
               <li>
-                <span className="text-slate-400">Smart Integrations</span>
+                <span className="text-slate-400">Managed Infrastructure</span>
               </li>
             </ul>
           </div>

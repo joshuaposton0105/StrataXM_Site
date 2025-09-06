@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Calendar, Mail, Phone, CheckCircle, DollarSign, Clock, Target } from 'lucide-react';
+import { Send, Calendar, Mail, Phone, CheckCircle, Database, Zap, Brain } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,21 +37,21 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const callBenefits = [
+  const assessmentBenefits = [
     {
-      icon: <Target className="w-6 h-6" />,
-      title: 'Find Your Biggest Time Wasters',
-      description: 'We\'ll identify which tasks are eating up most of your team\'s time.'
+      icon: <Database className="w-6 h-6" />,
+      title: 'Data Foundation Audit',
+      description: 'We\'ll map your current data landscape and identify opportunities for unification.'
     },
     {
-      icon: <DollarSign className="w-6 h-6" />,
-      title: 'Calculate Your Savings',
-      description: 'See exactly how much time and money you could save each month.'
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Integration Roadmap',
+      description: 'Get a clear plan for connecting your systems and automating data flows.'
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: 'Get a Simple Plan',
-      description: 'Leave with clear next steps you can understand and implement.'
+      icon: <Brain className="w-6 h-6" />,
+      title: 'AI Readiness Assessment',
+      description: 'Understand what it takes to make your business AI-ready and competitive.'
     }
   ];
 
@@ -66,7 +66,6 @@ const Contact = () => {
     
     try {
       // Send form data to Formspree
-      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
       const response = await fetch('https://formspree.io/f/xdkdgkdn', {
         method: 'POST',
         headers: {
@@ -124,17 +123,18 @@ const Contact = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Let's Figure Out How Much Time <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">You Could Save</span>
+              Ready to Build Your <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Data Infrastructure?</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Book a free 30-minute call and we'll show you exactly which tasks in your business could be automated and how much time that would save you.
+              Schedule a free data infrastructure assessment and discover how to transform your scattered 
+              business data into a unified, AI-ready foundation.
             </p>
             <div className="bg-white rounded-lg p-6 max-w-2xl mx-auto shadow-lg border border-slate-100">
               <h3 className="text-lg font-semibold text-slate-900 mb-4 text-center">
-                Here's What Happens on Our Call:
+                Your Free Data Infrastructure Assessment Includes:
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {callBenefits.map((benefit, index) => (
+                {assessmentBenefits.map((benefit, index) => (
                   <div key={index} className="text-center">
                     <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
                       {benefit.icon}
@@ -160,7 +160,7 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
-                Tell us about your situation
+                Tell us about your data challenges
               </h2>
 
               {isSubmitted ? (
@@ -172,7 +172,8 @@ const Contact = () => {
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-green-800 mb-2">Thank you!</h3>
                   <p className="text-green-700">
-                    Your message has been received! We'll get back to you within 24 hours at {formData.email}.
+                    Your message has been received! We'll get back to you within 24 hours at {formData.email} 
+                    to schedule your free data infrastructure assessment.
                   </p>
                 </motion.div>
               ) : (
@@ -236,7 +237,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      What's taking up too much of your team's time? *
+                      Describe your data situation *
                     </label>
                     <textarea
                       id="message"
@@ -248,7 +249,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors duration-200 resize-none ${
                         errors.message ? 'border-red-300 bg-red-50' : 'border-slate-300'
                       }`}
-                      placeholder="For example: 'We spend 3 hours every day entering orders into our system' or 'It takes forever to find customer information when they call' or 'My team is drowning in email and paperwork'"
+                      placeholder="For example: 'Our customer data is scattered across 3 different systems and we spend hours each day copying information between them' or 'We have tons of data but no way to get insights from it' or 'We want to use AI but our data isn't ready'"
                     ></textarea>
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-600">{errors.message}</p>
@@ -293,7 +294,7 @@ const Contact = () => {
               {/* Direct Contact */}
               <div className="bg-slate-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Want to talk right now?
+                  Prefer to talk directly?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
@@ -322,51 +323,51 @@ const Contact = () => {
                 <div className="flex items-center space-x-3 mb-6">
                   <Calendar className="w-8 h-8 text-cyan-600" />
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Book Your Free Analysis Call
+                    Schedule Your Data Infrastructure Assessment
                   </h3>
                 </div>
                 <div className="space-y-4 mb-6">
                   <p className="text-slate-700 leading-relaxed">
-                    <strong>In just 30 minutes, we'll:</strong>
+                    <strong>In our 45-minute assessment call, we'll:</strong>
                   </p>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Look at your daily tasks and find what's wasting the most time</span>
+                      <span className="text-sm">Audit your current data landscape and identify integration opportunities</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Show you exactly how much time and money you could save</span>
+                      <span className="text-sm">Show you exactly how unified data infrastructure could transform your operations</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Give you a simple plan for what to fix first</span>
+                      <span className="text-sm">Create a custom roadmap for making your business AI-ready</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm">Explain what it would cost and what you'd save</span>
+                      <span className="text-sm">Provide transparent pricing for your specific data infrastructure needs</span>
                     </li>
                   </ul>
                 </div>
                 <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
                   <p className="text-sm text-cyan-800 font-medium text-center">
-                    <strong>No pressure, no sales pitch.</strong> Just honest advice about what would help your business most.
+                    <strong>No sales pressure.</strong> Just honest assessment of your data infrastructure opportunities and what it would take to get there.
                   </p>
                 </div>
                 <a
-                  href="https://calendly.com/strataxm/strategy-call"
+                  href="https://calendly.com/strataxm/data-infrastructure-assessment"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-4 px-6 rounded-lg font-semibold text-center transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25"
                 >
-                  Book Your Free Analysis Call
+                  Book Your Free Assessment
                 </a>
               </div>
 
               {/* Value Proposition */}
               <div className="bg-white border-2 border-slate-100 rounded-2xl p-8">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
-                  Why Business Owners Love This Call
+                  What Makes Our Assessment Different
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -374,8 +375,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">1</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">You Get Value Immediately</h4>
-                      <p className="text-sm text-slate-600">You'll leave knowing exactly what's wasting your time and how to fix it, even if you never hire us.</p>
+                      <h4 className="font-medium text-slate-900">Technical Depth</h4>
+                      <p className="text-sm text-slate-600">We actually understand your systems and can provide specific, actionable recommendations.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -383,8 +384,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">2</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">We Give You Honest Answers</h4>
-                      <p className="text-sm text-slate-600">We'll tell you exactly what's realistic for your business and budget—no inflated promises.</p>
+                      <h4 className="font-medium text-slate-900">Business Focus</h4>
+                      <p className="text-sm text-slate-600">We explain everything in business terms and focus on ROI, not just cool technology.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -392,44 +393,8 @@ const Contact = () => {
                       <span className="text-green-600 font-bold text-sm">3</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-900">Zero Pressure</h4>
-                      <p className="text-sm text-slate-600">This is about helping you understand your options, not selling you something. We only work together if it's clearly a good fit.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Proof */}
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">
-                  What Actually Happens on the Call
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-cyan-600 font-bold text-sm">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-slate-900">We Listen to Your Situation</h4>
-                      <p className="text-sm text-slate-600">You tell us what's frustrating you most, and we help you understand what can be fixed.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-cyan-600 font-bold text-sm">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-slate-900">We Show You the Numbers</h4>
-                      <p className="text-sm text-slate-600">You'll see exactly how much time you could save and what it would cost to make it happen.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-cyan-600 font-bold text-sm">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-slate-900">You Get a Clear Next Step</h4>
-                      <p className="text-sm text-slate-600">You'll leave knowing exactly what to do next, whether you work with us or handle it yourself.</p>
+                      <h4 className="font-medium text-slate-900">Long-Term Partnership</h4>
+                      <p className="text-sm text-slate-600">We're looking for ongoing managed infrastructure partnerships, not one-time projects.</p>
                     </div>
                   </div>
                 </div>
@@ -447,15 +412,15 @@ const Contact = () => {
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>We'll ask about your biggest time-wasters</span>
+                    <span>We'll ask detailed questions about your data landscape</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>You'll get clear, honest advice</span>
+                    <span>You'll get honest, technical advice about your options</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Zero pressure to buy anything</span>
+                    <span>No pressure to buy anything—just clear guidance</span>
                   </li>
                 </ul>
               </div>
@@ -474,30 +439,30 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Questions People Ask Before They Call
+              Questions About Data Infrastructure
             </h2>
             <p className="text-xl text-slate-600">
-              Here are the most common concerns we hear from business owners.
+              Here are the most common questions Louisiana business owners ask about data infrastructure.
             </p>
           </motion.div>
 
           <div className="space-y-6">
             {[
               {
-                question: 'How quickly will I see results?',
-                answer: 'Most businesses see improvements within 2-4 weeks. Simple automations (like automatic email responses) can be set up in days. More complex solutions typically take 6-12 weeks.'
+                question: 'How long does it take to see results from data infrastructure?',
+                answer: 'Most businesses see immediate improvements in data access within 2-4 weeks. Full data infrastructure transformation typically takes 3-6 months, but we deliver value at each phase.'
               },
               {
-                question: 'Do I need to understand technology to work with you?',
-                answer: 'Not at all. We handle all the technical stuff and explain everything in plain English. If your team can use email and basic software, they can use what we build.'
+                question: 'Do I need to replace all my current software?',
+                answer: 'Usually not. We specialize in connecting your existing systems and making them work together better. Replacing everything is expensive and disruptive—we avoid that when possible.'
               },
               {
-                question: 'What if I\'m not ready for fancy AI stuff?',
-                answer: 'That\'s perfectly fine. We usually start with simple automation—like automatically processing orders or organizing customer information. You don\'t need to jump into AI right away.'
+                question: 'What makes this different from hiring a freelancer?',
+                answer: 'We provide ongoing managed data infrastructure, not one-time projects. Your data backbone needs continuous monitoring, optimization, and growth—that\'s what we provide through monthly retainer partnerships.'
               },
               {
-                question: 'How much does this cost?',
-                answer: 'Most small business projects cost between $1,000 and $25,000, depending on what you want to automate. We\'ll give you clear pricing upfront—no surprise fees or hidden costs.'
+                question: 'How much does data infrastructure cost?',
+                answer: 'Most projects range from $5K to $75K depending on complexity. We provide transparent pricing upfront and focus on solutions that clearly pay for themselves through efficiency gains and better decision-making.'
               }
             ].map((faq, index) => (
               <motion.div

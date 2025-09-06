@@ -1,69 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Database, Brain, Settings, Target, ArrowRight, Calculator, Clock, TrendingUp } from 'lucide-react';
+import { Database, Zap, Brain, Shield, Target, ArrowRight, Calculator, Clock, TrendingUp, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Stop Doing the Same Tasks Over and Over',
-      description: 'If your team spends hours each day on data entry, sending similar emails, or updating spreadsheets, we can automate those tasks so they happen without any human involvement.',
-      outcome: 'Your team gets 15-20 hours back each week to focus on customers and growth',
-      features: [
-        'Automatically send follow-up emails to customers',
-        'Process orders from start to finish without manual work',
-        'Set up new customers in your system automatically',
-        'Generate and email reports to you every morning'
-      ]
-    },
-    {
       icon: <Database className="w-8 h-8" />,
-      title: 'Get Answers About Your Business Instantly',
-      description: 'Instead of checking your sales system, then your accounting software, then three different spreadsheets just to see how you\'re doing, get all the information you need in one place.',
-      outcome: 'Answer any business question in seconds, not hours',
+      title: 'Data Foundations',
+      subtitle: 'Capture → Centralize → Secure',
+      description: 'Transform scattered business information into a unified, secure data foundation that powers everything else.',
+      outcome: 'Eliminate data silos and create a single source of truth for your business',
       features: [
-        'See sales, expenses, and profits on one screen',
-        'View complete customer history without switching systems',
-        'Get real-time updates on how your business is performing',
-        'Trust that your numbers are accurate and up-to-date'
-      ]
+        'Digitize paper-based processes and forms',
+        'Centralize data in Microsoft Dataverse or Azure SQL',
+        'Implement data governance and security standards',
+        'Create standardized data models across your business',
+        'Establish backup and disaster recovery protocols'
+      ],
+      technologies: ['Microsoft Dataverse', 'Azure SQL Database', 'Power Platform', 'SharePoint'],
+      timeline: '4-8 weeks',
+      investment: '$2K - $15K'
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Use Smart Technology to Make Better Decisions',
-      description: 'You\'ve heard about AI, but you\'re not sure what it can actually do for your business. We show you exactly where smart technology can help you make money or save time—no hype, just results.',
-      outcome: 'Only invest in technology that clearly improves your bottom line',
+      icon: <Zap className="w-8 h-8" />,
+      title: 'Automated Data Flows',
+      subtitle: 'Connect → Automate → Monitor',
+      description: 'Build intelligent pipelines that move data automatically between all your business systems.',
+      outcome: 'Eliminate manual data entry and ensure information flows where it needs to go',
       features: [
-        'Identify exactly where smart technology will help your business',
-        'Get honest advice about what you\'re ready for right now',
-        'See clear numbers on what it will cost and what you\'ll save',
-        'Test solutions before making big investments'
-      ]
-    },
-    {
-      icon: <Settings className="w-8 h-8" />,
-      title: 'Make Your Systems Talk',
-      description: 'Tired of entering the same customer information in three different places? We connect your existing software so information automatically goes where it needs to go.',
-      outcome: 'Eliminate manual data entry and reduce errors',
-      features: [
-        'Customer information automatically updates everywhere',
-        'Sales data flows directly into your accounting software',
-        'Marketing and sales systems share information seamlessly',
-        'Connect any software you use, even custom solutions'
-      ]
+        'Connect EHR, CRM, accounting, and cloud systems',
+        'Build ETL/ELT pipelines with Logic Apps and Azure Data Factory',
+        'Implement real-time data synchronization',
+        'Set up monitoring and compliance tracking',
+        'Create custom APIs for unique integrations'
+      ],
+      technologies: ['Azure Logic Apps', 'Azure Data Factory', 'Power Automate', 'Custom APIs'],
+      timeline: '6-12 weeks',
+      investment: '$5K - $25K'
     },
     {
       icon: <Brain className="w-8 h-8" />,
-      title: 'Put Smart Technology to Work for You',
-      description: 'When you\'re ready to use AI, we implement practical solutions that solve real problems and save real money—no complicated experiments or unclear benefits.',
-      outcome: 'Smart technology that clearly improves your business from day one',
+      title: 'Insights & AI',
+      subtitle: 'Analyze → Predict → Optimize',
+      description: 'Transform your unified data into actionable insights and AI-powered tools that drive better decisions.',
+      outcome: 'Make data-driven decisions with predictive insights and automated intelligence',
       features: [
-        'Chatbots that actually help customers and reduce your workload',
-        'Predict what inventory you\'ll need to avoid stockouts',
-        'Automatically organize and file important documents',
-        'Personalize customer experiences to increase sales'
-      ]
+        'Build Power BI dashboards for real-time visibility',
+        'Implement predictive models and anomaly detection',
+        'Deploy natural language processing for document analysis',
+        'Create AI-powered customer insights and recommendations',
+        'Embed AI tools directly into your workflows'
+      ],
+      technologies: ['Power BI', 'Azure AI Services', 'Azure Machine Learning', 'Cognitive Services'],
+      timeline: '8-16 weeks',
+      investment: '$10K - $50K'
     }
   ];
 
@@ -71,40 +62,68 @@ const Services = () => {
     {
       icon: <Calculator className="w-6 h-6" />,
       title: 'Typical Investment',
-      range: '$1K - $25K',
-      description: 'Most projects fall in this range depending on scope and complexity',
+      range: '$5K - $75K',
+      description: 'Most data infrastructure projects based on scope and complexity',
       details: [
-        'Simple automation: $500 - $2K',
-        'Data integration: $500 - $10K', 
-        'AI implementation: $1K - $10K',
-        'Complete transformation: $10K - $50K+'
+        'Data foundations: $2K - $15K',
+        'Automated flows: $5K - $25K', 
+        'AI & insights: $10K - $50K',
+        'Complete transformation: $25K - $100K+'
       ]
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: 'Payback Period',
-      range: '6 - 18 months',
-      description: 'How quickly the investment pays for itself through savings',
+      title: 'Implementation Timeline',
+      range: '3 - 6 months',
+      description: 'Phased approach with value delivered at each stage',
       details: [
-        'Labor cost reduction: 3-6 months',
-        'Efficiency improvements: 6-12 months',
-        'Revenue growth: 12-18 months',
-        'Competitive advantage: Ongoing'
+        'Phase 1 (Foundations): 4-8 weeks',
+        'Phase 2 (Data Flows): 6-12 weeks',
+        'Phase 3 (AI & Insights): 8-16 weeks',
+        'Ongoing: Managed infrastructure'
       ]
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: 'Long-term ROI',
-      range: '300% - 800%',
+      range: '400% - 1200%',
       description: 'Return on investment over 3 years for most implementations',
       details: [
-        'Year 1: Break even + 50-100% return',
-        'Year 2: 200-400% cumulative return',
-        'Year 3: 300-800% cumulative return',
-        'Ongoing: Compounding benefits'
+        'Year 1: Break even + 100-200% return',
+        'Year 2: 300-600% cumulative return',
+        'Year 3: 400-1200% cumulative return',
+        'Ongoing: Compounding data value'
       ]
     }
   ];
+
+  const useCases = [
+    {
+      industry: 'Healthcare',
+      challenge: 'Patient data scattered across EHR, billing, and paper forms',
+      solution: 'Unified patient data platform with automated workflows',
+      result: 'Reduced admin time by 40%, improved patient care coordination'
+    },
+    {
+      industry: 'Manufacturing',
+      challenge: 'Production data trapped in spreadsheets and legacy systems',
+      solution: 'Real-time production dashboard with predictive maintenance',
+      result: 'Increased efficiency by 25%, reduced downtime by 60%'
+    },
+    {
+      industry: 'Financial Services',
+      challenge: 'Manual compliance reporting and disconnected client data',
+      solution: 'Automated compliance workflows with integrated CRM',
+      result: 'Cut reporting time by 80%, improved client relationship management'
+    },
+    {
+      industry: 'Professional Services',
+      challenge: 'Project data in multiple tools, difficult to track profitability',
+      solution: 'Integrated project management with real-time financial dashboards',
+      result: 'Improved project margins by 30%, better resource allocation'
+    }
+  ];
+
   return (
     <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
@@ -117,12 +136,19 @@ const Services = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Our <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Services</span>
+              Data Infrastructure <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Services</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We focus on practical solutions that deliver measurable results for your business. 
-              No technical jargon, just clear outcomes you can understand and track.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+              We build the data backbone that makes AI and automation possible. 
+              Every service follows our proven methodology: <strong>Capture → Flow → Insights</strong>.
             </p>
+            <div className="bg-white rounded-lg p-6 max-w-2xl mx-auto shadow-lg border border-slate-100">
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">Our Managed Infrastructure Approach</h3>
+              <p className="text-slate-600">
+                Unlike one-time projects, we provide ongoing managed data infrastructure. 
+                Your data backbone grows and evolves with your business through monthly retainer partnerships.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -137,7 +163,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
@@ -145,9 +171,12 @@ const Services = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white mb-6">
                     {service.icon}
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    {service.title}
-                  </h2>
+                  <div className="mb-4">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
+                      {service.title}
+                    </h2>
+                    <p className="text-lg text-cyan-600 font-semibold">{service.subtitle}</p>
+                  </div>
                   <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
@@ -155,19 +184,88 @@ const Services = () => {
                     <h3 className="font-semibold text-slate-900 mb-2">Key Outcome:</h3>
                     <p className="text-cyan-700 font-medium">{service.outcome}</p>
                   </div>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-slate-50 rounded-lg p-3">
+                      <h4 className="font-medium text-slate-900 mb-1">Timeline:</h4>
+                      <p className="text-slate-600">{service.timeline}</p>
+                    </div>
+                    <div className="bg-slate-50 rounded-lg p-3">
+                      <h4 className="font-medium text-slate-900 mb-1">Investment:</h4>
+                      <p className="text-slate-600">{service.investment}</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8">
                     <h3 className="text-xl font-semibold text-slate-900 mb-6">What We Deliver:</h3>
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 mb-8">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <CheckCircle className="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
                           <span className="text-slate-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
+                    <div className="border-t border-slate-100 pt-6">
+                      <h4 className="font-semibold text-slate-900 mb-3">Core Technologies:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.map((tech, techIndex) => (
+                          <span key={techIndex} className="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Louisiana Industry Use Cases
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              See how we've helped businesses across Louisiana transform their data infrastructure.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100"
+              >
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{useCase.industry}</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium text-red-600 mb-2">Challenge:</h4>
+                    <p className="text-slate-600">{useCase.challenge}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-blue-600 mb-2">Solution:</h4>
+                    <p className="text-slate-600">{useCase.solution}</p>
+                  </div>
+                  <div className="bg-green-50 rounded-lg p-4 border border-green-100">
+                    <h4 className="text-sm font-medium text-green-800 mb-2">Result:</h4>
+                    <p className="text-green-700 font-medium">{useCase.result}</p>
                   </div>
                 </div>
               </motion.div>
@@ -189,7 +287,7 @@ const Services = () => {
               Investment & Returns
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Transparent pricing and realistic expectations about what you can expect to invest and earn back.
+              Transparent pricing and realistic expectations for data infrastructure investments.
             </p>
           </motion.div>
 
@@ -227,70 +325,24 @@ const Services = () => {
             className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-8 border border-cyan-200 text-center"
           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Ready to See Your Specific Numbers?
+              Ready to Build Your Data Infrastructure?
             </h3>
             <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
-              Every business is different. Let's calculate the exact investment and expected returns for your specific situation.
+              Let's discuss your specific data challenges and create a custom roadmap 
+              for transforming your business infrastructure.
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Get Your Custom ROI Analysis
+              Get Your Data Infrastructure Assessment
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
-          </motion.div>
-
-          {/* Common Questions Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-20"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">
-              Questions We Hear All the Time
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  question: "Will this be too complicated for my team?",
-                  answer: "Not at all. We design everything to be simple to use. If your team can use email and basic software, they can use what we build. Plus, we train everyone so they feel confident."
-                },
-                {
-                  question: "What if something breaks or stops working?",
-                  answer: "We build reliable systems and provide ongoing support. Most of our solutions are more stable than manual processes because they eliminate human error."
-                },
-                {
-                  question: "Do I need to replace all my current software?",
-                  answer: "Usually not. We typically work with what you already have and just connect things better. Replacing everything is expensive and disruptive—we avoid that when possible."
-                },
-                {
-                  question: "How do I know this will actually save money?",
-                  answer: "We calculate the savings before we start any work. You'll see exactly how much time and money you'll save, and we only recommend projects that clearly pay for themselves."
-                }
-              ].map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-6 shadow-sm border border-slate-100"
-                >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Managed Infrastructure Section */}
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -299,48 +351,50 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Our Process
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Ongoing Managed Infrastructure
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We take a systematic approach to ensure every project delivers maximum value to your business.
+              We don't just build and leave. We provide ongoing managed data infrastructure 
+              to ensure your systems grow and evolve with your business.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                step: '01',
-                title: 'Discovery & Analysis',
-                description: 'We study your current operations, identify bottlenecks, and map out opportunities for improvement.'
+                title: 'Monitoring & Maintenance',
+                description: 'Continuous monitoring of data flows, performance optimization, and proactive maintenance.',
+                features: ['24/7 system monitoring', 'Performance optimization', 'Security updates', 'Backup verification']
               },
               {
-                step: '02',
-                title: 'Strategy & Planning',
-                description: 'We create a clear roadmap with priorities, timelines, and expected outcomes that align with your goals.'
+                title: 'Growth & Scaling',
+                description: 'Add new data sources, expand integrations, and scale infrastructure as your business grows.',
+                features: ['New system integrations', 'Capacity planning', 'Feature enhancements', 'User training']
               },
               {
-                step: '03',
-                title: 'Implementation & Support',
-                description: 'We build, test, and deploy solutions while training your team to ensure long-term success.'
+                title: 'Strategic Partnership',
+                description: 'Regular reviews, strategic planning, and guidance on leveraging data for competitive advantage.',
+                features: ['Monthly strategy reviews', 'ROI analysis', 'Technology roadmapping', 'Best practice guidance']
               }
-            ].map((step, index) => (
+            ].map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {step.description}
-                </p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start space-x-2">
+                      <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-sm text-slate-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -356,16 +410,17 @@ const Services = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Stop Wasting Time on Tasks That Should Be Automatic
+              Transform Your Data Into Your Competitive Advantage
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              If any of these problems sound familiar, let's talk about how to fix them.
+              Stop letting valuable business data sit trapped in silos. 
+              Build the infrastructure that makes AI and automation possible.
             </p>
             <Link
               to="/contact"
               className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
             >
-              Get Your Free Time-Saving Analysis
+              Start Building Your Data Infrastructure
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
