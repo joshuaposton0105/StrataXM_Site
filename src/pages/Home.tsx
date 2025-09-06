@@ -354,7 +354,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Why Louisiana Businesses Choose StrataXM
+              Why Businesses Choose StrataXM
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               We're not just another tech vendor. We're your long-term data infrastructure partner, 
