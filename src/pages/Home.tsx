@@ -358,7 +358,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               We're not just another tech vendor. We're your long-term data infrastructure partner, 
-              built for Louisiana businesses by Louisiana entrepreneurs.
+              built for small businesses by a small business.
             </p>
           </motion.div>
 
