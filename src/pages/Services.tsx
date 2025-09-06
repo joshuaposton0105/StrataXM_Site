@@ -133,7 +133,7 @@ const Services = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Data Infrastructure <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Services</span>
+              Digital Transformation <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Services</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
               We build the data backbone that makes AI and automation possible. 
