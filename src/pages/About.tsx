@@ -34,7 +34,7 @@ const About = () => {
       description: 'We explain everything in business terms, not technical jargon. You\'ll always understand what we\'re building and why.'
     },
     {
-      icon: <CheckCircle2className="w-6 h-6" />,
+      icon: <CheckCircle2 className="w-6 h-6" />,
       title: 'Managed Infrastructure Model',
       description: 'Unlike one-time projects, we provide ongoing managed data infrastructure through monthly retainer partnerships.'
     }
