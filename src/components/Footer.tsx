@@ -24,7 +24,7 @@ const Footer = () => {
                 className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors duration-200"
               >
                 <Mail size={20} />
-                <span>josh@strataxm.com</span>
+                <span>info@strataxm.com</span>
               </a>
               <a
                 href="https://linkedin.com/company/strataxm"
