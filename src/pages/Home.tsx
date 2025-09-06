@@ -280,7 +280,7 @@ const Home = () => {
               The Data Transformation Journey
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Most Louisiana businesses are at one of these stages. We meet you where you are 
+              Most businesses are at one of these stages. We meet you where you are 
               and build the infrastructure to get you where you need to be.
             </p>
           </motion.div>
