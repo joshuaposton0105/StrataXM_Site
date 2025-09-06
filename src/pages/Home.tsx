@@ -357,8 +357,8 @@ const Home = () => {
               Why Businesses Choose StrataXM
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're not just another tech vendor. We're your long-term data infrastructure partner, 
-              built for small businesses by a small business.
+              We're not just another tech vendor. We're your long-term digital transformation partner, 
+              built for small businesses by a small business, specializing in data infrastructure that enables comprehensive modernization.
             </p>
           </motion.div>
 
