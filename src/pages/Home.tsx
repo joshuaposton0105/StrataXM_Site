@@ -99,7 +99,7 @@ const Home = () => {
                 <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                   Data Infrastructure
                 </span>{' '}
-                That Makes Your Business AI-Ready
+                That Makes Your Business Run Smarter
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                 StrataXM transforms scattered business data into a unified, intelligent foundation. 
