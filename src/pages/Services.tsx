@@ -20,7 +20,6 @@ const Services = () => {
       ],
       technologies: ['Microsoft Dataverse', 'Azure SQL Database', 'Power Platform', 'SharePoint'],
       timeline: '4-8 weeks',
-      investment: '$2K - $15K'
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -37,7 +36,6 @@ const Services = () => {
       ],
       technologies: ['Azure Logic Apps', 'Azure Data Factory', 'Power Automate', 'Custom APIs'],
       timeline: '6-12 weeks',
-      investment: '$5K - $25K'
     },
     {
       icon: <Brain className="w-8 h-8" />,
@@ -54,23 +52,10 @@ const Services = () => {
       ],
       technologies: ['Power BI', 'Azure AI Services', 'Azure Machine Learning', 'Cognitive Services'],
       timeline: '8-16 weeks',
-      investment: '$10K - $50K'
     }
   ];
 
-  const investmentBreakdown = [
-    {
-      icon: <Calculator className="w-6 h-6" />,
-      title: 'Typical Investment',
-      range: '$5K - $75K',
-      description: 'Most data infrastructure projects based on scope and complexity',
-      details: [
-        'Data foundations: $2K - $15K',
-        'Automated flows: $5K - $25K', 
-        'AI & insights: $10K - $50K',
-        'Complete transformation: $25K - $100K+'
-      ]
-    },
+  const implementationDetails = [
     {
       icon: <Clock className="w-6 h-6" />,
       title: 'Implementation Timeline',
@@ -85,14 +70,26 @@ const Services = () => {
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: 'Long-term ROI',
+      title: 'Expected ROI',
       range: '400% - 1200%',
       description: 'Return on investment over 3 years for most implementations',
       details: [
-        'Year 1: Break even + 100-200% return',
-        'Year 2: 300-600% cumulative return',
-        'Year 3: 400-1200% cumulative return',
+        'Year 1: Break even + significant returns',
+        'Year 2: Substantial cumulative returns',
+        'Year 3: Strong long-term ROI',
         'Ongoing: Compounding data value'
+      ]
+    },
+    {
+      icon: <Calculator className="w-6 h-6" />,
+      title: 'Value Drivers',
+      range: 'Multiple Areas',
+      description: 'Data infrastructure delivers value through efficiency and insights',
+      details: [
+        'Reduced manual data entry time',
+        'Faster decision-making processes',
+        'Improved operational efficiency',
+        'Enhanced competitive positioning'
       ]
     }
   ];
@@ -190,8 +187,8 @@ const Services = () => {
                       <p className="text-slate-600">{service.timeline}</p>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-3">
-                      <h4 className="font-medium text-slate-900 mb-1">Investment:</h4>
-                      <p className="text-slate-600">{service.investment}</p>
+                      <h4 className="font-medium text-slate-900 mb-1">Approach:</h4>
+                      <p className="text-slate-600">Phased implementation</p>
                     </div>
                   </div>
                 </div>
@@ -284,15 +281,15 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Investment & Returns
+              Implementation & Returns
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Transparent pricing and realistic expectations for data infrastructure investments.
+              Clear timelines and realistic expectations for data infrastructure transformation.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {investmentBreakdown.map((item, index) => (
+            {implementationDetails.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}

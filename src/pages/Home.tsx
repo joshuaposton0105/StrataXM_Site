@@ -35,9 +35,9 @@ const Home = () => {
   const outcomes = [
     {
       icon: <DollarSign className="w-8 h-8" />,
-      metric: '$75K+',
-      title: 'Average Annual Value',
-      description: 'Combined savings and revenue growth from unified data infrastructure and AI insights.'
+      metric: '400%+',
+      title: 'Average ROI',
+      description: 'Return on investment from unified data infrastructure and AI insights within 24 months.'
     },
     {
       icon: <Clock className="w-8 h-8" />,

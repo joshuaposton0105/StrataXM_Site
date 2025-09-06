@@ -461,8 +461,8 @@ const Contact = () => {
                 answer: 'We provide ongoing managed data infrastructure, not one-time projects. Your data backbone needs continuous monitoring, optimization, and growth—that\'s what we provide through monthly retainer partnerships.'
               },
               {
-                question: 'How much does data infrastructure cost?',
-                answer: 'Most projects range from $5K to $75K depending on complexity. We provide transparent pricing upfront and focus on solutions that clearly pay for themselves through efficiency gains and better decision-making.'
+                question: 'How do you determine the scope of a data infrastructure project?',
+                answer: 'We start with a comprehensive assessment of your current data landscape, business processes, and growth goals. This helps us design a phased approach that delivers value at each stage while building toward your long-term vision.'
               }
             ].map((faq, index) => (
               <motion.div
