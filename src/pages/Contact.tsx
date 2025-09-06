@@ -461,8 +461,8 @@ const Contact = () => {
                 answer: 'We provide ongoing managed data infrastructure, not one-time projects. Your data backbone needs continuous monitoring, optimization, and growth—that\'s what we provide through monthly retainer partnerships.'
               },
               {
-                question: 'How do you determine the scope of a data infrastructure project?',
-                answer: 'We start with a comprehensive assessment of your current data landscape, business processes, and growth goals. This helps us design a phased approach that delivers value at each stage while building toward your long-term vision.'
+                question: 'How do you determine the scope of a digital transformation project?',
+                answer: 'We start with a comprehensive assessment of your current systems, business processes, and growth goals. This helps us design a phased digital transformation approach that delivers value at each stage while building toward your long-term modernization vision.'
               }
             ].map((faq, index) => (
               <motion.div
