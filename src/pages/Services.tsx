@@ -235,7 +235,7 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Louisiana Industry Use Cases
+              Industry Use Cases
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               See how we've helped businesses across Louisiana transform their data infrastructure.
