@@ -394,7 +394,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900">Long-Term Partnership</h4>
-                      <p className="text-sm text-slate-600">We're your ongoing managed infrastructure partner. We don't built and disappear, we build, maintain, and scale.</p>
+                      <p className="text-sm text-slate-600">We're your ongoing managed infrastructure partner. We don't build and disappear. We build, maintain, and scale, preparing you for the next stage of your digital transformation journey.</p>
                     </div>
                   </div>
                 </div>
