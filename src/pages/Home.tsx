@@ -79,7 +79,7 @@ const Home = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-7xl font-bold text-slate-900 mb-6">
-              Build the <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Data Infrastructure</span> That Powers Your Digital Transformation
+              Make Your Systems<span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">Talk</span> 
             </h1>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-8 leading-relaxed">
               StrataXM transforms scattered business data into unified, intelligent foundations that enable comprehensive modernization and make Louisiana businesses AI-ready and competitive.
