@@ -201,11 +201,6 @@ const Services = () => {
                 </div>
 
                 <div className="bg-slate-100 rounded-2xl p-8 lg:p-10 border border-slate-200">
-                  <div className="mb-6">
-                    <div className="inline-block bg-slate-900 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-4">
-                      Real Scenario
-                    </div>
-                  </div>
                   <div className="space-y-4">
                     <p className="text-slate-700 leading-relaxed">
                       {pillar.scenario.context}
@@ -228,68 +223,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 lg:py-32 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              How It Works
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our three-phase delivery model ensures you see results fast and have ongoing support as you scale.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {workPhases.map((phase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-200 relative"
-              >
-                {index < workPhases.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="w-8 h-8 text-slate-300" />
-                  </div>
-                )}
-                <div className="w-16 h-16 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
-                  {phase.icon}
-                </div>
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    {phase.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 font-medium">{phase.duration}</p>
-                </div>
-                <p className="text-slate-600 leading-relaxed">
-                  {phase.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-slate-100 rounded-xl p-8 border border-slate-300 text-center max-w-4xl mx-auto"
-          >
-            <p className="text-lg text-slate-700 leading-relaxed">
-              This approach ensures you see real ROI fast, build reusable infrastructure, and have ongoing support as your needs evolve. No wasted time, no vendor lock-in.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Scenario Highlights */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -335,7 +270,7 @@ const Services = () => {
       </section>
 
       {/* Why StrataXM */}
-      <section className="py-20 lg:py-32 bg-slate-50">
+      <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
