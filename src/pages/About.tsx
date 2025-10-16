@@ -1,130 +1,112 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Target, Lightbulb, Award, MessageSquare, CheckCircle2, MapPin, Heart, Zap } from 'lucide-react';
+import { ArrowRight, Link as LinkIcon, Shield, Building, Package, Stethoscope, Wrench, TrendingUp, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About = () => {
+  const approach = [
+    {
+      icon: <LinkIcon className="w-8 h-8" />,
+      title: 'Integration-First',
+      description: 'We connect your existing systems before building anything new. Modernization starts with making what you have work together.'
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Clarity Over Complexity',
+      description: 'We simplify your data landscape. The goal is to make information easier to access and understand, not bury you in more tools.'
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: 'Scalable Foundations',
+      description: 'We build systems that grow with your business. Every solution is designed to expand as your needs evolve.'
+    },
+    {
+      icon: <Package className="w-8 h-8" />,
+      title: 'Practical AI Readiness',
+      description: 'We prepare your data infrastructure for intelligent automation—not hype, but real capability when you need it.'
+    }
+  ];
+
+  const whoWeHelp = [
+    {
+      icon: <Wrench className="w-6 h-6" />,
+      type: 'Trade Contractors',
+      scenario: 'Field teams using paper, office staff drowning in spreadsheets, no visibility into job costs or scheduling.'
+    },
+    {
+      icon: <Stethoscope className="w-6 h-6" />,
+      type: 'Medical & Dental Practices',
+      scenario: 'Patient data scattered across systems, manual reporting, compliance headaches, billing delays.'
+    },
+    {
+      icon: <Building className="w-6 h-6" />,
+      type: 'Manufacturers & Distributors',
+      scenario: 'Inventory counts off, production data siloed, no real-time cost tracking, decisions based on outdated reports.'
+    }
+  ];
+
   const values = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Meet Where You Are Approach',
-      description: 'We meet businesses where they are on the digital transformation journey, helping them take the right next step instead of forcing oversized platforms that create more chaos than clarity.'
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Long-Term Partnership',
-      description: 'We\'re not project vendors—we\'re your ongoing digital transformation partner, committed to your long-term success.'
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: 'Future-Ready Foundation',
-      description: 'Every solution we build lays the groundwork for more advanced reporting and decision-making over time.'
-    }
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: 'Proven Data Infrastructure',
-      description: 'We build on reliable, modern technologies and proven approaches that adapt as your business expands.'
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: 'Business-First Communication',
-      description: 'We explain everything in business terms, not technical jargon. You\'ll always understand what we\'re building and why.'
-    },
-    {
-      icon: <CheckCircle2 className="w-6 h-6" />,
-      title: 'Managed Infrastructure Model',
-      description: 'Unlike one-time projects, we provide ongoing managed data infrastructure through monthly retainer partnerships.'
-    }
-  ];
-
-  const communityCommitment = [
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Local Expertise',
-      description: 'Born and raised in Louisiana, we understand local business culture, regulations, and market dynamics.'
-    },
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: 'Practical Innovation',
-      description: 'We bring modern solutions to real business challenges—balancing efficiency, clarity, and the right level of technology.'
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Economic Development',
-      description: 'By helping local businesses modernize, we\'re contributing to Louisiana\'s economic growth and competitiveness.'
-    }
+    'Integrity: We do what we say we\'ll do, when we say we\'ll do it.',
+    'Transparency: You always know what we\'re building, why it matters, and what it costs.',
+    'Craftsmanship: We build systems the right way—secure, scalable, and built to last.',
+    'Learning: Technology evolves. We stay current so your business stays competitive.',
+    'Local Impact: We invest in Louisiana businesses because we believe in Louisiana\'s future.'
   ];
 
   return (
     <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-cyan-50 py-20 lg:py-32">
+      <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              About <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">StrataXM</span>
+              Modernization built for real businesses
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Your digital transformation partner, building the foundation that makes AI and automation possible for local businesses.
+            <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+              We help small and mid-sized businesses modernize operations through connected systems, automated workflows, and intelligent insights.
+            </p>
+            <p className="text-lg text-slate-500">
+              Automation · Data Engineering · Business Intelligence
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Our Story */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-2xl p-8 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white font-bold text-4xl">JP</span>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Josh Poston</h3>
-                <p className="text-cyan-700 font-medium mb-4">Founder & Data Infrastructure Architect</p>
-                <p className="text-slate-600 text-sm">Louisiana Native • Microsoft Certified • Community Leader</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Building Louisiana's Data Future
-              </h2>
-              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  StrataXM was founded with a clear mission: to democratize enterprise-grade technology 
-                  for Louisiana's small and mid-sized businesses. While large corporations have teams of data 
-                  engineers and AI specialists, local businesses have been left behind.
-                </p>
-                <p>
-                  We exist to change that. StrataXM brings the same digital transformation capabilities that power 
-                  Fortune 500 companies to small businesses—in a way that's practical, affordable, and 
-                  designed for long-term partnership.
-                </p>
-                <p>
-                  Every business we work with becomes more competitive, more efficient, and better positioned 
-                  for the AI-driven future. That's not just good for individual companies—it's good for Louisiana's 
-                  entire economic ecosystem.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+              Our Story
+            </h2>
+            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+              <p>
+                StrataXM started from a simple observation: most small and mid-sized businesses are drowning in disconnected systems and messy data.
+              </p>
+              <p>
+                We spent years building analytics platforms, automation systems, and data pipelines inside large organizations—solving the same problems over and over. Systems that don't talk to each other. Reports built manually every month. Data locked in spreadsheets that no one trusts.
+              </p>
+              <p>
+                The difference? Large enterprises have dedicated teams to solve these problems. Small businesses don't.
+              </p>
+              <p>
+                So we built StrataXM to bring that same capability to growing companies in Louisiana and beyond. We help businesses modernize their operations affordably, using proven enterprise-grade tools and frameworks adapted for smaller organizations.
+              </p>
+              <p>
+                We're not selling software. We're becoming your fractional data and automation team—the people who connect your systems, clean up your data, build your dashboards, and keep everything running while you focus on your business.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -135,60 +117,15 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Our Mission & Vision
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Our Mission
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're building the data infrastructure that powers Louisiana's economic future.
+            <p className="text-xl text-slate-600 leading-relaxed">
+              To give small and mid-sized businesses access to the same data infrastructure and automation maturity as large enterprises. We empower growing companies to make better decisions, automate manual work, and compete on a level playing field—without needing to hire a full data team.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl shadow-xl p-12 mb-16"
-          >
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Our Mission</h3>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                To build the data infrastructure that makes small and medium sized businesses AI-ready, competitive, 
-                and positioned for sustainable growth. We transform scattered business data into unified, 
-                intelligent foundations that power better decisions and automated operations.
-              </p>
-              <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 h-1 w-24 mx-auto rounded-full mb-8"></div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Our Vision</h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                A landscape where every business—regardless of size—has access to enterprise-grade data 
-                infrastructure and AI capabilities. Where local companies compete on equal footing with 
-                national players because their data works as hard as they do.
-              </p>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white mb-6">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -202,81 +139,38 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Our Data Infrastructure Methodology
+              Our Approach
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We follow a proven three-phase digital transformation methodology that ensures every project 
-              delivers measurable business value and sustainable modernization.
+              How we think about modernization and partnership.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                step: '01',
-                title: 'Data Foundation Assessment',
-                description: 'We audit your current data landscape, identify integration opportunities, and design a unified data architecture.',
-                outcome: 'Clear roadmap for transforming scattered data into a unified foundation'
-              },
-              {
-                step: '02', 
-                title: 'Infrastructure Implementation',
-                description: 'We build secure, scalable data pipelines and implement automated workflows using enterprise-grade Microsoft technologies.',
-                outcome: 'Working data infrastructure that eliminates manual processes and data silos'
-              },
-              {
-                step: '03',
-                title: 'Insights & AI Enablement',
-                description: 'We deploy dashboards, predictive models, and AI tools that turn your unified data into competitive advantage.',
-                outcome: 'AI-ready business with data-driven decision making and automated intelligence'
-              }
-            ].map((phase, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {approach.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow duration-300"
+                className="bg-slate-50 rounded-xl p-8 border border-slate-200"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">
-                  {phase.step}
+                <div className="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
+                  {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  {phase.title}
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {item.title}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  {phase.description}
+                <p className="text-slate-600 leading-relaxed">
+                  {item.description}
                 </p>
-                <div className="bg-cyan-50 rounded-lg p-4 border border-cyan-100">
-                  <p className="text-sm text-cyan-800 font-medium">
-                    <strong>Outcome:</strong> {phase.outcome}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-12"
-          >
-            <p className="text-lg text-slate-600 mb-6">
-              Ready to see how this methodology can transform your business data?
-            </p>
-            <Link
-              to="/contact"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
-            >
-              Start Your Data Transformation
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Who We Help */}
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -286,144 +180,109 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Why Louisiana Businesses Choose StrataXM
+              Who We Help
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're not just another tech vendor. We're your long-term data infrastructure partner.
+              We work with growing businesses that rely on multiple systems and need better visibility.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {whyChooseUs.map((reason, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {whoWeHelp.map((client, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl p-8 border border-slate-200"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mx-auto mb-6">
-                  {reason.icon}
+                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
+                  {client.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  {reason.title}
+                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                  {client.type}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {reason.description}
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  {client.scenario}
                 </p>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-slate-100 rounded-xl p-8 border border-slate-300 text-center max-w-4xl mx-auto"
+          >
+            <p className="text-lg text-slate-700 leading-relaxed">
+              If you rely on QuickBooks, ServiceTitan, Shopify, Microsoft 365, or industry-specific platforms, we can help you connect them and modernize your operations.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Community Commitment */}
+      {/* Our Values */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Committed to Louisiana's Future
+              Our Values
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're not just building data infrastructure—we're building Louisiana's economic future.
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {communityCommitment.map((commitment, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white mx-auto mb-6">
-                  {commitment.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                  {commitment.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {commitment.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {values.map((value, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="bg-slate-50 rounded-lg p-6 border border-slate-200 flex items-start gap-4"
+                >
+                  <CheckCircle className="w-6 h-6 text-slate-900 flex-shrink-0 mt-0.5" />
+                  <p className="text-lg text-slate-700">
+                    {value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-8 border border-cyan-200 text-center"
-          >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Ready to Partner with Us?
-            </h3>
-            <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
-              Let's discuss how we can build the data infrastructure that transforms your business 
-              and contributes to Louisiana's economic growth.
-            </p>
-            <Link
-              to="/contact"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
-            >
-              Start the Conversation
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* The Team */}
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Data Infrastructure Impact
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">
+              The Team
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Here's what businesses typically achieve when they invest in proper data infrastructure.
-            </p>
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-slate-200">
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                StrataXM is led by Joshua Poston, who has spent years building analytics platforms and automation systems inside complex organizations—from enterprise analytics at Qualtrics to data infrastructure for veterans services.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We've seen what works at scale, and we bring that expertise to growing businesses. We're not selling theory—we're bringing real capability, adapted for organizations that need results without the overhead of hiring a full data team.
+              </p>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { number: '70-90%', label: 'Reduction in manual data entry' },
-              { number: '50-80%', label: 'Faster access to business insights' },
-              { number: '12-24mo', label: 'Typical ROI payback period' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent mb-4">
-                  {stat.number}
-                </div>
-                <p className="text-lg text-slate-600 font-medium">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-slate-900 to-slate-800">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -431,17 +290,16 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Build Your Data Future?
+              Let's build something better
             </h2>
-            <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              Join the Louisiana businesses that are already transforming their operations 
-              with enterprise-grade data infrastructure.
+            <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Start with a Discovery Sprint. We'll map your systems, understand your challenges, and build a roadmap that makes sense for your business.
             </p>
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 inline-flex items-center group"
+              className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-slate-100 hover:shadow-xl inline-flex items-center group"
             >
-              Start Your Data Infrastructure Journey
+              Book a Discovery Call
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
