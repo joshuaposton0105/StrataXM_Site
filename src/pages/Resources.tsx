@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Clock, ArrowRight, CheckCircle, BarChart3, Wrench, Database, TrendingUp, Zap, Settings, BookOpen, Lightbulb } from 'lucide-react';
+import { Search, ArrowRight, CheckCircle, BarChart3, Wrench, Database, TrendingUp, Zap, Settings, BookOpen, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Resources = () => {
@@ -15,7 +15,6 @@ const Resources = () => {
       title: 'Understanding Business Process Automation',
       category: 'Automation',
       description: 'Automation doesn\'t mean replacing people—it means freeing them from repetitive work. Learn how to identify which tasks should be automated, what ROI to expect, and how automation scales with your business.',
-      readTime: '8 min',
       icon: <Zap className="w-6 h-6" />,
       keyPoints: [
         'How to audit your workflows for automation opportunities',
@@ -29,7 +28,6 @@ const Resources = () => {
       title: 'What Data Engineering Actually Means for Your Business',
       category: 'Data Engineering',
       description: 'Data engineering is the foundation that makes everything else possible. If your data is scattered, inconsistent, or hard to access, you can\'t automate, analyze, or make good decisions.',
-      readTime: '10 min',
       icon: <Database className="w-6 h-6" />,
       keyPoints: [
         'What a data pipeline is and why you need one',
@@ -43,7 +41,6 @@ const Resources = () => {
       title: 'Business Intelligence Without the Complexity',
       category: 'Business Intelligence',
       description: 'Business Intelligence means turning your data into decisions. Real-time dashboards, automated reports, and visual analytics—explained in terms that make sense for business owners.',
-      readTime: '12 min',
       icon: <BarChart3 className="w-6 h-6" />,
       keyPoints: [
         'How to design dashboards that actually get used',
@@ -57,7 +54,6 @@ const Resources = () => {
       title: 'Starting Your Modernization Journey',
       category: 'Getting Started',
       description: 'Modernization isn\'t all-or-nothing. Learn how to assess where you are, prioritize what matters, and build a roadmap that delivers value at every stage.',
-      readTime: '15 min',
       icon: <TrendingUp className="w-6 h-6" />,
       keyPoints: [
         'How to assess your current systems and data readiness',
@@ -71,7 +67,6 @@ const Resources = () => {
       title: 'Integration Strategies for Small Businesses',
       category: 'Data Engineering',
       description: 'You don\'t need to replace your software—you need to connect it. Learn how system integration works, what\'s possible with your existing tools, and when replacement makes sense.',
-      readTime: '9 min',
       icon: <Settings className="w-6 h-6" />,
       keyPoints: [
         'APIs and connectors: how systems talk to each other',
@@ -85,7 +80,6 @@ const Resources = () => {
       title: 'Preparing Your Business for AI',
       category: 'Getting Started',
       description: 'AI is only as good as your data. Before thinking about AI tools, you need clean, connected, and accessible data. Here\'s what AI-readiness actually means.',
-      readTime: '11 min',
       icon: <Lightbulb className="w-6 h-6" />,
       keyPoints: [
         'Why AI requires unified, quality data first',
@@ -278,8 +272,8 @@ const Resources = () => {
                     {content.description}
                   </p>
 
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-slate-900 mb-3">What you'll learn:</h4>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-3">Key topics covered:</h4>
                     <ul className="space-y-2">
                       {content.keyPoints.map((point, idx) => (
                         <li key={idx} className="flex items-start gap-2">
@@ -288,11 +282,6 @@ const Resources = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  <div className="flex items-center text-sm text-slate-500">
-                    <Clock className="w-4 h-4 mr-1" />
-                    <span>{content.readTime} read</span>
                   </div>
                 </div>
               </motion.div>
