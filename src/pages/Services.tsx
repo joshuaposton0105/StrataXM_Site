@@ -19,9 +19,9 @@ const Services = () => {
       ],
       poweredBy: 'Power Automate, Azure Logic Apps, Custom APIs',
       scenario: {
-        context: 'An HVAC company was manually entering every invoice into QuickBooks, tracking service appointments in Excel, and calling customers to confirm visits.',
-        solution: 'We automated invoice generation from completed jobs, synced scheduling with their field team\'s mobile app, and set up automatic customer confirmations via text.',
-        result: 'They cut administrative time by 60% and eliminated billing errors entirely.'
+        context: 'Imagine your field techs complete a job, but someone still has to manually enter the invoice into QuickBooks, update the schedule in Excel, and call the customer to follow up.',
+        solution: 'Automation can generate invoices from completed jobs automatically, sync scheduling with mobile apps, and send customer confirmations via text—without anyone touching it.',
+        result: 'Your admin team spends 60% less time on data entry and billing errors disappear.'
       },
       visualConcept: 'Flow diagram showing systems connecting with arrows and data moving between them'
     },
@@ -39,9 +39,9 @@ const Services = () => {
       ],
       poweredBy: 'Azure Data Factory, SQL Server, Azure Synapse, Databricks, Python',
       scenario: {
-        context: 'A medical group had patient data split across their EHR, billing system, scheduling software, and paper intake forms. Running reports meant pulling data from four places manually.',
-        solution: 'We built a centralized data warehouse that pulls from all their systems nightly, standardizes the data, and makes it available for reporting and analysis.',
-        result: 'They can now run accurate reports in minutes instead of days, and their compliance audits became straightforward.'
+        context: 'Your patient data lives in the EHR, billing system, scheduling software, and paper intake forms. Running a report means pulling data from four different places manually.',
+        solution: 'A centralized data warehouse can pull from all your systems automatically, standardize everything, and make it available for instant reporting and analysis.',
+        result: 'You run accurate reports in minutes instead of days, and compliance audits become straightforward.'
       },
       visualConcept: 'Central database icon with multiple source systems feeding into it via pipelines'
     },
@@ -59,9 +59,9 @@ const Services = () => {
       ],
       poweredBy: 'Power BI, Tableau, Azure Machine Learning, Python',
       scenario: {
-        context: 'A manufacturer had no real-time visibility into production costs, machine downtime, or inventory levels. They were making decisions based on outdated spreadsheets.',
-        solution: 'We built live dashboards showing production metrics, cost tracking, and inventory status. Alerts notify managers when machines go offline or inventory runs low.',
-        result: 'They reduced downtime by 40%, improved inventory accuracy, and cut production costs by 15%.'
+        context: 'You have no real-time visibility into production costs, machine downtime, or inventory levels. Your team makes decisions based on spreadsheets that are already outdated.',
+        solution: 'Live dashboards can show production metrics, cost tracking, and inventory status in real time. Alerts notify managers the moment machines go offline or inventory runs low.',
+        result: 'You reduce downtime, improve inventory accuracy, and cut production costs without anyone manually updating spreadsheets.'
       },
       visualConcept: 'Dashboard interface with charts, graphs, and real-time metrics on a screen'
     }
@@ -92,20 +92,20 @@ const Services = () => {
     {
       icon: <Wrench className="w-8 h-8" />,
       businessType: 'HVAC Company',
-      problem: 'Field technicians were using paper work orders. The office team re-entered everything into QuickBooks and scheduling software. Customers had to call for status updates.',
-      result: 'Built a mobile app for technicians connected to scheduling and billing. Automated invoice generation and customer notifications. Same-day invoicing, zero lost paperwork.'
+      problem: 'Field technicians use paper work orders. Your office team re-enters everything into QuickBooks and scheduling software. Customers call asking for status updates.',
+      result: 'Connect field work to scheduling and billing automatically. Enable same-day invoicing, eliminate lost paperwork, and keep customers updated without manual calls.'
     },
     {
       icon: <Stethoscope className="w-8 h-8" />,
       businessType: 'Medical Group',
-      problem: 'Patient data scattered across EHR, billing system, and intake forms. Running monthly reports took days of manual work. Compliance audits were painful.',
-      result: 'Centralized all patient data in Azure with Power BI dashboards. Real-time reporting for operations and finance. Compliance reporting went from days to minutes.'
+      problem: 'Patient data is scattered across your EHR, billing system, and intake forms. Running monthly reports takes days of manual work. Compliance audits are painful.',
+      result: 'Centralize patient data with automated reporting dashboards. Get real-time visibility into operations and finance. Turn compliance reporting from days into minutes.'
     },
     {
       icon: <Factory className="w-8 h-8" />,
       businessType: 'Manufacturer',
-      problem: 'No visibility into real-time production costs, machine downtime, or inventory levels. Decisions made on outdated spreadsheets and gut feel.',
-      result: 'Built live production dashboards tracking costs, downtime, and inventory. Automated alerts for issues. 40% less downtime, 15% lower production costs.'
+      problem: 'You have no visibility into real-time production costs, machine downtime, or inventory levels. Your team makes decisions based on outdated spreadsheets and gut feel.',
+      result: 'Build live dashboards tracking costs, downtime, and inventory in real time. Set up automated alerts for issues. Reduce downtime and cut production costs.'
     }
   ];
 
