@@ -289,7 +289,7 @@ const About = () => {
             </h2>
             <div className="bg-white rounded-xl p-8 shadow-lg border border-slate-200">
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                StrataXM is led by Joshua Poston, who has spent years building analytics platforms and automation systems inside complex organizations—from enterprise analytics at Qualtrics to data infrastructure for veterans services.
+                StrataXM is led by Joshua Poston, who has spent years building analytics platforms and automation systems inside complex organizations—from enterprise analytics to data infrastructure for veterans services.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
                 We've seen what works at scale, and we bring that expertise to growing businesses. We're not selling theory—we're bringing real capability, adapted for organizations that need results without the overhead of hiring a full data team.
