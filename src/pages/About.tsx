@@ -177,46 +177,64 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Who We Help
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We work with growing businesses that rely on multiple systems and need better visibility.
-            </p>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-xl text-slate-600 leading-relaxed">
+                We work with any small or mid-sized business that's outgrown spreadsheets and manual processes. If you're running multiple systems that don't talk to each other, if your team spends hours on tasks that should be automated, or if you can't get clear answers from your data—we can help.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Our mission is simple: give growing businesses the same data infrastructure and automation capabilities that large corporations have, without the enterprise price tag or complexity.
+              </p>
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {whoWeHelp.map((client, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 border border-slate-200"
-              >
-                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
-                  {client.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  {client.type}
-                </h3>
-                <p className="text-slate-600 leading-relaxed text-sm">
-                  {client.scenario}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-12"
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+              Common scenarios we solve:
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {whoWeHelp.map((client, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-xl p-8 border border-slate-200"
+                >
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
+                    {client.icon}
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4">
+                    {client.type}
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed text-sm">
+                    {client.scenario}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-slate-100 rounded-xl p-8 border border-slate-300 text-center max-w-4xl mx-auto"
+            className="bg-white rounded-xl p-10 border border-slate-300 text-center max-w-4xl mx-auto shadow-lg"
           >
+            <p className="text-xl text-slate-900 font-semibold mb-4">
+              But we're not limited to these industries.
+            </p>
             <p className="text-lg text-slate-700 leading-relaxed">
-              If you rely on QuickBooks, ServiceTitan, Shopify, Microsoft 365, or industry-specific platforms, we can help you connect them and modernize your operations.
+              If you rely on QuickBooks, ServiceTitan, Shopify, Microsoft 365, or any industry-specific platforms—and you need them to work together better—we can help you modernize. Every business deserves enterprise-grade capabilities.
             </p>
           </motion.div>
         </div>
