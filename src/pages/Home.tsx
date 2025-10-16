@@ -109,7 +109,7 @@ const Home = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Your fractional data and<br />automation team
+              Integrate. Automate.<br />Dominate.
             </h1>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-10 leading-relaxed">
               StrataXM helps small and mid-sized businesses modernize operations through Automation, Data Engineering, and Business Intelligence. We build the digital backbone that makes your business run better.
