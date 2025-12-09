@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Shield, Target, CheckCircle, Database, BarChart3, LineChart, AlertTriangle } from 'lucide-react';
+import { ArrowRight, TrendingUp, Target, CheckCircle, Database, BarChart3, LineChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -73,14 +73,6 @@ const Home = () => {
     'You want to understand what\'s really driving profit',
     'You\'re considering expansion and need to evaluate the risk',
     'You want ongoing support, not just a one-time report'
-  ];
-
-  const notForYou = [
-    'You need marketing analytics or ad campaign tracking',
-    'You want process automation without fixing your data first',
-    'You need IT support, managed services, or software development',
-    'You only want dashboards without someone to explain what they mean',
-    'You expect a consultant who delivers a presentation and leaves'
   ];
 
   return (
@@ -215,7 +207,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Who We're For */}
+      {/* Who We Work With */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -225,53 +217,31 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Who We Work With
+              Common Situations We Help With
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-slate-50 rounded-xl p-8 border border-slate-200"
+              className="bg-slate-50 rounded-xl p-8 lg:p-12 border border-slate-200"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <Shield className="w-8 h-8 text-slate-900" />
-                <h3 className="text-2xl font-bold text-slate-900">
-                  You're a good fit if:
-                </h3>
-              </div>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {forYou.map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-slate-700 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700">{item}</span>
+                    <span className="text-lg text-slate-700">{item}</span>
                   </li>
                 ))}
               </ul>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl p-8 border-2 border-slate-300"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <AlertTriangle className="w-8 h-8 text-slate-700" />
-                <h3 className="text-2xl font-bold text-slate-900">
-                  We're not the right fit if:
-                </h3>
+              <div className="mt-8 pt-8 border-t border-slate-300">
+                <p className="text-slate-600 leading-relaxed">
+                  If any of these sound familiar, we should talk. We'll explain what's possible and whether we're the right team to help.
+                </p>
               </div>
-              <ul className="space-y-3">
-                {notForYou.map((item, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <span className="text-slate-500 mt-0.5 flex-shrink-0">—</span>
-                    <span className="text-slate-600">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           </div>
         </div>
