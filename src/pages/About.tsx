@@ -168,17 +168,15 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                We work with business owners at small and mid-sized companies—typically 10 to 500 employees—who need to make big decisions and want real numbers backing them up, not just gut instinct.
+                We work with business owners and leadership teams who want to become more data-driven in how they operate and make decisions. Some clients are just getting their data organized for the first time. Others already have reporting and are ready to move into forecasting and scenario modeling.
               </p>
               <p>
-                Our clients are often at turning points: considering expansion, evaluating large contracts, planning capacity changes, or making pricing decisions that could significantly impact the business. They know their industry and operations. What they need is someone to consolidate their messy data and help them understand what the numbers actually say.
+                Our role is to meet you where you are — whether that means building your first source of truth, improving reporting, or applying modeling to future decisions. The common thread is a desire to move away from guesswork and toward decisions supported by real numbers.
               </p>
               <p>
-                We work across industries: manufacturing, healthcare, construction, trades, distribution, professional services. The common thread isn't the industry—it's the need for clean data and clear analysis to support major business decisions.
+                If you want to build reliable data infrastructure, understand what your numbers are actually saying, and use that information to plan more confidently, we can help.
               </p>
-              <p>
-                If you're trying to decide whether to open a new location, take on a large contract, change your pricing, or add capacity—and you want real numbers backing that choice—we can help.
-              </p>
+
             </div>
           </motion.div>
         </div>
