@@ -33,7 +33,7 @@ const Services = () => {
     },
     {
       icon: <LineChart className="w-10 h-10" />,
-      title: 'Statistical Analysis',
+      title: 'Business Analytics',
       tagline: 'Understand what will happen, not just what did',
       description: 'Historical reports tell you what happened. Statistical analysis tells you what will likely happen next. We apply forecasting models, risk analysis, and quantitative methods to help you anticipate revenue patterns, capacity constraints, and business risk before they affect your operations.',
       whenYouNeedThis: [
