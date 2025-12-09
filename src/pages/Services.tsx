@@ -62,7 +62,7 @@ const Services = () => {
       icon: <Target className="w-10 h-10" />,
       title: 'Decision Support',
       tagline: 'Model scenarios before you commit',
-      description: 'Major business decisions—expanding locations, changing pricing, adding capacity—involve risk. We build scenario models that let you test different choices mathematically before committing resources. Think of it as a financial flight simulator for your business.',
+      description: 'Major business decisions—expanding locations, changing pricing, adding capacity—involve risk. We build scenario models that let you test different choices mathematically before committing resources. Think of it as a financial flight simulator for your business. When appropriate, we apply advanced statistical and machine learning methods as analytic tools — not as products — to improve forecast accuracy and scenario testing.',
       whenYouNeedThis: [
         'You\'re considering opening a new location or expanding capacity',
         'You need to evaluate pricing changes or promotional strategies',
