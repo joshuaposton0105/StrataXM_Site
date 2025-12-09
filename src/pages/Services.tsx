@@ -35,7 +35,7 @@ const Services = () => {
       icon: <LineChart className="w-10 h-10" />,
       title: 'Business Analytics',
       tagline: 'Understand what is actually happening in your business.',
-      description: 'Historical reports tell you what happened. Statistical analysis tells you what will likely happen next. We apply forecasting models, risk analysis, and quantitative methods to help you anticipate revenue patterns, capacity constraints, and business risk before they affect your operations.',
+      description: 'Once your data is reliable, we turn it into clear, standardized reporting that shows how your business is actually performing. We define KPIs, build executive dashboards, and surface trends in revenue, margin, operations, and customer behavior so leadership can see reality without interpretation battles..',
       whenYouNeedThis: [
         'You need to forecast next quarter\'s revenue for planning',
         'You want to predict slow months to manage cash flow',
@@ -44,12 +44,12 @@ const Services = () => {
         'You want to model risk before making major investments'
       ],
       whatWeDeliver: [
-        'Revenue and demand forecasting models',
-        'Seasonality and trend analysis',
-        'Job costing and profitability analysis by segment',
-        'Customer lifetime value and churn risk scoring',
-        'Scenario analysis for pricing and capacity',
-        'Statistical reports with confidence intervals and assumptions documented'
+        'Executive dashboards and operational reporting',
+  'KPI definition and metric standardization',
+  'Revenue, margin, and cost performance analysis',
+  'Product, customer, and location profitability reporting',
+  'Trend, variance, and seasonality analysis',
+  'Recurring monthly and quarterly business performance reporting'
       ],
       caseStudy: {
         business: 'Multi-Location Restaurant Group',
