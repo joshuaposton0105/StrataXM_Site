@@ -405,7 +405,7 @@ const Contact = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-slate-900 mt-0.5">•</span>
-                    <span>Direct conversation with Joshua</span>
+                    <span>Direct conversation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-slate-900 mt-0.5">•</span>
