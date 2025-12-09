@@ -1,100 +1,86 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Cog, Database, BarChart3, CheckCircle, GitBranch, Users, Code, Zap, RefreshCw, LineChart } from 'lucide-react';
+import { ArrowRight, TrendingUp, Shield, Target, CheckCircle, Database, BarChart3, LineChart, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const pillars = [
-    {
-      icon: <Cog className="w-8 h-8" />,
-      title: 'Automation',
-      description: 'Eliminate repetitive work and connect your systems so data flows where it needs to go, without manual intervention.',
-      features: [
-        'Replace manual data entry and repetitive tasks',
-        'Connect disconnected systems and eliminate data silos',
-        'Automate approvals, alerts, and scheduled workflows',
-        'Build intelligent document processing pipelines',
-        'Sync data between systems in real-time',
-        'Create self-service portals for customers and staff'
-      ],
-      poweredBy: 'Power Automate, Azure Logic Apps, Custom APIs'
-    },
+  const services = [
     {
       icon: <Database className="w-8 h-8" />,
       title: 'Data Engineering',
-      description: 'Build the infrastructure that turns raw data into a reliable, usable asset your business can actually trust and act on.',
-      features: [
-        'Design scalable databases and data warehouses',
-        'Build ETL/ELT pipelines that run on schedule or in real-time',
-        'Integrate APIs, files, legacy systems, and cloud platforms',
-        'Implement data quality checks and monitoring',
-        'Create reusable data models for reporting and AI',
-        'Establish security, backup, and governance standards'
-      ],
-      poweredBy: 'Azure Data Factory, SQL Server, Azure Synapse, Databricks'
+      description: 'Build infrastructure that consolidates scattered systems into a single source of truth. Your POS, accounting, and operations data flow into one place you can trust.',
+      capabilities: [
+        'Connect QuickBooks, CRM, POS, and operations systems',
+        'Build cloud data warehouses and ETL pipelines',
+        'Establish data quality and governance standards',
+        'Create unified reporting foundations'
+      ]
     },
     {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Business Intelligence',
-      description: 'Surface insights that matter through dashboards, reports, and analytics your team will actually use to make decisions.',
-      features: [
-        'Build interactive dashboards for daily operations',
-        'Design executive reporting for KPIs and trends',
-        'Enable self-service analytics for business users',
-        'Create automated report distribution and alerts',
-        'Implement predictive models and forecasting',
-        'Integrate AI-powered recommendations into workflows'
-      ],
-      poweredBy: 'Power BI, Tableau, Azure Machine Learning'
+      icon: <LineChart className="w-8 h-8" />,
+      title: 'Statistical Analysis',
+      description: 'Apply forecasting, risk modeling, and quantitative methods to your business data. Understand what will likely happen, not just what did happen.',
+      capabilities: [
+        'Revenue and demand forecasting',
+        'Job costing and profitability analysis',
+        'Business risk modeling',
+        'Capacity and trend analysis'
+      ]
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: 'Decision Support',
+      description: 'Model scenarios and evaluate options before committing resources. Make expansion, pricing, and investment decisions with mathematical backing.',
+      capabilities: [
+        'What-if analysis for business decisions',
+        'Financial risk evaluation',
+        'Simulation modeling for growth scenarios',
+        'Ongoing quantitative partnership'
+      ]
     }
   ];
 
-  const workPhases = [
+  const maturityLadder = [
     {
-      title: 'Discovery Sprint',
-      duration: '1–2 weeks',
-      description: 'We start with a focused assessment to understand your systems, pain points, and goals. You get a roadmap of what to build, in what order, and why. No fluff, no 100-page decks.',
-      icon: <GitBranch className="w-6 h-6" />
+      stage: 'Data Foundation',
+      description: 'Your data lives in disconnected systems. Reports require manual work. Numbers conflict between sources.',
+      goal: 'Consolidate into a single source of truth',
+      icon: <Database className="w-6 h-6" />
     },
     {
-      title: 'Foundation Project',
-      duration: '8–12 weeks',
-      description: 'We build your first high-impact solution. This proves the model works, delivers measurable ROI, and creates reusable infrastructure for future improvements. You see results, not just promises.',
-      icon: <Code className="w-6 h-6" />
+      stage: 'Unified Reporting',
+      description: 'Data flows automatically into centralized reporting. You see what happened, consistently and accurately.',
+      goal: 'Trust your historical numbers',
+      icon: <BarChart3 className="w-6 h-6" />
     },
     {
-      title: 'Fractional Partnership',
-      duration: 'Ongoing',
-      description: 'After the foundation is live, we become your fractional data and automation team. We maintain what we built, add new capabilities as your needs evolve, and act as a strategic partner as you scale.',
-      icon: <RefreshCw className="w-6 h-6" />
+      stage: 'Forecasting',
+      description: 'Statistical models predict future revenue, demand, and risk. You understand what will likely happen.',
+      goal: 'Anticipate business conditions',
+      icon: <TrendingUp className="w-6 h-6" />
+    },
+    {
+      stage: 'Decision Support',
+      description: 'Scenario modeling evaluates options before you commit. You make major decisions with quantitative backing.',
+      goal: 'Choose with confidence',
+      icon: <Target className="w-6 h-6" />
     }
   ];
 
-  const differentiators = [
-    {
-      icon: <GitBranch className="w-5 h-5" />,
-      text: 'Integration-first mindset — we connect what you already have, not rip and replace'
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      text: 'Built for SMBs — you get enterprise capabilities without enterprise budgets or bureaucracy'
-    },
-    {
-      icon: <Code className="w-5 h-5" />,
-      text: 'Microsoft ecosystem expertise — Azure, Power Platform, Dynamics, SQL Server'
-    },
-    {
-      icon: <Zap className="w-5 h-5" />,
-      text: 'Reusable frameworks — every project leaves you with infrastructure you can build on'
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      text: 'Local partnership in Louisiana — responsive, accessible, invested in your success'
-    },
-    {
-      icon: <LineChart className="w-5 h-5" />,
-      text: 'Practical AI readiness — we build the data foundation AI needs to work'
-    }
+  const forYou = [
+    'Your POS, accounting, and spreadsheets show different numbers',
+    'You need to forecast revenue, demand, or slow months',
+    'You want to model expansion, pricing, or capacity decisions',
+    'You need statistical rigor for major business choices',
+    'You want ongoing analytical partnership, not a one-time project'
+  ];
+
+  const notForYou = [
+    'You need marketing analytics or website optimization',
+    'You want workflow automation without data infrastructure',
+    'You need IT support or managed services',
+    'You only want dashboards without underlying data work',
+    'You expect a consultant who delivers a deck and disappears'
   ];
 
   return (
@@ -109,17 +95,17 @@ const Home = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Integrate. Automate.<br />Dominate.
+              Decisions backed by data,<br />not guesswork
             </h1>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-10 leading-relaxed">
-              StrataXM helps small and mid-sized businesses modernize operations through Automation, Data Engineering, and Business Intelligence. We build the digital backbone that makes your business run better.
+              StrataXM builds data infrastructure and applies statistical analysis to help business owners make confident decisions about expansion, pricing, capacity, and risk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/contact"
                 className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-slate-800 hover:shadow-xl inline-flex items-center group"
               >
-                Let's Modernize Your Operations
+                Start a Conversation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
@@ -127,7 +113,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* What We Do - 3 Pillars */}
+      {/* What We Do */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -139,53 +125,46 @@ const Home = () => {
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
               What We Do
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We build the digital backbone of your business across three integrated pillars.
-            </p>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-slate-700 leading-relaxed">
+                We build data infrastructure that consolidates your scattered systems into a single source of truth, then apply statistical methods to forecast revenue, model risk, and evaluate business decisions before you make them. Think of us as your quantitative advisory team—we own the data foundation, run the analysis, and help you choose with mathematical backing instead of gut instinct.
+              </p>
+            </div>
           </motion.div>
 
-          <div className="space-y-12">
-            {pillars.map((pillar, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+            {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-50 rounded-2xl p-8 lg:p-12 border border-slate-200"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-slate-50 rounded-xl p-8 border border-slate-200"
               >
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                    {pillar.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-3xl font-bold text-slate-900 mb-3">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
+                <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-6">
+                  {service.icon}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                  {pillar.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-slate-700 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-700">{feature}</span>
-                    </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.capabilities.map((capability, capIndex) => (
+                    <li key={capIndex} className="flex items-start space-x-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-slate-700 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-700">{capability}</span>
+                    </li>
                   ))}
-                </div>
-                <div className="pt-4 border-t border-slate-300">
-                  <p className="text-sm text-slate-500">
-                    <span className="font-semibold">Powered by:</span> {pillar.poweredBy}
-                  </p>
-                </div>
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How We Work */}
+      {/* Maturity Ladder */}
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -198,49 +177,45 @@ const Home = () => {
               How We Work
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Project to prove. Fractional to sustain.
+              We build capability in stages. Each level creates value while establishing the foundation for the next.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {workPhases.map((phase, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {maturityLadder.map((stage, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl p-6 border border-slate-200"
               >
-                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-6">
-                  {phase.icon}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                    {stage.icon}
+                  </div>
+                  <div className="text-sm font-bold text-slate-500 uppercase tracking-wide">
+                    Stage {index + 1}
+                  </div>
                 </div>
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    {phase.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 font-medium">{phase.duration}</p>
-                </div>
-                <p className="text-slate-600 leading-relaxed">
-                  {phase.description}
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {stage.stage}
+                </h3>
+                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                  {stage.description}
                 </p>
+                <div className="pt-4 border-t border-slate-200">
+                  <p className="text-sm font-semibold text-slate-900">
+                    Goal: {stage.goal}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-slate-100 rounded-xl p-8 border border-slate-300 text-center"
-          >
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
-              This approach ensures you see real ROI fast, build reusable infrastructure, and have ongoing support as your needs evolve. No wasted time, no vendor lock-in.
-            </p>
-          </motion.div>
         </div>
       </section>
 
-      {/* Why StrataXM */}
+      {/* Who We're For */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -250,35 +225,59 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Why StrataXM
+              Who We Work With
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're not consultants who hand you a plan and leave. We build, maintain, and grow with you.
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {differentiators.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="flex items-start gap-4 bg-slate-50 rounded-lg p-6 border border-slate-200"
-              >
-                <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                  {item.icon}
-                </div>
-                <p className="text-slate-700 leading-relaxed">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-slate-50 rounded-xl p-8 border border-slate-200"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Shield className="w-8 h-8 text-slate-900" />
+                <h3 className="text-2xl font-bold text-slate-900">
+                  You're a good fit if:
+                </h3>
+              </div>
+              <ul className="space-y-3">
+                {forYou.map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-slate-700 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-xl p-8 border-2 border-slate-300"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <AlertTriangle className="w-8 h-8 text-slate-700" />
+                <h3 className="text-2xl font-bold text-slate-900">
+                  We're not the right fit if:
+                </h3>
+              </div>
+              <ul className="space-y-3">
+                {notForYou.map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <span className="text-slate-500 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-slate-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -287,16 +286,16 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to modernize your operations?
+              Ready for quantitative rigor?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book a discovery call and we'll talk through your systems, workflows, and goals. No pitch, no pressure. Just a conversation about what makes sense for your business.
+              We start with a structured assessment of your data situation and business questions. You'll understand exactly what needs to be built and why it matters.
             </p>
             <Link
               to="/contact"
               className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-slate-100 hover:shadow-xl inline-flex items-center group"
             >
-              Schedule Your Discovery Call
+              Schedule an Assessment
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>

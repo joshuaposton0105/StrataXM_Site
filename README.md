@@ -1,26 +1,26 @@
-# StrataXM - Data Infrastructure & AI Enablement
+# StrataXM - Decision Science & Data Engineering
 
-StrataXM builds the data infrastructure that makes Louisiana businesses AI-ready. We transform scattered business data into unified, intelligent foundations that power growth and competitive advantage.
+StrataXM is a quantitative consultancy for small and mid-sized businesses. We build data infrastructure, apply statistical analysis, and help business owners make decisions backed by math instead of guesswork.
 
-## Our Approach: Capture → Flow → Insights
+## Our Approach: Foundation → Clarity → Forecasting → Decisions
 
-### Data Foundations
-- Digitize paper-based processes and forms
-- Centralize data in Microsoft Dataverse or Azure SQL
-- Implement data governance and security standards
-- Create standardized data models across your business
+### Data Engineering
+- Consolidate scattered data into a single source of truth
+- Build cloud data warehouses and ETL pipelines
+- Connect disparate systems (POS, accounting, CRM, operations)
+- Establish data quality standards and governance
 
-### Automated Data Flows
-- Connect EHR, CRM, accounting, and cloud systems
-- Build ETL/ELT pipelines with Logic Apps and Azure Data Factory
-- Implement real-time data synchronization
-- Set up monitoring and compliance tracking
+### Statistical Analysis
+- Revenue and demand forecasting
+- Business risk modeling and scenario analysis
+- Job costing and profitability analysis
+- Capacity planning and trend analysis
 
-### Insights & AI
-- Build Power BI dashboards for real-time visibility
-- Implement predictive models and anomaly detection
-- Deploy natural language processing for document analysis
-- Create AI-powered customer insights and recommendations
+### Decision Support
+- What-if analysis for business decisions
+- Financial risk evaluation for expansion or investment
+- Simulation modeling for pricing, hiring, and growth scenarios
+- Ongoing analytical partnership for strategic choices
 
 ## Contact Form Setup - Formspree Integration
 
@@ -59,16 +59,19 @@ The site is configured for Vercel deployment with proper SPA routing via `vercel
 
 ## SEO & Meta Tags
 
-Updated for data infrastructure positioning:
-- Title: "StrataXM - Data Infrastructure & AI Enablement"
-- Description: Focus on Louisiana businesses and AI readiness
-- Keywords: Data infrastructure, AI readiness, Microsoft technologies
+Positioned as Decision Science & Data Engineering consultancy:
+- Title: "StrataXM - Decision Science & Data Engineering"
+- Description: Quantitative consultancy for business owners who want decisions backed by data, not guesswork
+- Keywords: decision intelligence, business forecasting, risk modeling, scenario analysis, data engineering, statistical analysis
 
 ## Brand Positioning
 
-**Old**: General workflow automation and integrations
-**New**: Data infrastructure and AI enablement partner
+**What We Are**: A quantitative consultancy that builds data infrastructure and applies statistical analysis for business decision support
 
-**Target Audience**: Louisiana SMBs (healthcare, trades, manufacturing, financial services)
-**Key Message**: We build the data backbone that makes AI and automation possible
-**Differentiator**: Long-term managed infrastructure partnerships, not one-time projects
+**What We Are NOT**: Automation agency, AI implementation shop, dashboard-only BI studio, marketing analytics firm
+
+**Target Audience**: Business owners and principals (age 50-65) at SMBs who need to make major decisions with confidence
+
+**Key Message**: We turn messy, scattered data into mathematical certainty for business decisions
+
+**Differentiator**: Serious quantitative work (forecasting, risk modeling, scenario analysis) built on owned data infrastructure

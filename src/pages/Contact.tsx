@@ -126,10 +126,10 @@ const Contact = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Let's Build Something Smarter
+              Let's Talk About Your Decision
             </h1>
             <p className="text-xl text-slate-600 mb-4 leading-relaxed">
-              Tell us a little about your business and what you'd like to improve. We'll follow up personally to explore how automation and data can work for you.
+              Tell us about the business decision you need to make and the data situation you're working with. We'll explain whether quantitative analysis can help.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-slate-700 mb-8">
               <a href="mailto:josh@strataxm.com" className="flex items-center gap-2 hover:text-slate-900 transition-colors">
@@ -258,10 +258,10 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-colors duration-200 bg-white"
                       >
                         <option value="General Inquiry">General Inquiry</option>
-                        <option value="Automation">Automation</option>
-                        <option value="Data Engineering">Data Engineering</option>
-                        <option value="Business Intelligence">Business Intelligence</option>
-                        <option value="Discovery Sprint">Discovery Sprint</option>
+                        <option value="Data Consolidation">Data Consolidation</option>
+                        <option value="Revenue Forecasting">Revenue Forecasting</option>
+                        <option value="Scenario Modeling">Scenario Modeling</option>
+                        <option value="Decision Support">Decision Support</option>
                       </select>
                     </div>
 
@@ -279,7 +279,7 @@ const Contact = () => {
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-colors duration-200 resize-none ${
                           errors.message ? 'border-red-400 bg-red-50' : 'border-slate-300'
                         }`}
-                        placeholder="What challenges are you facing? What systems do you use? What would you like to automate or improve?"
+                        placeholder="What decision are you facing? What data do you currently have? What systems are you working with?"
                       ></textarea>
                       {errors.message && (
                         <p className="mt-1 text-sm text-red-600">{errors.message}</p>

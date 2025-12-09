@@ -1,122 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, BarChart3, Wrench, Database, TrendingUp, Zap, Settings, BookOpen, Lightbulb, Target, Users } from 'lucide-react';
+import { ArrowRight, Database, TrendingUp, Target, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Resources = () => {
   const concepts = [
     {
-      term: 'Business Process Automation',
-      explanation: 'Automation handles repetitive tasks automatically so your team can focus on work that requires human judgment. Common examples include automatically generating invoices when work is completed, sending reminder emails for overdue payments, or updating multiple systems when customer information changes.',
-      whenYouNeedIt: 'You find your team doing the same manual tasks repeatedly, copying data between systems, or spending hours on routine administrative work.',
-      icon: <Zap className="w-8 h-8" />
-    },
-    {
-      term: 'Data Engineering',
-      explanation: 'Data engineering connects your disconnected systems and ensures data flows automatically between them. Instead of manually exporting from one system and importing to another, data engineering builds "pipes" that move information automatically while keeping it clean and consistent.',
-      whenYouNeedIt: 'Your data lives in multiple places (CRM, accounting, operations tools), you manually move data between systems, or different reports show different numbers for the same thing.',
+      term: 'Single Source of Truth',
+      explanation: 'Your QuickBooks says one revenue number. Your POS says another. Excel says a third. A single source of truth means one authoritative database where all your business data lives, reconciled and consistent. Everything else pulls from this source.',
+      whyItMatters: 'You can\'t forecast revenue or model decisions if different systems show different numbers. Clean, consolidated data is the foundation for everything else.',
       icon: <Database className="w-8 h-8" />
     },
     {
-      term: 'Business Intelligence',
-      explanation: 'Business Intelligence transforms raw data into visual dashboards and reports that help you make decisions quickly. Instead of pulling numbers from multiple spreadsheets, you see all your key metrics in one place, updating in real-time as your business operates.',
-      whenYouNeedIt: 'You spend hours creating reports manually, make decisions based on outdated information, or can\'t quickly answer basic questions about your business performance.',
-      icon: <BarChart3 className="w-8 h-8" />
-    },
-    {
-      term: 'System Integration',
-      explanation: 'Integration connects your existing software so they share data automatically. Your CRM, accounting software, and operations tools can work together without replacing any of them. When information changes in one system, it updates everywhere else automatically.',
-      whenYouNeedIt: 'You use multiple software tools that don\'t talk to each other, re-enter the same information in different systems, or have customer/product data scattered across multiple places.',
-      icon: <Settings className="w-8 h-8" />
-    },
-    {
-      term: 'Data Pipeline',
-      explanation: 'A data pipeline is the "plumbing" that automatically moves information from where it lives to where you need it. It extracts data from your various systems, cleans and standardizes it, then loads it into a database or dashboard—all without manual intervention.',
-      whenYouNeedIt: 'You manually export and import data between systems, spend time cleaning up inconsistent data, or need consolidated reporting across multiple tools.',
+      term: 'Revenue Forecasting',
+      explanation: 'Statistical models that predict future revenue based on historical patterns, seasonality, economic factors, and leading indicators. Not a guess. Not a goal. A probability-weighted projection with confidence intervals.',
+      whyItMatters: 'Banks want projections for loans. You need cash flow visibility. Hiring and capacity decisions depend on knowing what revenue will likely be three to six months out.',
       icon: <TrendingUp className="w-8 h-8" />
     },
     {
-      term: 'Single Source of Truth',
-      explanation: 'A single source of truth means each piece of business data has one authoritative location. Customer information lives in one place, inventory numbers come from one system, and financial data has one master version. Everything else pulls from these sources, so you never question which number is "real."',
-      whenYouNeedIt: 'Different reports show different numbers, your team argues about which spreadsheet is correct, or you waste time reconciling conflicting data sources.',
+      term: 'Scenario Modeling',
+      explanation: 'Build mathematical models of your business that let you test different decisions before committing. What happens to cash flow if you hire two people? What if the contract ends in month six instead of twelve? Run the scenarios, see the numbers.',
+      whyItMatters: 'Major decisions involve risk. Scenario models let you quantify that risk and compare options mathematically instead of guessing.',
       icon: <Target className="w-8 h-8" />
+    },
+    {
+      term: 'Risk Quantification',
+      explanation: 'Every business decision involves uncertainty. Risk quantification means putting numbers on that uncertainty: best case, expected case, worst case. What\'s the probability of breaking even? What\'s the downside exposure?',
+      whyItMatters: 'You need to know not just what\'s likely to happen, but what could go wrong and how bad it could get. That\'s how you decide if a risk is worth taking.',
+      icon: <AlertTriangle className="w-8 h-8" />
     }
   ];
 
   const realScenarios = [
     {
-      business: 'HVAC Contractor',
-      industry: 'Trade Services',
-      problem: 'Field technicians completed work orders on paper. Office staff spent 2-3 hours daily re-entering everything into QuickBooks and ServiceTitan. Invoices took 2-3 days to send, delaying payment.',
-      whatWeDid: 'Connected the field service app directly to QuickBooks and ServiceTitan. When technicians mark a job complete, the system automatically creates the invoice in QuickBooks, updates the job status in ServiceTitan, and emails the invoice to the customer.',
-      result: 'Invoices go out same-day. Zero duplicate data entry. Office staff saved 15 hours per week. Customers pay faster because they receive invoices immediately.',
-      icon: <Wrench className="w-10 h-10" />
+      situation: 'Opening a New Location',
+      before: 'You think a second location will work based on the success of the first one. You have general instincts about market demand and cost structure. Banks want financial projections, but you\'re guessing.',
+      after: 'We build a financial model using historical performance from your existing location, adjusted for demographics, competition, and market size. We forecast revenue under different scenarios, model break-even timeline, and quantify risk. You have credible projections backed by data.',
+      impact: 'You secure financing with confidence. You know what success looks like and what failure looks like. You\'ve quantified the risk before committing.'
     },
     {
-      business: 'Medical Practice',
-      industry: 'Healthcare',
-      problem: 'Patient data scattered across EHR, billing system, and intake forms. Creating monthly reports required 2-3 days of manual work pulling data from each system into Excel. No visibility into daily operations or capacity.',
-      whatWeDid: 'Built a data pipeline that pulls from all systems into a central database. Created live dashboards showing patient volume, billing status, appointment capacity, and compliance metrics. Reports that took days now update automatically.',
-      result: 'Staff check dashboards daily to make staffing decisions. Compliance reports generate in minutes instead of days. Management can see real-time capacity and respond to changes immediately.',
-      icon: <BarChart3 className="w-10 h-10" />
+      situation: 'Evaluating a Large Contract',
+      before: 'A customer offers you a contract that would be 30% of your current revenue. The numbers look good, but it requires hiring staff and leasing equipment. You\'re not sure if the margins justify the fixed cost commitment.',
+      after: 'We model cash flow, profitability, and capacity utilization under different fulfillment scenarios. We quantify what happens if the contract ends early, if costs run over, or if you secure similar additional work. The math shows where the break-even point is and what conditions have to hold.',
+      impact: 'You negotiate better terms based on quantified risk. You accept the contract with clear financial guardrails instead of hoping it works out.'
     },
     {
-      business: 'Fabrication Shop',
-      industry: 'Manufacturing',
-      problem: 'No real-time visibility into job costs, machine utilization, or inventory levels. Production decisions based on gut feel and outdated spreadsheets updated manually each week. Couldn\'t identify which jobs were profitable until after completion.',
-      whatWeDid: 'Integrated production tracking with inventory and accounting systems. Built dashboards showing live cost-per-job, machine downtime, inventory by job, and profitability by customer. Historical data enables accurate job quoting.',
-      result: 'Real-time cost visibility allows mid-project corrections. Machine downtime reduced 30% through better monitoring. Inventory accuracy improved from 70% to 98%. Quotes now based on actual historical costs.',
-      icon: <Database className="w-10 h-10" />
+      situation: 'Pricing Decision',
+      before: 'Your prices haven\'t changed in three years. Costs are up. Competitors may or may not be charging more. You don\'t know how customers will react to a price increase or what the revenue impact would be.',
+      after: 'We analyze historical demand elasticity, model revenue under different pricing scenarios, and quantify the risk of customer churn versus margin improvement. The analysis shows the optimal price point and expected revenue change.',
+      impact: 'You implement a pricing strategy backed by data instead of guessing. Revenue increases without losing the volume you were worried about.'
     }
   ];
 
   const commonQuestions = [
     {
-      question: 'How is this different from just buying new software?',
-      answer: 'New software often creates new problems—learning curves, data migration, more disconnected systems. We work with what you have, connecting your existing tools so they work together. You keep the software your team knows, but eliminate the manual work between them.'
+      question: 'How is this different from hiring an analyst?',
+      answer: 'A full-time analyst costs $80K-$120K per year plus benefits. You also need someone to build and maintain the data infrastructure they work from. We provide both the infrastructure and the analytical capability as a service. You get enterprise-grade capability at a fraction of the cost of building an internal team.'
     },
     {
-      question: 'Do I need to replace my current systems?',
-      answer: 'Rarely. Most businesses already use good software—it just doesn\'t connect. We integrate your existing CRM, accounting, and operations tools so they share data automatically. Replacement only makes sense when software truly can\'t meet your needs.'
+      question: 'Do you guarantee your forecasts will be accurate?',
+      answer: 'No one can guarantee future outcomes. What we provide is rigorous statistical analysis with documented assumptions, methodology, and confidence intervals. You understand what the model says, why it says it, and where the uncertainty lies. That\'s far better than guessing, but it\'s not a crystal ball.'
     },
     {
-      question: 'How long until I see results?',
-      answer: 'It depends on scope. Small automations (like auto-generating invoices) deliver value in weeks. Comprehensive data pipelines and dashboards typically take 2-3 months. We prioritize quick wins first so you see value while bigger projects progress.'
+      question: 'What if my data is incomplete or messy?',
+      answer: 'That\'s normal and part of what we solve. Data engineering comes first precisely because clean, consolidated data is required for statistical analysis. We build the infrastructure that consolidates your systems, then clean and standardize what we need for modeling. If the data doesn\'t exist, we tell you what needs to be collected and why.'
     },
     {
-      question: 'What if my data is a mess?',
-      answer: 'Messy data is normal—that\'s part of the problem we solve. Data engineering includes cleaning, standardizing, and organizing your information. We address data quality as part of every project because good decisions require good data.'
+      question: 'How long does it take to see results?',
+      answer: 'Data infrastructure typically takes 6-12 weeks to establish, depending on how many systems you have and how messy the data is. Statistical analysis and scenario modeling can start as soon as clean data exists. Most engagements produce actionable analysis within 2-3 months from start.'
     },
     {
-      question: 'Can small businesses afford this?',
-      answer: 'If you\'re wasting 10+ hours per week on manual data work, you\'re already paying for it in lost productivity. Most automation and integration projects pay for themselves within 6-12 months through time savings alone, not counting better decisions from better data.'
+      question: 'Is this only for companies that are growing?',
+      answer: 'No. Quantitative decision support matters whether you\'re growing, contracting, or stable. You might need to model cost reduction scenarios instead of expansion. The need is the same: making consequential choices with mathematical backing instead of instinct.'
     },
     {
-      question: 'What\'s the difference between a project and fractional service?',
-      answer: 'Projects have defined scope and end dates—like building a specific dashboard or automation. Fractional service is ongoing support—I act as your part-time technical team, handling new automations, maintaining integrations, and adapting as your business evolves. Many clients start with a project, then move to fractional for continued support.'
-    }
-  ];
-
-  const processSteps = [
-    {
-      title: 'Audit & Assessment',
-      description: 'We look at your current systems, data, and workflows to identify the biggest bottlenecks and opportunities. What\'s wasting the most time? Where are decisions being made without good data?',
-      icon: <BookOpen className="w-6 h-6" />
-    },
-    {
-      title: 'Prioritized Roadmap',
-      description: 'Not everything happens at once. We build a phased plan that delivers quick wins first, then tackles bigger transformations. Each phase adds value while building toward long-term goals.',
-      icon: <Target className="w-6 h-6" />
-    },
-    {
-      title: 'Implementation',
-      description: 'We build integrations, automate workflows, and create dashboards using your existing systems. Changes are tested thoroughly before going live to avoid disrupting daily operations.',
-      icon: <Settings className="w-6 h-6" />
-    },
-    {
-      title: 'Training & Handoff',
-      description: 'Your team learns how to use new dashboards and automated systems. We document everything and provide training so your team is confident using the new capabilities.',
-      icon: <Users className="w-6 h-6" />
+      question: 'What tools or software do you use?',
+      answer: 'We use whatever fits the problem: SQL Server, Azure, Snowflake for data warehousing. Python and R for statistical analysis. Power BI or Tableau for visualization. Excel for financial modeling that business owners understand. The tools are not the deliverable. The analysis and the infrastructure are.'
     }
   ];
 
@@ -132,10 +91,10 @@ const Resources = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Understanding Modernization
+              Understanding Decision Support
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Plain-English explanations of automation, data engineering, and business intelligence—what they actually mean for your business.
+              Plain-English explanations of data infrastructure, forecasting, and scenario modeling—what they mean for your business and when you need them.
             </p>
           </motion.div>
         </div>
@@ -151,11 +110,8 @@ const Resources = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Key Concepts Explained
+              Key Concepts
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              What these services actually do and when you need them
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -165,7 +121,7 @@ const Resources = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-50 rounded-xl border border-slate-200 p-8 hover:border-slate-900 transition-all duration-300"
+                className="bg-slate-50 rounded-xl border border-slate-200 p-8"
               >
                 <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-6">
                   {concept.icon}
@@ -177,9 +133,9 @@ const Resources = () => {
                   {concept.explanation}
                 </p>
                 <div className="bg-white rounded-lg p-4 border-l-4 border-slate-900">
-                  <p className="text-sm font-semibold text-slate-900 mb-1">When you need this:</p>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">Why it matters:</p>
                   <p className="text-sm text-slate-600">
-                    {concept.whenYouNeedIt}
+                    {concept.whyItMatters}
                   </p>
                 </div>
               </motion.div>
@@ -188,7 +144,7 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Real Examples */}
+      {/* Real Scenarios */}
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -198,10 +154,10 @@ const Resources = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Real Client Examples
+              Real Business Scenarios
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              How these solutions solve actual business problems
+              How quantitative analysis changes decision-making in practice
             </p>
           </motion.div>
 
@@ -212,95 +168,42 @@ const Resources = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8">
-                  <div className="lg:col-span-3 flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <div className="w-20 h-20 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-4">
-                      {scenario.icon}
-                    </div>
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium mb-2">
-                      {scenario.industry}
-                    </span>
-                    <h3 className="text-2xl font-bold text-slate-900">
-                      {scenario.business}
-                    </h3>
-                  </div>
-
-                  <div className="lg:col-span-9 space-y-6">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2">The Problem</h4>
-                      <p className="text-slate-600 leading-relaxed">
-                        {scenario.problem}
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2">What We Did</h4>
-                      <p className="text-slate-600 leading-relaxed">
-                        {scenario.whatWeDid}
-                      </p>
-                    </div>
-
-                    <div className="bg-slate-50 rounded-lg p-6 border-l-4 border-slate-900">
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2">Results</h4>
-                      <p className="text-slate-700 font-medium leading-relaxed">
-                        {scenario.result}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              How This Works
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              The typical process from initial conversation to working solution
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="bg-slate-50 rounded-xl border border-slate-200 p-6 h-full hover:border-slate-900 transition-all duration-300">
-                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white mb-4">
-                    {step.icon}
-                  </div>
-                  <div className="mb-3 text-sm font-bold text-slate-500 uppercase tracking-wide">
-                    Step {index + 1}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    {step.title}
+                <div className="p-8 lg:p-12">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-8">
+                    {scenario.situation}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-8 h-8 text-slate-300" />
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">
+                        Without Quantitative Analysis
+                      </h4>
+                      <p className="text-slate-600 leading-relaxed">
+                        {scenario.before}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">
+                        With Quantitative Analysis
+                      </h4>
+                      <p className="text-slate-600 leading-relaxed">
+                        {scenario.after}
+                      </p>
+                    </div>
                   </div>
-                )}
+
+                  <div className="bg-slate-900 text-white rounded-lg p-6">
+                    <h4 className="text-sm font-bold uppercase tracking-wide text-slate-400 mb-2">
+                      The Impact
+                    </h4>
+                    <p className="text-slate-200 leading-relaxed">
+                      {scenario.impact}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -308,7 +211,7 @@ const Resources = () => {
       </section>
 
       {/* Common Questions */}
-      <section className="py-20 lg:py-32 bg-slate-50">
+      <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -319,9 +222,6 @@ const Resources = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
               Common Questions
             </h2>
-            <p className="text-xl text-slate-600">
-              Answers to questions most business owners ask
-            </p>
           </motion.div>
 
           <div className="space-y-6">
@@ -331,7 +231,7 @@ const Resources = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white rounded-xl border border-slate-200 p-6 hover:border-slate-900 transition-all duration-300"
+                className="bg-slate-50 rounded-xl border border-slate-200 p-6"
               >
                 <h3 className="text-lg font-bold text-slate-900 mb-3">
                   {item.question}
@@ -353,12 +253,11 @@ const Resources = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Lightbulb className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              See how this applies to your business
+              Ready to apply this to your business?
             </h2>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Every business is different. Let's talk about your specific systems, workflows, and goals to identify the best opportunities.
+              Tell us about the decision you're facing and the data you have. We'll explain whether quantitative analysis can help and what that engagement would look like.
             </p>
             <Link
               to="/contact"
