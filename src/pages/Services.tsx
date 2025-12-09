@@ -99,10 +99,10 @@ const Services = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Quantitative Services for Business Owners
+              We Do Data
             </h1>
             <p className="text-xl text-slate-600 mb-6 leading-relaxed">
-              We help business owners make major decisions with mathematical backing instead of gut instinct. Our work combines data infrastructure, statistical analysis, and scenario modeling to give you confidence in risky choices.
+              We help owners stop guessing and start deciding with certainty. By turning disconnected data into clear insight and future-looking scenarios, we bring confidence to your most important financial and strategic choices.
             </p>
           </motion.div>
         </div>
