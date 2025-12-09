@@ -88,24 +88,24 @@ const About = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">
-              What We Are Not
+              How We Do It
             </h2>
             <div className="space-y-4 text-lg text-slate-700">
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not a process automation agency. If you want workflow automation without fixing your data foundation first, we're not the right fit.</p>
+                <p>We focus on building reliable data foundations that businesses can actually trust</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not an AI or machine learning shop. We don't sell AI solutions or chatbots. If you want to understand your business and forecast revenue, we can help. If you want AI because it's trendy, look elsewhere.</p>
+                <p>We create clear reporting that shows what is truly happening inside the business</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not a dashboard-only BI studio. Dashboards are useful, but they're just a tool. We focus on helping you understand what the numbers actually mean and what to do about them.</p>
+                <p>We apply forecasting and scenario modeling to support real financial decisions</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not marketing consultants. We don't optimize ad campaigns or track website conversions. We focus on operational profit, forecasting, and business decisions.</p>
+                <p>We work as a long-term analytical partner, not a one-time project vendor</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
