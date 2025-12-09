@@ -9,7 +9,7 @@ const Services = () => {
       icon: <Database className="w-10 h-10" />,
       title: 'Data Engineering',
       tagline: 'Build a foundation you can trust',
-      description: 'Most business owners operate with scattered data across multiple systems that never quite agree. We consolidate your POS, accounting, CRM, and operations data into a single source of truth—a cloud data warehouse that becomes the reliable foundation for all reporting and analysis.',
+      description: 'Most business owners operate with scattered data across multiple systems that never quite agree. We consolidate your POS, accounting, CRM, and operations data into a single source of truth.',
       whenYouNeedThis: [
         'Your QuickBooks, POS, and spreadsheets show different revenue numbers',
         'Running a monthly report requires manual exports from five different systems',
