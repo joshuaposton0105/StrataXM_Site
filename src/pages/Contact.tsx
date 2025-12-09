@@ -126,10 +126,10 @@ const Contact = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Let's Talk About Your Decision
+              Let's Talk About Your Business
             </h1>
             <p className="text-xl text-slate-600 mb-4 leading-relaxed">
-              Tell us about the business decision you need to make and the data situation you're working with. We'll explain whether quantitative analysis can help.
+              Tell us about your data situation and the decisions you're facing. We'll explain whether we can help and what working together would look like.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-slate-700 mb-8">
               <a href="mailto:josh@strataxm.com" className="flex items-center gap-2 hover:text-slate-900 transition-colors">

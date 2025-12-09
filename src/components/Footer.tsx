@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="text-xl font-bold">StrataXM</span>
             </div>
             <p className="text-slate-400 mb-6 max-w-md">
-              Quantitative consultancy for business owners who need decisions backed by data, not guesswork.
+              Turn messy data into clear answers about profit, performance, and growth. The analytical team you don't have in-house.
             </p>
             <div className="flex space-x-4">
               <a
@@ -74,16 +74,16 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-slate-400">Data Engineering</span>
+                <span className="text-slate-400">Data Consolidation</span>
               </li>
               <li>
-                <span className="text-slate-400">Statistical Analysis</span>
+                <span className="text-slate-400">Profit Analysis</span>
               </li>
               <li>
-                <span className="text-slate-400">Decision Support</span>
+                <span className="text-slate-400">Revenue Forecasting</span>
               </li>
               <li>
-                <span className="text-slate-400">Forecasting & Risk</span>
+                <span className="text-slate-400">Decision Modeling</span>
               </li>
             </ul>
           </div>

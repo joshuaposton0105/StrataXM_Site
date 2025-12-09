@@ -7,80 +7,80 @@ const Home = () => {
   const services = [
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'Data Engineering',
-      description: 'Build infrastructure that consolidates scattered systems into a single source of truth. Your POS, accounting, and operations data flow into one place you can trust.',
+      title: 'Data Consolidation & Trust',
+      description: 'Connect your scattered systems into one reliable source. Your QuickBooks, POS, CRM, and spreadsheets finally agree—no more conflicting numbers, no more manual reconciliation.',
       capabilities: [
-        'Connect QuickBooks, CRM, POS, and operations systems',
-        'Build cloud data warehouses and ETL pipelines',
-        'Establish data quality and governance standards',
-        'Create unified reporting foundations'
+        'Connect all your business systems into one place',
+        'Clean up messy, conflicting data',
+        'Build automated reporting you can actually trust',
+        'Create a single version of the truth for your business'
       ]
     },
     {
       icon: <LineChart className="w-8 h-8" />,
-      title: 'Statistical Analysis',
-      description: 'Apply forecasting, risk modeling, and quantitative methods to your business data. Understand what will likely happen, not just what did happen.',
+      title: 'Profit & Performance Analytics',
+      description: 'See what\'s actually driving your business. Understand true profitability by customer, service, or product. Know where you\'re making money and where you\'re not.',
       capabilities: [
         'Revenue and demand forecasting',
-        'Job costing and profitability analysis',
-        'Business risk modeling',
-        'Capacity and trend analysis'
+        'True job costing and profit margin analysis',
+        'Customer and product profitability breakdown',
+        'Trend analysis and performance tracking'
       ]
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'Decision Support',
-      description: 'Model scenarios and evaluate options before committing resources. Make expansion, pricing, and investment decisions with mathematical backing.',
+      title: 'Business Decision Modeling',
+      description: 'Evaluate major decisions before you commit. Model expansion scenarios, pricing changes, and contract opportunities. Understand the financial impact before you sign.',
       capabilities: [
-        'What-if analysis for business decisions',
-        'Financial risk evaluation',
-        'Simulation modeling for growth scenarios',
-        'Ongoing quantitative partnership'
+        'Forecast the financial impact of expansion',
+        'Evaluate contract and pricing opportunities',
+        'Model "what-if" scenarios for major decisions',
+        'Ongoing advisory partnership as you grow'
       ]
     }
   ];
 
   const maturityLadder = [
     {
-      stage: 'Data Foundation',
-      description: 'Your data lives in disconnected systems. Reports require manual work. Numbers conflict between sources.',
-      goal: 'Consolidate into a single source of truth',
+      stage: 'Clean Data',
+      description: 'Your data lives in disconnected systems. Reports require manual work. Different sources show different numbers.',
+      goal: 'One reliable source for all your business data',
       icon: <Database className="w-6 h-6" />
     },
     {
-      stage: 'Unified Reporting',
-      description: 'Data flows automatically into centralized reporting. You see what happened, consistently and accurately.',
-      goal: 'Trust your historical numbers',
+      stage: 'Clear Visibility',
+      description: 'Data flows automatically into dashboards you can trust. You see what happened, clearly and accurately.',
+      goal: 'Know exactly what\'s going on in your business',
       icon: <BarChart3 className="w-6 h-6" />
     },
     {
-      stage: 'Forecasting',
-      description: 'Statistical models predict future revenue, demand, and risk. You understand what will likely happen.',
-      goal: 'Anticipate business conditions',
+      stage: 'Revenue Forecasting',
+      description: 'Project future revenue based on real patterns. You understand what\'s likely coming instead of guessing.',
+      goal: 'Plan cash flow and capacity with confidence',
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      stage: 'Decision Support',
-      description: 'Scenario modeling evaluates options before you commit. You make major decisions with quantitative backing.',
-      goal: 'Choose with confidence',
+      stage: 'Decision Confidence',
+      description: 'Model major decisions before you commit. You evaluate expansion, pricing, and contracts with real numbers.',
+      goal: 'Make big choices backed by data, not hope',
       icon: <Target className="w-6 h-6" />
     }
   ];
 
   const forYou = [
-    'Your POS, accounting, and spreadsheets show different numbers',
-    'You need to forecast revenue, demand, or slow months',
-    'You want to model expansion, pricing, or capacity decisions',
-    'You need statistical rigor for major business choices',
-    'You want ongoing analytical partnership, not a one-time project'
+    'Your QuickBooks, POS, and spreadsheets show different numbers',
+    'You need to forecast revenue or predict slow months',
+    'You want to understand what\'s really driving profit',
+    'You\'re considering expansion and need to evaluate the risk',
+    'You want ongoing support, not just a one-time report'
   ];
 
   const notForYou = [
-    'You need marketing analytics or website optimization',
-    'You want workflow automation without data infrastructure',
-    'You need IT support or managed services',
-    'You only want dashboards without underlying data work',
-    'You expect a consultant who delivers a deck and disappears'
+    'You need marketing analytics or ad campaign tracking',
+    'You want process automation without fixing your data first',
+    'You need IT support, managed services, or software development',
+    'You only want dashboards without someone to explain what they mean',
+    'You expect a consultant who delivers a presentation and leaves'
   ];
 
   return (
@@ -95,10 +95,10 @@ const Home = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Decisions backed by data,<br />not guesswork
+              Turn messy data into<br />clear answers about your business
             </h1>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-10 leading-relaxed">
-              StrataXM builds data infrastructure and applies statistical analysis to help business owners make confident decisions about expansion, pricing, capacity, and risk.
+              StrataXM helps small business owners understand what's really driving profit, forecast revenue with confidence, and make better decisions about expansion, pricing, and growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
@@ -127,7 +127,7 @@ const Home = () => {
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-slate-700 leading-relaxed">
-                We build data infrastructure that consolidates your scattered systems into a single source of truth, then apply statistical methods to forecast revenue, model risk, and evaluate business decisions before you make them. Think of us as your quantitative advisory team—we own the data foundation, run the analysis, and help you choose with mathematical backing instead of gut instinct.
+                We connect your scattered systems into one source of truth, clean up conflicting numbers, and build dashboards that actually explain what's happening in your business. Then we help you forecast revenue, understand true profitability, and evaluate major decisions before you commit. Think of us as the analytical team you don't have in-house—we make your data trustworthy and useful for running your business smarter.
               </p>
             </div>
           </motion.div>
@@ -286,10 +286,10 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready for quantitative rigor?
+              Ready to trust your numbers?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              We start with a structured assessment of your data situation and business questions. You'll understand exactly what needs to be built and why it matters.
+              We start by understanding your systems, your data, and the decisions you need to make. You'll get a clear plan for what needs to happen and why it matters.
             </p>
             <Link
               to="/contact"

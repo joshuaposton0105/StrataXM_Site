@@ -1,26 +1,26 @@
-# StrataXM - Decision Science & Data Engineering
+# StrataXM - Business Analytics & Profit Forecasting
 
-StrataXM is a quantitative consultancy for small and mid-sized businesses. We build data infrastructure, apply statistical analysis, and help business owners make decisions backed by math instead of guesswork.
+StrataXM helps small business owners turn messy data into clear answers about profit, performance, and growth. We consolidate scattered systems, forecast revenue, and help you make major decisions with confidence.
 
-## Our Approach: Foundation → Clarity → Forecasting → Decisions
+## Our Approach: Clean Data → Clear Visibility → Forecasting → Decision Confidence
 
-### Data Engineering
-- Consolidate scattered data into a single source of truth
-- Build cloud data warehouses and ETL pipelines
-- Connect disparate systems (POS, accounting, CRM, operations)
-- Establish data quality standards and governance
+### Data Consolidation & Trust
+- Connect scattered systems into one reliable source
+- Clean up messy, conflicting data
+- Build automated reporting you can trust
+- Create a single version of the truth for your business
 
-### Statistical Analysis
+### Profit & Performance Analytics
 - Revenue and demand forecasting
-- Business risk modeling and scenario analysis
-- Job costing and profitability analysis
-- Capacity planning and trend analysis
+- True job costing and profit margin analysis
+- Customer and product profitability breakdown
+- Trend analysis and performance tracking
 
-### Decision Support
-- What-if analysis for business decisions
-- Financial risk evaluation for expansion or investment
-- Simulation modeling for pricing, hiring, and growth scenarios
-- Ongoing analytical partnership for strategic choices
+### Business Decision Modeling
+- Forecast the financial impact of expansion
+- Evaluate contract and pricing opportunities
+- Model "what-if" scenarios for major decisions
+- Ongoing advisory partnership as you grow
 
 ## Contact Form Setup - Formspree Integration
 
@@ -59,19 +59,19 @@ The site is configured for Vercel deployment with proper SPA routing via `vercel
 
 ## SEO & Meta Tags
 
-Positioned as Decision Science & Data Engineering consultancy:
-- Title: "StrataXM - Decision Science & Data Engineering"
-- Description: Quantitative consultancy for business owners who want decisions backed by data, not guesswork
-- Keywords: decision intelligence, business forecasting, risk modeling, scenario analysis, data engineering, statistical analysis
+Positioned as Business Analytics & Profit Forecasting consultancy:
+- Title: "StrataXM - Business Analytics & Profit Forecasting"
+- Description: Turn messy data into clear answers about profit, performance, and growth
+- Keywords: business profit analysis, revenue forecasting, small business analytics, profit margin analysis, business decision support, QuickBooks integration, Alexandria Louisiana
 
 ## Brand Positioning
 
-**What We Are**: A quantitative consultancy that builds data infrastructure and applies statistical analysis for business decision support
+**What We Are**: The analytical team small businesses don't have in-house—we consolidate messy data, forecast revenue, and help owners make expansion and pricing decisions with real numbers
 
-**What We Are NOT**: Automation agency, AI implementation shop, dashboard-only BI studio, marketing analytics firm
+**What We Are NOT**: Automation agency, AI hype shop, dashboard-only BI studio, marketing analytics firm, IT support
 
-**Target Audience**: Business owners and principals (age 50-65) at SMBs who need to make major decisions with confidence
+**Target Audience**: Business owners (age 50-65) at SMBs who are confused by conflicting numbers, need to forecast revenue, or are considering expansion/pricing changes
 
-**Key Message**: We turn messy, scattered data into mathematical certainty for business decisions
+**Key Message**: Turn messy data into clear answers about your business
 
-**Differentiator**: Serious quantitative work (forecasting, risk modeling, scenario analysis) built on owned data infrastructure
+**Differentiator**: We combine data consolidation, profit analysis, and forecasting—explained in plain business language, not technical jargon

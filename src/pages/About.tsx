@@ -7,23 +7,23 @@ const About = () => {
   const principles = [
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'Foundation First',
-      description: 'Forecasting and decision modeling require reliable data. We always start by establishing a single source of truth before layering on statistical analysis.'
+      title: 'Clean Data First',
+      description: 'You can\'t forecast revenue or understand profit if your data is messy and conflicting. We always start by consolidating systems and cleaning up the foundation before building analysis on top.'
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: 'Quantitative Rigor',
-      description: 'We document assumptions, explain methodology, and provide confidence intervals. You understand not just what the model says, but why it says it and where uncertainty exists.'
+      title: 'Plain English Explanations',
+      description: 'We explain what the numbers mean and why they matter in language you actually understand. No jargon. No academic formulas. Just clear answers about your business.'
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: 'Decision-Focused',
-      description: 'Analysis exists to support decisions. Every model, forecast, and scenario we build ties directly to a choice you need to make with confidence.'
+      description: 'Every analysis ties back to a real business decision you need to make. We don\'t build reports for the sake of reports. We help you choose with confidence.'
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'Long-Term Partnership',
-      description: 'We own the infrastructure we build and maintain the models we create. You\'re not hiring a consultant who disappears after delivering a deck.'
+      title: 'Ongoing Partnership',
+      description: 'We build the systems, maintain what we create, and stay with you as your business grows. You\'re not hiring a consultant who delivers a presentation and disappears.'
     }
   ];
 
@@ -39,10 +39,10 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              A quantitative practice for business owners
+              Your analytical team for profit, forecasting, and growth
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              StrataXM applies statistical methods and data engineering to help business owners make major decisions with mathematical backing instead of gut instinct.
+              StrataXM helps business owners turn messy data into clear answers about profit, performance, and risk. We're the analytical capability you don't have in-house.
             </p>
           </motion.div>
         </div>
@@ -62,16 +62,16 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                Most small and mid-sized businesses make major decisions—expansion, pricing, capacity, investment—based on instinct and historical patterns they remember informally. It works until the stakes get high enough that a wrong choice threatens the business.
+                Most small business owners make major decisions—opening a second location, changing prices, taking on a big contract—based on instinct and what they remember from the past. It works until the stakes get high enough that a wrong choice threatens everything.
               </p>
               <p>
-                StrataXM was founded to bring quantitative decision support to businesses that don't have their own analytics teams. We build data infrastructure, apply statistical methods, and model scenarios so business owners can evaluate risk mathematically before committing resources.
+                StrataXM was founded to give small businesses the analytical capability that big companies have in-house. We consolidate your messy data, build dashboards that actually make sense, forecast revenue, and help you model major decisions before you commit.
               </p>
               <p>
-                This is not business intelligence dashboards. This is not workflow automation. This is forecasting, risk analysis, and scenario modeling—the kind of quantitative work that actuaries and analysts do inside large organizations, adapted for businesses that need the capability without hiring a full team.
+                This is not just pretty dashboards. This is not process automation. This is understanding what's driving your profit, forecasting what's coming, and evaluating business decisions with real numbers—the kind of analysis that large companies do internally, adapted for businesses that can't justify hiring a full analytics team.
               </p>
               <p>
-                We serve owners and principals who need to make consequential decisions with confidence. Expansion. Capacity changes. Contract evaluation. Pricing strategy. The choices where being wrong costs more than hiring us.
+                We work with owners who need to make consequential choices with confidence. Expansion. Pricing changes. Contract evaluation. Capacity planning. The decisions where being wrong costs real money.
               </p>
             </div>
           </motion.div>
@@ -93,23 +93,23 @@ const About = () => {
             <div className="space-y-4 text-lg text-slate-700">
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not a workflow automation agency. If you need Zapier integrations or low-code automation without underlying data infrastructure, we're not the right fit.</p>
+                <p>We are not a process automation agency. If you want workflow automation without fixing your data foundation first, we're not the right fit.</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not an AI implementation shop. We don't sell machine learning solutions or deploy chatbots. If you want quantitative analysis, we can help. If you want AI because it's trendy, look elsewhere.</p>
+                <p>We are not an AI or machine learning shop. We don't sell AI solutions or chatbots. If you want to understand your business and forecast revenue, we can help. If you want AI because it's trendy, look elsewhere.</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not a dashboard-only BI studio. We build data infrastructure and apply statistical methods. Dashboards are a tool, not the deliverable.</p>
+                <p>We are not a dashboard-only BI studio. Dashboards are useful, but they're just a tool. We focus on helping you understand what the numbers actually mean and what to do about them.</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not marketing analytics consultants. We don't optimize ad spend or do attribution modeling. We focus on operational and financial decision support.</p>
+                <p>We are not marketing consultants. We don't optimize ad campaigns or track website conversions. We focus on operational profit, forecasting, and business decisions.</p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-slate-500 mt-1">—</span>
-                <p>We are not advisors who deliver a strategy document and disappear. We own the infrastructure we build and maintain the models we create. This is a partnership, not a one-time engagement.</p>
+                <p>We are not advisors who deliver a report and leave. We build the systems, maintain what we create, and stay with you as an ongoing partner. This is not a one-time project.</p>
               </div>
             </div>
           </motion.div>
@@ -168,16 +168,16 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                We work with business owners and principals at small and mid-sized companies—typically 10 to 500 employees—who need to make consequential decisions and want quantitative backing instead of guesswork.
+                We work with business owners at small and mid-sized companies—typically 10 to 500 employees—who need to make big decisions and want real numbers backing them up, not just gut instinct.
               </p>
               <p>
-                Our clients are often at inflection points: considering expansion, evaluating large contracts, planning capacity changes, or making pricing decisions that materially affect the business. They understand their industry and operations. What they need is someone to build the data infrastructure and run the analysis that tells them what the numbers actually say.
+                Our clients are often at turning points: considering expansion, evaluating large contracts, planning capacity changes, or making pricing decisions that could significantly impact the business. They know their industry and operations. What they need is someone to consolidate their messy data and help them understand what the numbers actually say.
               </p>
               <p>
-                We work across industries: manufacturing, healthcare, construction, specialty trades, distribution, professional services. The common thread is not the industry—it's the need for reliable data and statistical analysis to support major decisions.
+                We work across industries: manufacturing, healthcare, construction, trades, distribution, professional services. The common thread isn't the industry—it's the need for clean data and clear analysis to support major business decisions.
               </p>
               <p>
-                If you're trying to decide whether to open a new location, take on a large contract, change your pricing structure, or invest in additional capacity, and you want mathematical backing for that choice—we can help.
+                If you're trying to decide whether to open a new location, take on a large contract, change your pricing, or add capacity—and you want real numbers backing that choice—we can help.
               </p>
             </div>
           </motion.div>
@@ -198,13 +198,13 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                StrataXM is led by Joshua Poston, who has spent years building data infrastructure and analytics systems for complex organizations—from enterprise-scale analytics platforms to decision support systems for mission-critical operations.
+                StrataXM is led by Joshua Poston, who has spent years building data systems and analytics capabilities for complex organizations—from enterprise analytics platforms to decision support systems for operations teams.
               </p>
               <p>
-                This practice was founded on the observation that small and mid-sized businesses face many of the same quantitative challenges as large enterprises—forecasting, risk modeling, scenario analysis—but lack access to the statistical and engineering expertise needed to solve them.
+                This practice was founded on a simple observation: small and mid-sized businesses face the same challenges as large companies—forecasting revenue, understanding profit drivers, modeling expansion decisions—but don't have access to the analytical teams that big companies build in-house.
               </p>
               <p>
-                We bring that capability without requiring you to hire a full analytics team. You get the infrastructure, the analysis, and the ongoing partnership that makes quantitative decision support practical for businesses of your scale.
+                We bring that capability without requiring you to hire a full team. You get the data consolidation, the analysis, and the ongoing partnership that makes smart decision-making practical for businesses your size.
               </p>
             </div>
           </motion.div>
@@ -220,10 +220,10 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to apply quantitative rigor to your business?
+              Ready to make decisions with confidence?
             </h2>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Tell us about the decision you need to make and the data you have. We'll explain whether we can help and what that engagement would look like.
+              Tell us about your data situation and the decision you're facing. We'll explain whether we can help and what working together would look like.
             </p>
             <Link
               to="/contact"
