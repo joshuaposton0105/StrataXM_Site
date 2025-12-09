@@ -225,10 +225,10 @@ const Services = () => {
               These services work together
             </h2>
             <p className="text-lg text-slate-700 leading-relaxed mb-6">
-              You can't forecast accurately without clean, consolidated data. You can't model decisions without understanding historical patterns. Most engagements involve all three disciplines working together in stages.
+              Most companies don’t start with forecasting or scenario modeling — they start by getting their data into one clean, reliable place. Once the numbers are trustworthy, reporting becomes straightforward. And once reporting is solid, planning and decision modeling finally make sense.
             </p>
             <p className="text-lg text-slate-700 leading-relaxed">
-              We typically start with data engineering to establish a reliable foundation, then layer on statistical analysis and decision support as your capability matures.
+              That’s how most of our work unfolds: we build the foundation first, then add analysis and decision support as the business grows more sophisticated in how it uses data.
             </p>
           </motion.div>
         </div>
