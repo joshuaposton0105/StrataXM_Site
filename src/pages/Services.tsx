@@ -1,117 +1,137 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Database, LineChart, Target, ArrowRight, TrendingUp, DollarSign, AlertCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
+  const [openCase, setOpenCase] = useState(null);
+
   const services = [
     {
-      icon: <Database className="w-10 h-10" />,
-      title: 'Data Engineering',
-      tagline: 'Capture Reality. Build a Source of Truth.',
-      description: 'Most business owners operate with scattered data across multiple systems that never quite agree. We engineer your POS, accounting, CRM, and operations data into a single source of truth.',
-      whenYouNeedThis: [
-        'Your QuickBooks, POS, and spreadsheets show different revenue numbers',
-        'Running a monthly report requires manual exports from five different systems',
-        'You spend hours reconciling conflicting data sources',
-        'You can\'t answer basic questions about profitability or trends quickly',
-        'Your team doesn\'t trust the numbers'
-      ],
-      whatWeDeliver: [
-        'Cloud data warehouse (Azure SQL, Snowflake, or similar)',
-        'Automated ETL pipelines that pull data from all source systems',
-        'Data quality rules and validation',
-        'Unified data models for consistent reporting',
-        'Documentation of data lineage and business definitions'
+      id: 'foundation',
+      eyebrow: 'Step 01',
+      title: "Your numbers don't agree. Let's fix that.",
+      subtitle: 'Data Foundation & Reporting',
+      pain: "You ask a simple question — how much did we make last month? — and get three different answers depending on which system you look at. Your team spends hours every week pulling exports, reconciling spreadsheets, and second-guessing every number. Nobody trusts the data, so nobody uses it.",
+      outcome: "We connect your systems into one reliable source of truth. Automated reporting that runs without anyone touching it. Numbers your whole team can stand behind.",
+      bullets: [
+        "Stop reconciling systems manually every month",
+        "End the argument about which number is right",
+        "Get reports that run themselves",
+        "See what's happening in your business without digging for it",
       ],
       caseStudy: {
         business: 'Regional HVAC Contractor',
-        problem: 'ServiceTitan tracked jobs and scheduling. QuickBooks handled invoicing. Excel tracked job costs manually. When asked about profitability by customer or service type, the owner spent three days pulling data from all three sources and reconciling discrepancies.',
-        solution: 'Built a cloud data warehouse that pulls data nightly from ServiceTitan and QuickBooks. Automated job costing calculations that previously happened in spreadsheets. Created a unified profitability model.',
-        result: 'Owner can now see profitability by customer, service type, and technician in real time. Monthly financial close reduced from two weeks to three days. Data conflicts eliminated.'
+        problem: 'Job tracking lived in one system, invoicing in another, and job costs in a spreadsheet someone maintained manually. Answering "are we profitable on this customer?" required three days of work and still wasn\'t trustworthy.',
+        solution: 'Connected all three systems into a single automated data pipeline. Eliminated the manual spreadsheet entirely. Built a profitability model that updates nightly.',
+        result: 'Profitability by customer, service type, and technician — available in real time. Monthly financial close went from two weeks to three days. The spreadsheet no longer exists.'
       }
     },
     {
-      icon: <LineChart className="w-10 h-10" />,
-      title: 'Business Analytics',
-      tagline: 'Understand what is actually happening in your business.',
-      description: 'Once your data is reliable, we turn it into clear, standardized reporting that shows how your business is actually performing. We define KPIs, build executive dashboards, and surface trends in revenue, margin, operations, and customer behavior so leadership can see reality without interpretation battles..',
-      whenYouNeedThis: [
-        'You need to forecast next quarter\'s revenue for planning',
-        'You want to predict slow months to manage cash flow',
-        'You need to understand job cost trends and profitability drivers',
-        'You\'re trying to identify leading indicators of customer churn',
-        'You want to model risk before making major investments'
-      ],
-      whatWeDeliver: [
-        'Executive dashboards and operational reporting',
-  'KPI definition and metric standardization',
-  'Revenue, margin, and cost performance analysis',
-  'Product, customer, and location profitability reporting',
-  'Trend, variance, and seasonality analysis',
-  'Recurring monthly and quarterly business performance reporting'
+      id: 'analytics',
+      eyebrow: 'Step 02',
+      title: "You can see what happened. Now understand why.",
+      subtitle: 'Performance Analytics',
+      pain: "You have reports. Maybe even a dashboard someone built two years ago. But when something goes wrong — a slow month, a margin problem, a customer segment that's quietly bleeding money — you can't pinpoint it fast enough to do anything about it. You're reacting instead of leading.",
+      outcome: "We turn your data into analysis that explains your business: what's driving profit, where you're losing money, what's trending in the wrong direction before it becomes a problem.",
+      bullets: [
+        "Know which customers, jobs, or products are actually profitable",
+        "Catch margin problems before they hit the P&L",
+        "Understand seasonal patterns and plan around them",
+        "Stop reacting to surprises — see them coming",
       ],
       caseStudy: {
-        business: 'Multi-Location Restaurant Group',
-        problem: 'The owner wanted to open a fourth location but couldn\'t confidently forecast first-year revenue. Historical data existed, but each location opened under different conditions. Gut instinct said it would work, but banks wanted projections backed by data.',
-        solution: 'Built statistical models using historical performance from existing locations, adjusted for market demographics, seasonality, and economic conditions. Ran Monte Carlo simulations to model revenue under different scenarios.',
-        result: 'Owner secured financing with credible projections showing expected revenue range and break-even timeline. The location performed within 8% of forecasted revenue in year one.'
+        business: 'Multi-Location Healthcare Practice',
+        problem: 'Revenue looked healthy at the top line, but the owner suspected some service lines were underperforming. Without clean per-service profitability data, there was no way to know where to focus — or what to cut.',
+        solution: 'Built service-line and provider-level profitability reporting. Layered in payer mix analysis and referral source tracking. Surfaced which services were growing and which were silently dragging margins.',
+        result: 'Two underperforming service lines identified and restructured within 90 days. Referral source data redirected marketing spend. Net margin improved without adding revenue.'
       }
     },
     {
-      icon: <Target className="w-10 h-10" />,
-      title: 'Decision Support',
-      tagline: 'Model scenarios before you commit',
-      description: 'Major business decisions—expanding locations, changing pricing, adding capacity—involve risk. We build scenario models that let you test different choices mathematically before committing resources. Think of it as a financial flight simulator for your business. When appropriate, we apply advanced statistical and machine learning methods as analytic tools — not as products — to improve forecast accuracy and scenario testing.',
-      whenYouNeedThis: [
-        'You\'re considering opening a new location or expanding capacity',
-        'You need to evaluate pricing changes or promotional strategies',
-        'You\'re deciding whether to hire additional staff',
-        'You want to understand the financial impact of different growth scenarios',
-        'You need to justify major investments to partners or lenders'
-      ],
-      whatWeDeliver: [
-        'What-if analysis models for business decisions',
-        'Financial impact projections with sensitivity analysis',
-        'Risk quantification (best case, expected case, worst case)',
-        'Break-even analysis and payback period calculations',
-        'Scenario comparison frameworks',
-        'Ongoing analytical partnership for strategic choices'
+      id: 'decisions',
+      eyebrow: 'Step 03',
+      title: "Big decision ahead. Know the real risk before you commit.",
+      subtitle: 'Decision Modeling & Forecasting',
+      pain: "You're staring down a major decision — a new location, a big contract, a pricing change, new equipment — and your gut says yes but you can't back it up with numbers. Your accountant can tell you what happened last year. Nobody's telling you what's likely to happen next.",
+      outcome: "We model the decision before you make it. Revenue forecasts, scenario analysis, break-even timelines, cash flow projections. You see the best case, the worst case, and everything in between — before you sign anything.",
+      bullets: [
+        "Forecast revenue with confidence, not guesswork",
+        "Model expansion before you commit capital",
+        "Know your break-even before you hire or lease",
+        "Walk into any negotiation with real numbers behind you",
       ],
       caseStudy: {
-        business: 'Specialty Manufacturing',
-        problem: 'The company received a proposal for a large contract that would require hiring three additional employees and leasing new equipment. The revenue looked attractive, but the owner wasn\'t sure if the margins justified the fixed cost increases and capacity commitment.',
-        solution: 'Built a scenario model that projected cash flow, profitability, and capacity utilization under different contract fulfillment scenarios. Modeled the financial impact if the contract ended early or if additional similar contracts could be secured.',
-        result: 'Analysis showed the contract would break even in month 7, but only if equipment utilization stayed above 65%. The owner negotiated better contract terms and a longer commitment period before accepting. The business remained profitable when a similar competitor took the original deal and failed within a year.'
+        business: 'Specialty Manufacturing Company',
+        problem: 'A large contract offer looked attractive on the surface but required hiring three people and leasing new equipment. The owner couldn\'t tell if the margins justified the fixed cost increase — or what happened to the business if the contract ended early.',
+        solution: 'Built a scenario model projecting cash flow, margin, and capacity utilization under multiple outcomes. Modeled early termination risk and the conditions under which the deal stopped making sense.',
+        result: 'Analysis showed break-even at month 7, contingent on utilization staying above 65%. The owner negotiated a longer commitment period before accepting. A competitor took the original terms. They were out of business within a year.'
       }
     }
   ];
 
+  const pains = [
+    "My reports take days to pull together and I still don't trust them",
+    "I don't know which part of my business is actually making money",
+    "I'm about to make a big decision and I'm flying blind",
+    "My team argues about which numbers are right",
+    "I know something's wrong but I can't pinpoint it",
+    "My accountant tells me what happened — nobody tells me what's coming",
+  ];
+
   return (
     <div className="pt-16 lg:pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-20 lg:py-32">
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-800 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              We Do Data
+            <p className="text-slate-400 uppercase tracking-widest text-sm font-semibold mb-6">
+              What We Do
+            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+              Your business is generating data every day.<br />
+              <span className="text-slate-400">Most of it isn't working for you.</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-6 leading-relaxed">
-              We help owners stop guessing and start deciding with certainty. By turning disconnected data into clear insight and future-looking scenarios, we bring confidence to your most important financial and strategic choices.
+            <p className="text-xl text-slate-300 leading-relaxed max-w-3xl">
+              We turn scattered, conflicting business data into clear answers — what's driving profit, what's coming next, and whether the decision in front of you is worth the risk. No in-house analytics team required.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Detail */}
+      {/* Pain Strip */}
+      <section className="bg-slate-100 py-12 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm font-bold uppercase tracking-widest text-slate-500 mb-8">
+            Sound familiar?
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {pains.map((pain, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="bg-white rounded-lg px-5 py-4 border border-slate-200 text-slate-700 text-sm leading-relaxed"
+              >
+                <span className="text-slate-400 mr-2">"</span>
+                {pain}
+                <span className="text-slate-400">"</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
       {services.map((service, index) => (
         <section
-          key={index}
+          key={service.id}
           className={`py-20 lg:py-32 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,121 +140,117 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-                <div>
-                  <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-6">
-                    {service.icon}
-                  </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-xl text-slate-600 mb-6 italic">
-                    {service.tagline}
-                  </p>
-                  <p className="text-lg text-slate-700 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="bg-slate-100 rounded-xl p-6 border border-slate-200">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">
-                      You need this if:
-                    </h3>
-                    <ul className="space-y-2">
-                      {service.whenYouNeedThis.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start space-x-2 text-sm">
-                          <AlertCircle className="w-4 h-4 text-slate-700 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="bg-white rounded-xl p-6 border border-slate-300">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">
-                      What we deliver:
-                    </h3>
-                    <ul className="space-y-2">
-                      {service.whatWeDeliver.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start space-x-2 text-sm">
-                          <span className="text-slate-700 mt-0.5 flex-shrink-0">—</span>
-                          <span className="text-slate-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+              {/* Header */}
+              <div className="max-w-4xl mb-12">
+                <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3">
+                  {service.eyebrow} &mdash; {service.subtitle}
+                </p>
+                <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                  {service.title}
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  {service.pain}
+                </p>
+                <p className="text-lg font-semibold text-slate-900 leading-relaxed">
+                  {service.outcome}
+                </p>
               </div>
 
-              {/* Case Study */}
-              <div className="bg-slate-900 text-white rounded-xl p-8 lg:p-12">
-                <div className="mb-6">
-                  <div className="inline-block bg-white/10 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    Case Study
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-2">
-                    {service.caseStudy.business}
-                  </h3>
+              {/* Two Column */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+
+                {/* Bullets */}
+                <div className="bg-slate-900 rounded-xl p-8">
+                  <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">
+                    What this means for you
+                  </p>
+                  <ul className="space-y-4">
+                    {service.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-start space-x-3">
+                        <ArrowRight className="w-4 h-4 text-white mt-1 flex-shrink-0" />
+                        <span className="text-white text-base leading-relaxed">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wide text-slate-400 mb-3">
-                      The Problem
-                    </h4>
-                    <p className="text-slate-200 leading-relaxed">
-                      {service.caseStudy.problem}
-                    </p>
-                  </div>
+                {/* Case Study Toggle */}
+                <div className="border border-slate-200 rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenCase(openCase === service.id ? null : service.id)}
+                    className="w-full flex items-center justify-between px-8 py-6 bg-white hover:bg-slate-50 transition-colors duration-200"
+                  >
+                    <div className="text-left">
+                      <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">
+                        Case Study
+                      </p>
+                      <p className="text-lg font-bold text-slate-900">
+                        {service.caseStudy.business}
+                      </p>
+                    </div>
+                    {openCase === service.id
+                      ? <ChevronUp className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                      : <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                    }
+                  </button>
 
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wide text-slate-400 mb-3">
-                      Our Solution
-                    </h4>
-                    <p className="text-slate-200 leading-relaxed">
-                      {service.caseStudy.solution}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wide text-slate-400 mb-3">
-                      The Result
-                    </h4>
-                    <p className="text-slate-200 leading-relaxed">
-                      {service.caseStudy.result}
-                    </p>
-                  </div>
+                  <AnimatePresence>
+                    {openCase === service.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-8 pb-8 bg-white border-t border-slate-100 space-y-6 pt-6">
+                          {[
+                            { label: 'The Problem', text: service.caseStudy.problem },
+                            { label: 'What We Did', text: service.caseStudy.solution },
+                            { label: 'The Result', text: service.caseStudy.result },
+                          ].map(({ label, text }) => (
+                            <div key={label}>
+                              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+                                {label}
+                              </p>
+                              <p className="text-slate-700 leading-relaxed text-sm">{text}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
+
               </div>
             </motion.div>
           </div>
         </section>
       ))}
 
-      {/* Integration Note */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* How It Fits Together */}
+      <section className="py-20 lg:py-24 bg-slate-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <TrendingUp className="w-12 h-12 text-slate-900 mx-auto mb-6" />
-            <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
-              These services work together
+            <TrendingUp className="w-10 h-10 text-slate-400 mx-auto mb-6" />
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Most businesses don't start at Step 3.
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
-              Most companies don’t start with forecasting or scenario modeling — they start by getting their data into one clean, reliable place. Once the numbers are trustworthy, reporting becomes straightforward. And once reporting is solid, planning and decision modeling finally make sense.
+            <p className="text-lg text-slate-300 leading-relaxed mb-6 max-w-3xl mx-auto">
+              You can't forecast revenue on data you don't trust. You can't model decisions without understanding your current performance. The three services above build on each other — and most of our clients start at Step 1, whether they expected to or not.
             </p>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              That’s how most of our work unfolds: we build the foundation first, then add analysis and decision support as the business grows more sophisticated in how it uses data.
+            <p className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
+              We meet you where you are. Some clients need everything. Some need one thing done right. We'll tell you honestly where to start and why.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -246,7 +262,7 @@ const Services = () => {
               What problem are you trying to solve?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Tell us about your data situation and the decisions you need to make. We'll explain whether we can help and what that would look like.
+              Tell us about your data situation and the decisions you need to make. We'll tell you whether we can help and what that would look like.
             </p>
             <Link
               to="/contact"
@@ -258,6 +274,7 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };
