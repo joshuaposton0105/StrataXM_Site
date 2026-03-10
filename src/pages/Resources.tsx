@@ -1,100 +1,118 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Database, TrendingUp, Target, AlertTriangle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Database, TrendingUp, Target, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Resources = () => {
+  const [openFaq, setOpenFaq] = useState(null);
+
   const concepts = [
     {
-      term: 'Single Source of Truth',
-      explanation: 'Your QuickBooks says one revenue number. Your POS says another. Excel says a third. A single source of truth means one authoritative database where all your business data lives, reconciled and consistent. Everything else pulls from this source.',
-      whyItMatters: 'You can\'t forecast revenue or model decisions if different systems show different numbers. Clean, consolidated data is the foundation for everything else.',
+      term: 'Business Intelligence (BI)',
+      slug: 'business-intelligence',
+      explanation: 'Business intelligence means turning your raw operational data — sales, costs, customer activity, job records — into clear, organized reporting you can actually use. Instead of logging into five systems to piece together what happened last month, BI gives you one place where the numbers are already consolidated, reconciled, and presented in a way that makes sense.',
+      whyItMatters: 'Most small businesses have more data than they realize. The problem isn\'t a lack of information — it\'s that the information is scattered, conflicting, and hard to access. BI solves that. It\'s the foundation for everything else: forecasting, profitability analysis, and confident decision-making.',
       icon: <Database className="w-8 h-8" />
     },
     {
       term: 'Revenue Forecasting',
-      explanation: 'Statistical models that predict future revenue based on historical patterns, seasonality, economic factors, and leading indicators. Not a guess. Not a goal. A probability-weighted projection with confidence intervals.',
-      whyItMatters: 'Banks want projections for loans. You need cash flow visibility. Hiring and capacity decisions depend on knowing what revenue will likely be three to six months out.',
+      slug: 'revenue-forecasting',
+      explanation: 'Revenue forecasting uses your historical data — patterns, seasonality, growth trends, customer behavior — to project what revenue is likely to look like over the next quarter or year. It\'s not a goal or a wish. It\'s a data-driven estimate of what\'s probable, with a realistic range built around it.',
+      whyItMatters: 'You can\'t manage cash flow, plan hiring, or decide whether to take on new overhead without knowing what revenue is likely to be. Banks want projections for financing. Operators need them for planning. A reliable forecast turns "I hope next quarter is good" into "here\'s what we expect and why."',
       icon: <TrendingUp className="w-8 h-8" />
     },
     {
-      term: 'Scenario Modeling',
-      explanation: 'Build mathematical models of your business that let you test different decisions before committing. What happens to cash flow if you hire two people? What if the contract ends in month six instead of twelve? Run the scenarios, see the numbers.',
-      whyItMatters: 'Major decisions involve risk. Scenario models let you quantify that risk and compare options mathematically instead of guessing.',
+      term: 'Profitability Analysis',
+      slug: 'profitability-analysis',
+      explanation: 'Top-line revenue can look healthy while certain customers, jobs, locations, or service lines quietly drain margin. Profitability analysis breaks down your business at the level that matters — by customer, product, service type, or location — so you can see exactly where you\'re making money and where you\'re not.',
+      whyItMatters: 'Many businesses are surprised to find that 20% of their customers generate most of their profit — and another 20% are barely breaking even or losing money. You can\'t make smart pricing, capacity, or growth decisions without knowing where the margin actually lives.',
       icon: <Target className="w-8 h-8" />
     },
     {
-      term: 'Risk Quantification',
-      explanation: 'Every business decision involves uncertainty. Risk quantification means putting numbers on that uncertainty: best case, expected case, worst case. What\'s the probability of breaking even? What\'s the downside exposure?',
-      whyItMatters: 'You need to know not just what\'s likely to happen, but what could go wrong and how bad it could get. That\'s how you decide if a risk is worth taking.',
+      term: 'Scenario Modeling',
+      slug: 'scenario-modeling',
+      explanation: 'Scenario modeling means building a mathematical representation of your business and running decisions through it before you commit. What happens to cash flow if you hire two people? What\'s the break-even on a new location? What if a major contract ends early? Run the numbers first, then decide.',
+      whyItMatters: 'Major business decisions involve real financial risk. Scenario modeling lets you quantify that risk and compare options with actual numbers instead of gut instinct. It\'s how you walk into a negotiation — or a bank meeting — with something credible to show.',
       icon: <AlertTriangle className="w-8 h-8" />
     }
   ];
 
-  const realScenarios = [
+  const scenarios = [
     {
-      situation: 'Opening a New Location',
-      before: 'You think a second location will work based on the success of the first one. You have general instincts about market demand and cost structure. Banks want financial projections, but you\'re guessing.',
-      after: 'We build a financial model using historical performance from your existing location, adjusted for demographics, competition, and market size. We forecast revenue under different scenarios, model break-even timeline, and quantify risk. You have credible projections backed by data.',
-      impact: 'You secure financing with confidence. You know what success looks like and what failure looks like. You\'ve quantified the risk before committing.'
+      situation: 'Opening a Second Location',
+      before: 'You believe a second location will work based on the success of your first. You have general instincts about demand and cost — but banks want financial projections, and you\'re largely estimating.',
+      after: 'We build a forecast model using your existing location\'s performance, adjusted for local market conditions, competition, and realistic ramp-up timelines. You see projected revenue, break-even timeline, and downside risk — before you sign a lease.',
+      impact: 'You secure financing with credible projections. You know what success looks like — and what failure looks like — before committing capital.'
     },
     {
       situation: 'Evaluating a Large Contract',
-      before: 'A customer offers you a contract that would be 30% of your current revenue. The numbers look good, but it requires hiring staff and leasing equipment. You\'re not sure if the margins justify the fixed cost commitment.',
-      after: 'We model cash flow, profitability, and capacity utilization under different fulfillment scenarios. We quantify what happens if the contract ends early, if costs run over, or if you secure similar additional work. The math shows where the break-even point is and what conditions have to hold.',
-      impact: 'You negotiate better terms based on quantified risk. You accept the contract with clear financial guardrails instead of hoping it works out.'
+      before: 'A customer offers you a contract worth 30% of current revenue. The number looks attractive, but it requires new hires and equipment. You\'re not sure if the margins justify the fixed cost commitment — or what happens if the contract ends early.',
+      after: 'We model cash flow, margin, and capacity under multiple scenarios — including early termination and cost overruns. The analysis shows exactly where break-even is and what conditions have to hold for the deal to make sense.',
+      impact: 'You negotiate better terms based on quantified risk. You accept — or decline — with clear financial guardrails instead of hoping it works out.'
     },
     {
-      situation: 'Pricing Decision',
-      before: 'Your prices haven\'t changed in three years. Costs are up. Competitors may or may not be charging more. You don\'t know how customers will react to a price increase or what the revenue impact would be.',
-      after: 'We analyze historical demand elasticity, model revenue under different pricing scenarios, and quantify the risk of customer churn versus margin improvement. The analysis shows the optimal price point and expected revenue change.',
-      impact: 'You implement a pricing strategy backed by data instead of guessing. Revenue increases without losing the volume you were worried about.'
+      situation: 'Deciding Whether to Raise Prices',
+      before: 'Your costs are up. Your prices haven\'t changed in two years. You want to raise rates but you\'re worried about losing customers — and you don\'t know how much revenue is actually at risk.',
+      after: 'We analyze your customer mix, margin by segment, and historical retention patterns. We model revenue impact under different pricing scenarios and quantify the customer churn risk at each price point.',
+      impact: 'You implement a pricing strategy backed by data. Revenue improves without losing the volume you were worried about.'
     }
   ];
 
-  const commonQuestions = [
+  const faqs = [
     {
-      question: 'How is this different from hiring an analyst?',
-      answer: 'A full-time analyst costs $80K-$120K per year plus benefits. You also need someone to build and maintain the data infrastructure they work from. We provide both the infrastructure and the analytical capability as a service. You get enterprise-grade capability at a fraction of the cost of building an internal team.'
+      question: 'How is working with StrataXM different from hiring a full-time analyst?',
+      answer: 'A full-time data analyst or BI developer typically costs $80,000–$120,000 per year before benefits — and that person still needs data infrastructure to work from, which is a separate build. We provide both the infrastructure and the ongoing analytical capability as a service. You get enterprise-level BI without the overhead of building and staffing an internal team.'
     },
     {
-      question: 'Do you guarantee your forecasts will be accurate?',
-      answer: 'No one can guarantee future outcomes. What we provide is rigorous statistical analysis with documented assumptions, methodology, and confidence intervals. You understand what the model says, why it says it, and where the uncertainty lies. That\'s far better than guessing, but it\'s not a crystal ball.'
+      question: 'What does "business intelligence for small business" actually mean in practice?',
+      answer: 'For most small businesses, it starts with one problem: your systems don\'t agree. QuickBooks says one revenue number, your POS says another, and Excel has a third. BI means connecting those systems into one reliable source, building automated reporting that runs without manual work, and surfacing the analysis that helps you run the business — profitability by customer, trend tracking, performance against plan. It\'s not exotic. It\'s just your data, organized and working for you.'
     },
     {
-      question: 'What if my data is incomplete or messy?',
-      answer: 'That\'s normal and part of what we solve. Data engineering comes first precisely because clean, consolidated data is required for statistical analysis. We build the infrastructure that consolidates your systems, then clean and standardize what we need for modeling. If the data doesn\'t exist, we tell you what needs to be collected and why.'
+      question: 'What if my data is a mess right now?',
+      answer: 'That\'s the norm, not the exception. Messy, scattered data is the starting point for most of our engagements. We build the data foundation first — connecting your systems, cleaning up conflicts, establishing a single source of truth — before we layer on reporting and analysis. If key data doesn\'t exist yet, we tell you exactly what needs to be collected and why.'
     },
     {
-      question: 'How long does it take to see results?',
-      answer: 'Data infrastructure typically takes 6-12 weeks to establish, depending on how many systems you have and how messy the data is. Statistical analysis and scenario modeling can start as soon as clean data exists. Most engagements produce actionable analysis within 2-3 months from start.'
+      question: 'How long before we see results?',
+      answer: 'Most clients have initial reporting and a consolidated data foundation within 6–10 weeks, depending on how many systems are involved. Profitability analysis and forecasting work can begin as soon as clean data exists. Most engagements produce actionable insights within 60–90 days of kickoff.'
     },
     {
-      question: 'Is this only for companies that are growing?',
-      answer: 'No. Quantitative decision support matters whether you\'re growing, contracting, or stable. You might need to model cost reduction scenarios instead of expansion. The need is the same: making consequential choices with mathematical backing instead of instinct.'
+      question: 'Do you work with businesses outside of Louisiana?',
+      answer: 'Yes. Our clients are across industries and geographies. We\'re based in Central Louisiana, but our work is entirely remote-capable. If you have the data and the decisions to make, location doesn\'t matter.'
     },
     {
-      question: 'What tools or software do you use?',
-      answer: 'We use whatever fits the problem: SQL Server, Azure, Snowflake for data warehousing. Python and R for statistical analysis. Power BI or Tableau for visualization. Excel for financial modeling that business owners understand. The tools are not the deliverable. The analysis and the infrastructure are.'
+      question: 'Do you guarantee forecast accuracy?',
+      answer: 'No forecast is a guarantee — and anyone who promises one is selling something. What we provide is rigorous analysis with documented assumptions, clear methodology, and an honest range of outcomes. You understand what the model says, why it says it, and where the uncertainty lives. That\'s the difference between a credible projection and a guess.'
+    },
+    {
+      question: 'What tools and software do you use?',
+      answer: 'We use whatever fits the problem and the client\'s environment. The tools are not the deliverable — the analysis and the infrastructure are. We evaluate each engagement based on what will actually work best for your systems, your team, and your budget, and we recommend accordingly.'
+    },
+    {
+      question: 'Is this only for businesses that are growing?',
+      answer: 'No. The need for data-backed decisions doesn\'t change based on growth stage. Businesses managing cost reduction, evaluating whether to stay flat or contract, or trying to stabilize operations need the same analytical clarity. The questions are different; the approach is the same.'
     }
   ];
 
   return (
     <div className="pt-16 lg:pt-20">
-      {/* Hero Section */}
+
+      {/* Hero */}
       <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Understanding Decision Support
+            <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">
+              Small Business Analytics Guide
+            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              Business Intelligence for Small Business — What It Is and When You Need It
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Plain-English explanations of data infrastructure, forecasting, and scenario modeling—what they mean for your business and when you need them.
+              Plain-English explanations of BI, revenue forecasting, profitability analysis, and decision modeling — what each one means, what it costs you not to have it, and how it applies to real business decisions.
             </p>
           </motion.div>
         </div>
@@ -107,23 +125,27 @@ const Resources = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-3xl mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Key Concepts
+              The Core Concepts — In Plain English
             </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Most small business owners hear terms like "business intelligence" and assume it's for larger companies. It's not. Here's what each concept actually means — and why it matters at your scale.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {concepts.map((concept, index) => (
               <motion.div
                 key={index}
+                id={concept.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-slate-50 rounded-xl border border-slate-200 p-8"
               >
-                <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-6">
+                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center text-white mb-6">
                   {concept.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
@@ -133,8 +155,8 @@ const Resources = () => {
                   {concept.explanation}
                 </p>
                 <div className="bg-white rounded-lg p-4 border-l-4 border-slate-900">
-                  <p className="text-sm font-semibold text-slate-900 mb-1">Why it matters:</p>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm font-semibold text-slate-900 mb-1">Why it matters for your business:</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {concept.whyItMatters}
                   </p>
                 </div>
@@ -151,55 +173,54 @@ const Resources = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-3xl mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Real Business Scenarios
+              How Data-Backed Decisions Work in Practice
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              How quantitative analysis changes decision-making in practice
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Abstract concepts are easy to understand. Here's what the difference between guessing and knowing actually looks like — across the decisions small business owners face most often.
             </p>
           </motion.div>
 
-          <div className="space-y-12">
-            {realScenarios.map((scenario, index) => (
+          <div className="space-y-8">
+            {scenarios.map((scenario, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg"
+                className="bg-white rounded-xl border border-slate-200 overflow-hidden"
               >
-                <div className="p-8 lg:p-12">
+                <div className="p-8 lg:p-10">
                   <h3 className="text-2xl font-bold text-slate-900 mb-8">
                     {scenario.situation}
                   </h3>
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                    <div>
-                      <h4 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">
-                        Without Quantitative Analysis
+                    <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                        Without analytics
                       </h4>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed text-sm">
                         {scenario.before}
                       </p>
                     </div>
-
-                    <div>
-                      <h4 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">
-                        With Quantitative Analysis
+                    <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                        With StrataXM
                       </h4>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed text-sm">
                         {scenario.after}
                       </p>
                     </div>
                   </div>
 
                   <div className="bg-slate-900 text-white rounded-lg p-6">
-                    <h4 className="text-sm font-bold uppercase tracking-wide text-slate-400 mb-2">
-                      The Impact
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+                      The outcome
                     </h4>
-                    <p className="text-slate-200 leading-relaxed">
+                    <p className="text-slate-200 leading-relaxed text-sm">
                       {scenario.impact}
                     </p>
                   </div>
@@ -210,42 +231,93 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Common Questions */}
+      {/* FAQ */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Common Questions
+              Frequently Asked Questions
             </h2>
+            <p className="text-lg text-slate-600">
+              Honest answers to the questions business owners ask most before engaging with a BI or analytics partner.
+            </p>
           </motion.div>
 
-          <div className="space-y-6">
-            {commonQuestions.map((item, index) => (
+          <div className="space-y-3">
+            {faqs.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-slate-50 rounded-xl border border-slate-200 p-6"
+                transition={{ duration: 0.4, delay: index * 0.04 }}
+                className="border border-slate-200 rounded-xl overflow-hidden"
               >
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {item.answer}
-                </p>
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between px-6 py-5 bg-slate-50 hover:bg-slate-100 transition-colors duration-200 text-left"
+                >
+                  <span className="font-semibold text-slate-900 pr-4">{item.question}</span>
+                  {openFaq === index
+                    ? <ChevronUp className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                    : <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                  }
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 py-5 bg-white border-t border-slate-100">
+                        <p className="text-slate-600 leading-relaxed">{item.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Internal Link Bridge */}
+      <section className="py-16 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
+          >
+            {[
+              { label: 'See how we work', desc: 'The three problems we solve and what that looks like in practice', to: '/services', cta: 'View Services' },
+              { label: 'Industries we serve', desc: 'Healthcare, retail, service businesses, construction and contracting', to: '/about', cta: 'About StrataXM' },
+              { label: 'Start a conversation', desc: 'Tell us about your data situation. We\'ll tell you whether we can help.', to: '/contact', cta: 'Get in Touch' },
+            ].map((link, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 border border-slate-200">
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">{link.label}</p>
+                <p className="text-sm text-slate-600 mb-4 leading-relaxed">{link.desc}</p>
+                <Link
+                  to={link.to}
+                  className="text-sm font-semibold text-slate-900 inline-flex items-center hover:gap-2 transition-all duration-200"
+                >
+                  {link.cta} <ArrowRight className="ml-1 w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -254,10 +326,10 @@ const Resources = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to apply this to your business?
+              Ready to put your data to work?
             </h2>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Tell us about the decision you're facing and the data you have. We'll explain whether quantitative analysis can help and what that engagement would look like.
+              Tell us about the decision you're facing and the data you have. We'll tell you whether we can help and what that engagement would look like.
             </p>
             <Link
               to="/contact"
@@ -269,6 +341,7 @@ const Resources = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };
